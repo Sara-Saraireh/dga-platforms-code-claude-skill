@@ -64,3 +64,9 @@ export default function ServiceHome({ service, onStart }) {
 - Replace copy with the service's official Arabic wording.
 - Ensure focus styles meet the project's accessibility standard.
 - Confirm the page has exactly one `h1` and one primary action.
+
+**Tokens & spacing**
+- Map colors to verified tokens (`tokens/colors-v1.0.json`: e.g. SA 600 `#1B8354`, Gray scale) and
+  typography to `tokens/typography-v1.0.json` (IBM Plex Sans Arabic; Display for headings, Text for body).
+- Spacing here is **illustrative**, not official. Map it to the host project's approved spacing scale
+  (or verified Platforms Code spacing) before production. Do not present it as official DGA spacing.

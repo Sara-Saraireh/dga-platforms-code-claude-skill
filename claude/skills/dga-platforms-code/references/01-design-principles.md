@@ -61,3 +61,12 @@ Every element earns its place by serving the task.
 - No decorative gradients, illustrations, or animation that don't aid comprehension.
 - No purely aesthetic embellishment that competes with content or the primary action.
 - If an element doesn't help the user complete the service, remove it.
+
+## Future outlook (vision note)
+
+The Platforms Code Guide v1.0 mentions future support for innovative digital channels and
+technologies such as virtual reality, augmented reality, artificial intelligence, generative AI, and
+automation of design and development processes.
+
+This is a **vision note only**. Do not turn it into implementation requirements unless the user
+explicitly asks.

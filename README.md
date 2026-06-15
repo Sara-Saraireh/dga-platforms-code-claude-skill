@@ -9,6 +9,27 @@ casual prompt collection and not a substitute for official review.
 
 ---
 
+## Grounding and scope
+
+The guidance here is grounded in official DGA Platforms Code sources: the official **Platforms Code
+Guide v1.0** (DGA, 17 November 2024), verified **typography page** content, the **layout and spacing**
+source status, and a verified **semantic color** extraction (Semantic 600 values). Verified design
+tokens live in [`claude/skills/dga-platforms-code/tokens/`](claude/skills/dga-platforms-code/tokens/).
+
+Platforms Code is a **national reference for designing and developing government platform
+interfaces**. It aims to improve user experience, unify government platform design, and provide a
+smooth and inclusive digital experience for all users.
+
+**Official objectives:**
+
+- Consistent user experience.
+- Unified reference for user interfaces.
+- Contribution to international indicators.
+- Digital inclusion support.
+
+This repository provides **implementation alignment guidance only**. It does **not** certify official
+compliance; formal compliance requires review by the responsible entity.
+
 ## Purpose
 
 Public-sector and semi-government digital products must feel official, trustworthy, calm, accessible,
@@ -97,7 +118,25 @@ The authoritative references are the DGA sources, not this repository:
 - https://design.dga.gov.sa/guidelines/components/forms-and-inputs/steps
 - https://my.gov.sa/en/content/accessibility
 
-See [sources.md](sources.md) for how each source is used.
+See [sources.md](sources.md) for how each source is used. Verified extractions are in
+[references 13–16](claude/skills/dga-platforms-code/references/) and the token files under
+[tokens/](claude/skills/dga-platforms-code/tokens/).
+
+## Official libraries
+
+Platforms Code provides official libraries (use as references when the project has access; do not
+copy or redistribute their assets):
+
+- **Figma design library** — tested, ready-to-use design tools and components.
+- **Storybook developer tool** — build and document UI components in isolation before integration.
+- **Mobile application library** — mobile UI elements and additional mobile components.
+
+## Future outlook (vision note)
+
+The Platforms Code Guide v1.0 mentions future support for innovative digital channels and
+technologies such as virtual reality, augmented reality, artificial intelligence, generative AI, and
+automation of design and development processes. This is a **vision note only** and is not an
+implementation requirement of this Skill unless explicitly requested.
 
 ## Maintenance policy
 

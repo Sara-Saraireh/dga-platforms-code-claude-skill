@@ -47,3 +47,8 @@ export default function ServiceCard({ title, description, icon: Icon, available 
 - Ensure the icon is decorative (`aria-hidden`) since the title conveys meaning.
 - Keep all cards in a grid the same height/width for a calm layout.
 - For unavailable options, state the reason where helpful, not just the badge.
+
+**Tokens & spacing**
+- Map colors/type to the verified tokens (`tokens/colors-v1.0.json`, `tokens/typography-v1.0.json`).
+- Spacing here is **illustrative**, not official. Map it to approved project (or verified Platforms
+  Code) spacing before production. Do not present it as official DGA spacing.

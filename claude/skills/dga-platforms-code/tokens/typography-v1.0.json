@@ -1,0 +1,122 @@
+{
+  "source": "DGA Platforms Code Typography Page, official page content provided manually",
+  "classification": "public",
+  "fontFamilies": {
+    "primaryArabic": "IBM Plex Sans Arabic",
+    "seasonalSaudiFont": "Saudi Font"
+  },
+  "fontWeights": {
+    "ibmPlexSansArabic": {
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700
+    },
+    "saudiFont": {
+      "regular": 400,
+      "bold": 700
+    }
+  },
+  "scale": {
+    "display": {
+      "2xl": {
+        "fontSizePx": 72,
+        "fontSizeRem": "4.5rem",
+        "lineHeightPx": 90,
+        "lineHeightRem": "5.625rem",
+        "tracking": "-2%"
+      },
+      "xl": {
+        "fontSizePx": 60,
+        "fontSizeRem": "3.75rem",
+        "lineHeightPx": 72,
+        "lineHeightRem": "4.5rem",
+        "tracking": "-2%"
+      },
+      "lg": {
+        "fontSizePx": 48,
+        "fontSizeRem": "3rem",
+        "lineHeightPx": 60,
+        "lineHeightRem": "3.75rem",
+        "tracking": "-2%"
+      },
+      "md": {
+        "fontSizePx": 36,
+        "fontSizeRem": "2.25rem",
+        "lineHeightPx": 44,
+        "lineHeightRem": "2.75rem",
+        "tracking": "-2%"
+      },
+      "sm": {
+        "fontSizePx": 30,
+        "fontSizeRem": "1.875rem",
+        "lineHeightPx": 38,
+        "lineHeightRem": "2.375rem"
+      },
+      "xs": {
+        "fontSizePx": 24,
+        "fontSizeRem": "1.5rem",
+        "lineHeightPx": 32,
+        "lineHeightRem": "2rem"
+      }
+    },
+    "text": {
+      "xl": {
+        "fontSizePx": 20,
+        "fontSizeRem": "1.25rem",
+        "lineHeightPx": 30,
+        "lineHeightRem": "1.875rem"
+      },
+      "lg": {
+        "fontSizePx": 18,
+        "fontSizeRem": "1.125rem",
+        "lineHeightPx": 28,
+        "lineHeightRem": "1.75rem"
+      },
+      "md": {
+        "fontSizePx": 16,
+        "fontSizeRem": "1rem",
+        "lineHeightPx": 24,
+        "lineHeightRem": "1.5rem"
+      },
+      "sm": {
+        "fontSizePx": 14,
+        "fontSizeRem": "0.875rem",
+        "lineHeightPx": 20,
+        "lineHeightRem": "1.25rem"
+      },
+      "xs": {
+        "fontSizePx": 12,
+        "fontSizeRem": "0.75rem",
+        "lineHeightPx": 18,
+        "lineHeightRem": "1.125rem"
+      },
+      "2xs": {
+        "fontSizePx": 10,
+        "fontSizeRem": "0.625rem",
+        "lineHeightPx": 14,
+        "lineHeightRem": "0.875rem"
+      }
+    }
+  },
+  "usageRules": {
+    "display": "Use for headings and large visual emphasis only. Do not use for long paragraphs.",
+    "text": "Use for body text, labels, helper text, forms, tables, navigation, and UI content.",
+    "saudiFont": "Use only for national or seasonal contexts and main headings, subject to licensing and approval. Do not use for paragraphs or long-form content."
+  },
+  "accessibility": {
+    "target": "WCAG 2.1 AA",
+    "lightBackgroundTextRecommendation": ["Gray 500", "Gray 600", "Gray 700", "Gray 950"],
+    "darkBackgroundTextRecommendation": "Use white text on backgrounds numbered 500 and above.",
+    "contrastRatios": {
+      "AA": "4.5:1",
+      "AA_largeText": "3:1",
+      "AAA": "7:1",
+      "AAA_largeText": "4.5:1"
+    },
+    "largeTextDefinition": {
+      "bold": "above 18.5",
+      "regular": "24 and above"
+    }
+  }
+}

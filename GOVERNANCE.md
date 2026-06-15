@@ -3,6 +3,10 @@
 This document defines how the repository is maintained, versioned, reviewed, and kept aligned with
 the official DGA sources.
 
+This repository is an **implementation alignment aid only**. It does **not** certify official
+compliance; official review by the responsible entity is required before claiming compliance. Do not
+redistribute official fonts, Figma assets, Storybook assets, logos, or government visual marks.
+
 ## Source-of-truth policy
 
 - The **authoritative references** are the official DGA sources listed in [sources.md](sources.md).

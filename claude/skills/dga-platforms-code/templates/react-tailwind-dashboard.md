@@ -94,3 +94,9 @@ export default function Dashboard({ stats, rows, loading, nav }) {
 - Map status labels to the project's consistent status vocabulary and tone tokens.
 - On small screens, simplify: prioritize key stats and consider stacked cards over wide tables.
 - Keep IDs, numbers, and dates LTR and isolated.
+
+**Tokens & spacing**
+- Map colors/type to the verified tokens (`tokens/colors-v1.0.json`, `tokens/typography-v1.0.json`);
+  use semantic 600 tokens only for status.
+- Spacing here is **illustrative**, not official. Map it to approved project (or verified Platforms
+  Code) spacing before production. Do not present it as official DGA spacing.

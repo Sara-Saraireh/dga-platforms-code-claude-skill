@@ -74,3 +74,9 @@ export default function ResultPage({ status, reference, details, onPrint, onBack
 - Handle every real outcome the server can return (including not-found/error).
 - Keep the reference and any IDs LTR and isolated (`<bdi>` / `font-mono`).
 - Don't overuse the success tone; reserve it for genuine positive outcomes.
+
+**Tokens & spacing**
+- Map status tones to verified Semantic 600 tokens (`tokens/colors-v1.0.json`: Error `#D92D20`,
+  Warning `#DC6803`, Success `#1B8354`, Info `#1570EF`) and type to `tokens/typography-v1.0.json`.
+- Spacing here is **illustrative**, not official. Map it to approved project (or verified Platforms
+  Code) spacing before production. Do not present it as official DGA spacing.

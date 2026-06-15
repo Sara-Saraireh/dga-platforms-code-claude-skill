@@ -1,7 +1,25 @@
 # 04 — Components
 
-Confirm anatomy and states against https://design.dga.gov.sa/guidelines/components. Each component
-below lists practical rules and common mistakes to avoid.
+Confirm anatomy and states against https://design.dga.gov.sa/guidelines/components and the official
+Figma/Storybook libraries when available. Each component below lists practical rules and common
+mistakes to avoid.
+
+## What components are (Platforms Code Guide v1.0)
+
+Components are the **basic building blocks used to build user interfaces**. They are designed to be
+consistent, easy to use, and easy to understand. Examples include: buttons, input fields, forms,
+lists, icons, navigation bars, notifications, and cards. (The guide lists 55 components.)
+
+Rules:
+
+- Prefer reusable components over one-off UI.
+- Keep component states consistent.
+- Use cards, alerts, badges, buttons, and navigation consistently.
+- Use **semantic colors for state-specific components only** (Error/Warning/Success/Info 600 — see
+  `16-semantic-colors-extraction.md`); do not rely on color alone for alerts or statuses.
+- Do not invent custom behavior when an official pattern exists.
+- Exact anatomy and states must be checked against live official sources or official design assets
+  when needed.
 
 ## Buttons
 

@@ -4,6 +4,30 @@ All notable changes to this repository are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) principles, and the project uses Semantic
 Versioning (see [GOVERNANCE.md](GOVERNANCE.md)).
 
+## [1.1.0] - 2026-06-15
+
+### Added
+- Verified extractions from official sources:
+  - `references/13-platforms-code-guide-v1.0-extraction.md` (Platforms Code Guide v1.0, 17 Nov 2024).
+  - `references/14-typography-page-extraction.md` (typography page content).
+  - `references/15-layout-and-spacing-page-extraction.md` (layout & spacing source status).
+  - `references/16-semantic-colors-extraction.md` (Semantic 600 values).
+- Verified design tokens: `tokens/colors-v1.0.json` (Gray, Gold, SA, Semantic 600) and
+  `tokens/typography-v1.0.json` (IBM Plex Sans Arabic / Saudi Font, weights, type scale, a11y).
+
+### Changed
+- Ownership: `LICENSE.md` copyright set to "Copyright (c) 2026 Sara Saraireh".
+- Grounded `README.md`, `SKILL.md`, and references `00, 01, 02, 04, 06, 08, 11, 12` in the verified
+  sources (objectives, libraries, typography rules, layout/spacing status, semantic colors,
+  accessibility, evaluation criteria, future-outlook vision note).
+- Updated `sources.md`, `tools/source-update-log.md`, and `tools/manual-review-template.md`.
+- `GOVERNANCE.md` and `SECURITY.md` restate the implementation-alignment-only boundary and the
+  no-redistribution rule for fonts, Figma/Storybook assets, logos, and marks.
+
+### Notes
+- Exact numeric **spacing** tokens remain unverified; no `spacing-v1.0.json` is created. Violet/black
+  color values and semantic shades beyond 600 are not invented. No official-compliance claim is made.
+
 ## [1.0.0] - 2026-06-15
 
 ### Added

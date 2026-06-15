@@ -4,6 +4,11 @@ This Skill is primarily concerned with **UI and UX**. UI work routinely sits nex
 authorization, sessions, file upload, external APIs, and regulatory outputs. The rules below keep
 that work safe.
 
+This repository is an **implementation alignment aid only**. It does not certify official compliance;
+official review is required before claiming compliance. Do not modify authentication, authorization,
+or backend security logic during UI-only work. Do not redistribute official fonts, Figma assets,
+Storybook assets, logos, or government visual marks.
+
 ## Core rules
 
 - **Do not upload sensitive data to external tools.** Never paste production data, citizen/personal

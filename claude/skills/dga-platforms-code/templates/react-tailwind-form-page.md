@@ -82,3 +82,9 @@ export default function FormPage({ fields, onSubmit, submitting }) {
 - Keep client-side validation consistent with the server; the server is the source of truth.
 - For barcodes/codes, render values LTR and isolate them (see RTL reference).
 - For long forms, add an error summary and move focus to the first error on submit.
+
+**Tokens & spacing**
+- Map colors/type to the verified tokens (`tokens/colors-v1.0.json`, `tokens/typography-v1.0.json`);
+  use Text styles for labels, inputs, and helper text.
+- Spacing here is **illustrative**, not official. Map it to approved project (or verified Platforms
+  Code) spacing before production. Do not present it as official DGA spacing.

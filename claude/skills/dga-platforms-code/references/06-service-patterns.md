@@ -4,6 +4,20 @@ Government interfaces are organized around services. These patterns make the tas
 outcome obvious. Confirm reference structures against
 https://design.dga.gov.sa/guidelines/templates
 
+## What templates are (Platforms Code Guide v1.0)
+
+- Templates are **ready structures that help designers and developers build consistent, easy-to-use
+  pages**. They improve user experience by organizing content and elements effectively and uniformly
+  across pages.
+- The guide confirms there are **17 templates** but does not provide a fully readable list in the
+  extracted guide.
+- **Do not invent template names** in this repository unless verified from official live sources.
+- Keep repository templates generic and clearly marked as implementation examples aligned with
+  Platforms Code principles, **not** official DGA templates.
+- **Template spacing is illustrative** and must be mapped to verified project tokens or verified
+  Platforms Code spacing tokens before production use. Do not present template spacing as official
+  numeric DGA spacing (none are verified — see `15-layout-and-spacing-page-extraction.md`).
+
 ## Service landing page
 
 - State the service name, what it does, who it's for, and what's required before starting.

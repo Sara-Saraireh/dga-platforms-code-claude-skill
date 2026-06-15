@@ -17,7 +17,22 @@ subordinate to it. Do not copy full pages; summarize and link back. Verify exact
 | 8 | Foundations — Iconography | https://design.dga.gov.sa/guidelines/foundations/iconography | Icon style, usage, and consistency rules. |
 | 9 | Components | https://design.dga.gov.sa/guidelines/components | Component inventory, anatomy, states, and usage. |
 | 10 | Components — Forms & inputs — Steps | https://design.dga.gov.sa/guidelines/components/forms-and-inputs/steps | The Steps (stepper) component for multi-step service flows, including states and labeling. |
-| 11 | Accessibility (my.gov.sa) | https://my.gov.sa/en/content/accessibility | Public-sector accessibility commitments and reference standards. |
+| 11 | Foundations — Layout and spacing | https://design.dga.gov.sa/guidelines/foundations/layout-and-spacing | Confirms layout and spacing as an official foundation. Numeric spacing tokens are **not verified** in this repository; do not invent them. |
+| 12 | Accessibility (my.gov.sa) | https://my.gov.sa/en/content/accessibility | Public-sector accessibility commitments and reference standards. |
+
+## Verified provided sources
+
+| Source | Type | Used for |
+|--------|------|----------|
+| **Platforms Code Guide v1.0** — كود المنصات، نظام التصميم الموحد للمملكة العربية السعودية (DGA, 17 November 2024, version 1.0, classification: public) | Official DGA introductory guide (PDF) | Definition, objectives, component counts, beneficiary groups, national identity, foundations/components/templates/libraries framing, verified Gray/Gold/SA color tokens, accessibility framing, evaluation criteria. Extracted in [`references/13-platforms-code-guide-v1.0-extraction.md`](claude/skills/dga-platforms-code/references/13-platforms-code-guide-v1.0-extraction.md). |
+| **Typography page content** (provided manually) | Official page extraction | Typography classification, IBM Plex Sans Arabic usage, Saudi Font usage restrictions, verified type scale, and text accessibility guidance. Extracted in [`references/14-typography-page-extraction.md`](claude/skills/dga-platforms-code/references/14-typography-page-extraction.md). The page is extracted manually because the live page may be slow or client-side rendered. |
+| **Layout and spacing page** | Official source, numeric tokens unverified | Confirms layout and spacing as an official foundation. Does **not** provide numeric spacing tokens to this repository. See [`references/15-layout-and-spacing-page-extraction.md`](claude/skills/dga-platforms-code/references/15-layout-and-spacing-page-extraction.md). |
+| **Semantic color screenshot** (provided manually) | Verified extraction (Semantic 600 only) | Grounds Error/Warning/Success/Info **600** values only. Extracted in [`references/16-semantic-colors-extraction.md`](claude/skills/dga-platforms-code/references/16-semantic-colors-extraction.md). |
+
+Verified tokens are stored as data in
+[`claude/skills/dga-platforms-code/tokens/colors-v1.0.json`](claude/skills/dga-platforms-code/tokens/colors-v1.0.json)
+and
+[`claude/skills/dga-platforms-code/tokens/typography-v1.0.json`](claude/skills/dga-platforms-code/tokens/typography-v1.0.json).
 
 ## How to use these sources
 
@@ -29,6 +44,17 @@ subordinate to it. Do not copy full pages; summarize and link back. Verify exact
 - Use the **Steps** component page when building any multi-step service flow.
 - Use the **Accessibility** source to anchor accessibility expectations; supplement with WCAG where
   the project requires a specific conformance level.
+- The **Platforms Code Guide v1.0** (PDF) is an official DGA introductory guide; version 1.0, dated
+  17 November 2024. Use it for definition, objectives, counts, foundations/libraries framing, and the
+  verified Gray/Gold/SA color tokens.
+- The **typography page** grounds typography classification, IBM Plex Sans Arabic usage, Saudi Font
+  restrictions, the type scale, and text accessibility guidance.
+- The **layout and spacing page** confirms spacing as an official foundation but does not add numeric
+  spacing tokens here.
+- The **semantic screenshot** grounds Semantic 600 color values only.
+- Official website links remain the live source for the latest guidance.
+- If sources conflict, record the conflict in the source update log and require manual review before
+  updating repository rules.
 
 ## Maintenance
 

@@ -20,6 +20,18 @@ engineered without breaking business logic, APIs, authentication, authorization,
 This Skill aligns with DGA principles. It does **not** make an interface officially compliant.
 Never claim or imply official DGA compliance — that requires formal review by the responsible entity.
 
+### Verified Platforms Code principles
+
+Grounded in the Platforms Code Guide v1.0 (see `references/13-platforms-code-guide-v1.0-extraction.md`):
+
+- Platforms Code is a **national reference for designing and developing government platform
+  interfaces**.
+- Support consistency, unified UI guidance, digital inclusion, and quality improvement.
+- Support three beneficiary groups: **designers, developers, and product managers**.
+- Preserve accessibility and **WCAG-aware** implementation (target WCAG 2.1 AA per the typography
+  page).
+- Do not claim official compliance.
+
 ## When to activate
 
 Activate when the task involves any of:
@@ -81,6 +93,50 @@ Do these in order. Do not skip to editing.
 - **Clear hierarchy.** One primary action per view. Strong, legible typographic hierarchy.
 
 See `references/01-design-principles.md` and `references/02-foundations.md`.
+
+## Typography rules
+
+Grounded in the typography page (`references/14-typography-page-extraction.md`,
+`tokens/typography-v1.0.json`):
+
+- Use **IBM Plex Sans Arabic** as the general-purpose platform typography family when implementing
+  Platforms Code-aligned interfaces, unless the host project has approved typography tokens.
+- Use **Display** styles for headings and large visual emphasis only.
+- Use **Text** styles for body text, labels, helper text, tables, forms, navigation, and UI content.
+- Do not use Display styles for long paragraphs.
+- Do not use **Saudi Font** as the default product font. Saudi Font is limited to national or
+  seasonal contexts and **main headings only**, subject to licensing and approval.
+- Do not include or redistribute font files.
+
+## Layout and spacing rules
+
+Grounded in the layout-and-spacing source status (`references/15-layout-and-spacing-page-extraction.md`):
+
+- Treat layout and spacing as a **core quality gate**.
+- Preserve consistent section spacing, component spacing, form spacing, and mobile spacing.
+- Do not use arbitrary one-off spacing unless required to resolve a specific layout defect.
+- Prefer project spacing tokens or verified official Platforms Code spacing tokens.
+- Do not invent official DGA spacing values (none are verified in this repository).
+
+## Semantic color rules
+
+Grounded in the semantic color extraction (`references/16-semantic-colors-extraction.md`,
+`tokens/colors-v1.0.json`). Use semantic colors for state communication:
+
+- Error 600 `#D92D20`
+- Warning 600 `#DC6803`
+- Success 600 `#1B8354`
+- Info 600 `#1570EF`
+
+Do not rely on semantic colors alone — pair state color with labels, icons, and accessible text.
+Do not invent missing semantic shades.
+
+## Source-boundary rules
+
+- Use verified tokens from the repository token files (`tokens/`) when available.
+- Do not invent official design tokens (colors, type scale, spacing, radii).
+- Do not copy DGA logos, government logos, Figma files, Storybook assets, font files, or visual marks.
+- Do not claim official compliance.
 
 ## Arabic RTL rules
 

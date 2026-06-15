@@ -64,6 +64,35 @@ become manual-review items in the output report.
 - [ ] No unintended horizontal overflow; long IDs/tables handled.
 - [ ] Arabic readable on small screens; RTL correct at all breakpoints.
 
+## Typography (verified)
+
+- [ ] IBM Plex Sans Arabic (or approved project font) used as the general-purpose family.
+- [ ] Display styles used for headings only; Text styles for body/labels/forms/tables/UI.
+- [ ] Saudi Font not used as default; if present, only national/seasonal main headings, with license.
+- [ ] No font files included or redistributed.
+
+## Layout and spacing
+
+- [ ] Page sections have clear hierarchy.
+- [ ] Related elements are grouped visually.
+- [ ] Cards use consistent padding.
+- [ ] Forms have consistent field spacing.
+- [ ] Button groups have clear spacing.
+- [ ] Mobile layout is not cramped.
+- [ ] RTL layout does not create awkward gaps or misalignment.
+- [ ] No repeated arbitrary spacing values were introduced.
+- [ ] Numeric spacing tokens were verified or mapped to approved project tokens (none are invented).
+
+## Semantic color
+
+- [ ] Error, Warning, Success, and Info states use the verified 600 semantic colors where
+      appropriate (Error `#D92D20`, Warning `#DC6803`, Success `#1B8354`, Info `#1570EF`).
+- [ ] State is not communicated by color alone.
+- [ ] Every state has clear text and/or icon support.
+- [ ] Error and warning colors are not used for normal actions.
+- [ ] Success color is not overused as general decoration.
+- [ ] No semantic shades beyond the verified 600 values were invented.
+
 ## Engineering safety
 
 - [ ] Business logic, APIs, auth/authorization, and validation preserved.
@@ -80,3 +109,33 @@ become manual-review items in the output report.
       outputs).
 - [ ] No real personal data present; examples/fixtures use fake data.
 - [ ] Compliance disclaimer respected; no official-compliance claim made.
+
+## Evaluation criteria (Platforms Code Guide v1.0)
+
+Evaluation goals:
+
+- ضمان الامتثال / Ensure alignment with the unified guidance and best practices.
+- الحفاظ على الجودة / Maintain user experience quality and interface consistency.
+- تسهيل التحسين / Provide clear criteria and feedback mechanisms for continuous improvement.
+
+Compliance levels — a **manual review aid only**:
+
+| Level (Arabic) | Range |
+|----------------|-------|
+| غير ممتثل | 1 – 1.9 |
+| امتثال ضعيف جدًا | 2 – 2.9 |
+| امتثال ضعيف | 3 – 3.9 |
+| امتثال أقل من المتوسط | 4 – 4.9 |
+| امتثال عادل | 5 – 5.9 |
+| امتثال متوسط | 6 – 6.9 |
+| امتثال جيد | 7 – 7.9 |
+| امتثال جيد جدًا | 8 – 8.9 |
+| امتثال ممتاز | 9 – 9.9 |
+| امتثال متميز | 10 |
+
+Rules:
+
+- This repository **cannot** issue official compliance scores.
+- Treat the scale as a manual review aid only, unless the responsible entity defines an official
+  assessment process.
+- Use the phrase **"aligned with Platforms Code principles"**, not "officially compliant".

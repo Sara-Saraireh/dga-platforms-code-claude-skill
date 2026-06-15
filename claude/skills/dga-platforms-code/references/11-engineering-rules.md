@@ -23,6 +23,28 @@ and prevent collateral damage to logic and security.
   variables), not inline magic values.
 - When the official foundations require specific values, set them once in the token layer.
 - Do not invent token values; verify against the official sources or use the project's existing tokens.
+- **Verified tokens** are available in [`../tokens/colors-v1.0.json`](../tokens/colors-v1.0.json) and
+  [`../tokens/typography-v1.0.json`](../tokens/typography-v1.0.json). Map them into the project's token
+  layer rather than hardcoding hex values across components. **Spacing tokens are not verified** — use
+  the project's approved spacing scale; do not invent official DGA spacing.
+
+## Official libraries
+
+Platforms Code provides official libraries; use them as source references when the project has access:
+
+- **Figma design library** — tested, ready-to-use design tools and components.
+- **Storybook developer tool** — build and document UI components independently from the main
+  application, viewing/testing each component in isolation before integration.
+- **Mobile application library** — mobile UI elements and additional components (navigation bars,
+  dynamic mobile icons, and other mobile-specific needs).
+
+Rules:
+
+- Do not copy or redistribute Figma assets.
+- Do not copy or redistribute Storybook assets.
+- Do not claim access to official libraries unless the project actually has access.
+- Use these libraries as official source references when available (e.g., for exact anatomy, states,
+  and spacing tokens).
 
 ## Avoiding one-off UI code
 

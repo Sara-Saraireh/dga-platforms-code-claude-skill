@@ -1,14 +1,31 @@
 # 08 — Accessibility
 
-Public-sector interfaces must be usable by everyone. Anchor expectations to the official
-accessibility guidance (https://my.gov.sa/en/content/accessibility) and apply WCAG where the project
-requires a specific conformance level.
+Public-sector interfaces must be usable by everyone. The Platforms Code Guide v1.0 connects Platforms
+Code with accessibility and WCAG-aware design, and the typography page states the target is
+**WCAG 2.1 AA**. Anchor expectations to the official accessibility guidance
+(https://my.gov.sa/en/content/accessibility) and apply WCAG at the conformance level the project
+requires.
+
+Interface changes must consider contrast, keyboard navigation, semantic HTML, focus states, labels,
+screen-reader-friendly text, clear errors, and status messages that do not rely on color alone.
+Accessibility must be part of the final quality gate.
 
 ## Contrast
 
 - Ensure sufficient contrast for body text, large text, icons, and interactive states.
 - Check disabled, placeholder, and hover/focus states too — not just the default.
 - Don't place text over busy backgrounds or low-contrast accent colors.
+
+### Verified text-color and contrast guidance (typography page)
+
+- For **light backgrounds numbered 400 and below**, suggested text colors include **Gray 500,
+  Gray 600, Gray 700, Gray 950**.
+- For **backgrounds numbered 500 and above**, **white text** is recommended.
+- Minimum WCAG 2.1 contrast ratios: **AA 4.5:1**, **AA large text 3:1**, **AAA 7:1**,
+  **AAA large text 4.5:1**.
+- Large text definition: above 18.5 bold, or 24 regular.
+- Semantic state colors (Error/Warning/Success/Info 600) must be paired with text labels and/or
+  icons — never color alone.
 
 ## Focus states
 
