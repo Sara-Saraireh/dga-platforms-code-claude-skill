@@ -97,7 +97,10 @@ export default function ServiceHome({ service, onStart }) {
   state if `service` is fetched (`references/26-component-anatomy-polish.md`).
 - **Mobile:** the hero actions stack (`flex-col sm:flex-row`); keep comfortable spacing so the layout
   is neither cramped nor sparse. Verify RTL alignment at every breakpoint.
-- See the page blueprint for completeness: `references/25-government-page-blueprints.md` (service landing).
+- **Motion:** the hover/focus `transition-colors` is enough — keep motion subtle and purposeful,
+  respect `prefers-reduced-motion`, and never convey state by motion alone
+  (`references/27-motion-and-interaction-guidelines.md`).
+- See the page blueprint for completeness: `references/25-page-blueprints.md` (service landing).
 
 **Tokens & spacing**
 - Map colors to verified tokens (`tokens/colors-v1.0.json`: e.g. SA 600 `#1B8354`, Gray scale) and

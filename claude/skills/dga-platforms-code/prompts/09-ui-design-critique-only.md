@@ -15,13 +15,14 @@ Do the following, in order:
    Note where business logic, APIs, auth/authorization, and validation live (you will not touch them).
 2. **Read the references:** `17-visual-hierarchy-and-composition.md`,
    `23-design-direction-framework.md`, `24-high-fidelity-polish-rules.md`,
-   `25-government-page-blueprints.md`, `26-component-anatomy-polish.md`, and
-   `27-design-quality-gate.md`.
+   `25-page-blueprints.md`, `26-component-anatomy-polish.md`,
+   `27-motion-and-interaction-guidelines.md`, and `28-design-quality-gate.md`.
 3. **Review visually and structurally.** Assess hero, hierarchy, cards, CTAs, content/Arabic,
-   header/footer trust, desktop density, mobile density, state handling, RTL, and accessibility.
+   header/footer trust, desktop density, mobile density, state handling, motion appropriateness
+   (subtle/purposeful, reduced-motion respected, never state-by-motion-alone), RTL, and accessibility.
 4. **Identify why it feels basic.** Name concrete weaknesses with evidence (file/line), grouped by
    page area. Note the page type, primary task, and the main decision the user must make.
-5. **Score the internal design quality gate** (`27-design-quality-gate.md`, 1–5 per item) with a
+5. **Score the internal design quality gate** (`28-design-quality-gate.md`, 1–5 per item) with a
    one-line justification each. This is an internal review aid only, not an official score.
 6. **Recommend specific improvements.** Tie each to a verified reference/token. Separate **quick
    wins** (low-risk presentation fixes) from **structural changes** (layout/flow/component rework).

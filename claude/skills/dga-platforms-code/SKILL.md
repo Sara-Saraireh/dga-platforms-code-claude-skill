@@ -225,9 +225,10 @@ For design-excellence (high-fidelity, polished output), also use:
 
 - `references/23-design-direction-framework.md` — the three allowed government-grade directions.
 - `references/24-high-fidelity-polish-rules.md` — hero, cards, CTA, spacing, icons, header/footer.
-- `references/25-government-page-blueprints.md` — completeness checklists per page type.
+- `references/25-page-blueprints.md` — completeness checklists per page type.
 - `references/26-component-anatomy-polish.md` — polished anatomy per component.
-- `references/27-design-quality-gate.md` — internal 1–5 quality gate (not an official score).
+- `references/27-motion-and-interaction-guidelines.md` — subtle, purposeful, accessible motion.
+- `references/28-design-quality-gate.md` — internal 1–5 quality gate (not an official score).
 
 These files are **supporting design-review guidance**. They align with — and never override — DGA
 Platforms Code and the verified references (`13`–`16`) and tokens (`tokens/`). They are generic and
@@ -244,28 +245,33 @@ high-fidelity, government-grade output. Apply it whenever design quality is in s
 redesigns, polish passes). It sits on top of — and never weakens — the verified rules above.
 
 **A. Diagnose before designing.** Before proposing anything, identify: the **page type**, the
-**primary user task**, the **target user**, the **main decision** the user must make, and the current
-**visual**, **UX**, **content**, and **RTL/accessibility** weaknesses. (See `25`, `17`, `18`.)
+**primary user task**, the **target user**, the **main decision** the user must make, **why the
+current UI feels basic**, and the **main hierarchy issue**, **main content issue**, **main
+interaction issue**, and **main RTL/accessibility issue**. (See `25`, `17`, `18`.)
 
 **B. Propose design direction before coding (redesigns).** For redesign tasks, propose **2–3**
 restrained government-grade directions from `23-design-direction-framework.md` — Conservative
 official, Modern official, or Data-service official. Each proposal states its **layout approach**,
-**visual hierarchy approach**, **CTA approach**, **card/form approach**, **risks**, and a
-**recommendation**. Do not introduce playful, luxury, SaaS-marketing, gaming, glassmorphism-heavy,
-neon, or over-decorated styles.
+**hero approach**, **card/form approach**, **CTA strategy**, **motion approach** (if any), **risk**,
+and a **recommendation**. Do not introduce playful, luxury, SaaS-marketing, gaming,
+glassmorphism-heavy, neon, or over-decorated styles.
 
 **C. Implement one selected direction.** After the user approves (or, when no approval is required,
 after choosing the most suitable direction and stating why), implement **incrementally** — reusing
-existing components and verified tokens, inventing no new tokens, spacing, type styles, or colors.
+existing components and verified tokens, inventing no new tokens, spacing, type styles, or colors. Do
+not rewrite the whole app unless necessary. **Preserve business logic, APIs, authentication,
+authorization, validation, routing, and state management.** Do not claim official compliance.
 
-**D. Polish pass.** After implementation, run a focused polish pass over: hero hierarchy, section
-rhythm, card anatomy, CTA hierarchy, typography scale, header/footer trust signals,
-empty/loading/error states, mobile density, RTL alignment, and accessibility. (See `24`, `26`.)
+**D. Polish pass.** After implementation, run a focused polish pass over: hero clarity, desktop
+density, mobile density, card anatomy, CTA hierarchy, header/footer trust signals, Arabic copy,
+empty/loading/error states, semantic color usage, **motion appropriateness**, **reduced-motion
+support**, RTL alignment, and accessibility. (See `24`, `26`, `27`.)
 
-**E. Before/after review.** After coding, summarize: what looked **basic before**, what was
-**improved**, what **still needs human design review**, and what **remains outside official
-compliance**. Then apply the internal design quality gate (`27-design-quality-gate.md`); if any item
-scores below 3, identify a fix before finishing. (See `21-before-after-review.md`.)
+**E. Quality gate + before/after review.** Run the internal design quality gate
+(`28-design-quality-gate.md`); if any item scores below 3, identify a fix before finishing. Then
+summarize: what looked **basic before**, what was **improved**, what **still needs human design
+review**, and what **remains outside official compliance**. (See `21-before-after-review.md`.) The
+quality gate is **internal only** and must never be described as official DGA compliance.
 
 ## Engineering safety rules
 

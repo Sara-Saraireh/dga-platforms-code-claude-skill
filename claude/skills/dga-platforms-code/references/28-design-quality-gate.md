@@ -1,4 +1,4 @@
-# 27 — Design quality gate
+# 28 — Design quality gate
 
 > Supporting design-review guidance. It aligns with — and never overrides — DGA Platforms Code
 > and the verified references (`13`–`16`) and tokens (`tokens/`). This gate is an **internal review
@@ -35,7 +35,8 @@ official compliance score.
 | 9 | Accessibility | Contrast, focus, keyboard, semantics, labels, not color-only | `08` |
 | 10 | Mobile readiness | Mobile-first; no overflow; not cramped; readable Arabic | `09` |
 | 11 | State handling | Empty, loading, error states designed, not accidental | `18`, `26` |
-| 12 | Engineering safety | Logic/APIs/auth/validation preserved; reused tokens; checks run | `11` |
+| 12 | Motion appropriateness | Subtle, purposeful motion; respects reduced-motion; never state-by-motion-alone | `27` |
+| 13 | Engineering safety | Logic/APIs/auth/validation preserved; reused tokens; checks run | `11` |
 
 ## Pass rule
 
@@ -50,10 +51,11 @@ official compliance score.
 Design quality gate (internal aid — not official compliance)
 1. First impression: <1–5> — <one line + evidence>
 ...
-12. Engineering safety: <1–5> — <one line + evidence>
+12. Motion appropriateness: <1–5> — <one line + evidence>
+13. Engineering safety: <1–5> — <one line + evidence>
 Below-3 items: <list + the fix applied or the blocking note>
 Result: aligned with Platforms Code principles (not official compliance)
 ```
 
 See also: `12-design-review-checklist.md`, `19-design-critique-rubric.md`,
-`24-high-fidelity-polish-rules.md`.
+`24-high-fidelity-polish-rules.md`, `27-motion-and-interaction-guidelines.md`.

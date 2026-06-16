@@ -79,6 +79,9 @@ export default function ServiceCard({
 - **States:** default, hover, focus, `selected` (shown), and unavailable are all represented; keep
   them layout-stable.
 - **Mobile:** in a grid, let cards stack to one column on small screens; avoid cramped padding.
+- **Motion:** the `transition-colors` hover/focus is enough; keep motion subtle, respect
+  `prefers-reduced-motion`, and keep selected/unavailable conveyed by text/semantics not motion
+  (`references/27-motion-and-interaction-guidelines.md`).
 
 **Tokens & spacing**
 - Map colors/type to the verified tokens (`tokens/colors-v1.0.json`, `tokens/typography-v1.0.json`).

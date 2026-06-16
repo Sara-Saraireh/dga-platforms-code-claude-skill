@@ -115,8 +115,11 @@ export default function FormPage({ fields, onSubmit, submitting }) {
 - **States:** show default, focus, error (specific message), disabled, and a submitting state (shown);
   for long forms add an error summary and move focus to the first error.
 - **Review-before-submit:** for multi-step flows, follow the review page blueprint before submission
-  (`references/25-government-page-blueprints.md`).
+  (`references/25-page-blueprints.md`).
 - **Mobile:** single-column fields, comfortable spacing, large touch targets; verify RTL alignment.
+- **Motion:** keep validation/error feedback in text + accessible semantics (`role="alert"`), not
+  animation; any transition is subtle and respects `prefers-reduced-motion`
+  (`references/27-motion-and-interaction-guidelines.md`).
 
 **Tokens & spacing**
 

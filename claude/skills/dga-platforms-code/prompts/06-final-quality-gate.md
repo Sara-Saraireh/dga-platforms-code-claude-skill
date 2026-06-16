@@ -40,7 +40,7 @@ logic, or use real personal data.
 - **Internal design quality gate:** score 1–5 per item across first impression, government trust,
   task clarity, hierarchy, CTA, content, component polish, RTL, accessibility, mobile, state
   handling, and engineering safety; if any item is below 3, identify a fix before sign-off
-  (`references/27-design-quality-gate.md`). Internal review aid only, not an official score.
+  (`references/28-design-quality-gate.md`). Internal review aid only, not an official score.
 - **Before/after note:** where fixes were applied, summarize what improved
   (`references/21-before-after-review.md`).
 - **Boundary:** this is **aligned with Platforms Code principles**, not official DGA compliance.

@@ -105,13 +105,16 @@ template per release/feature and record evidence.
 - [ ] **Desktop density:** balanced — hero/sections not empty; no excessive blank space.
 - [ ] **Mobile density:** comfortable — not cramped; readable Arabic; RTL correct at all breakpoints.
 - [ ] **State handling:** empty, loading, and error states designed for every relevant component.
+- [ ] **Motion appropriateness:** motion (if any) is subtle and purposeful; respects
+      `prefers-reduced-motion`; state never conveyed by motion alone; no new animation dependency
+      added without approval (`references/27-motion-and-interaction-guidelines.md`).
 - [ ] **High-fidelity polish:** hero hierarchy, section rhythm, typography scale, icons that aid
       meaning, spacing from verified/project tokens (no arbitrary values).
 
 ### Internal design quality gate score (review aid only — not official compliance)
 
 Score each 1–5 (1 basic/broken, 3 acceptable, 5 excellent). If any item is below 3, record a fix.
-See `references/27-design-quality-gate.md`.
+See `references/28-design-quality-gate.md`.
 
 | # | Item | Score (1–5) | Note / fix if below 3 |
 |---|------|-------------|------------------------|
@@ -126,7 +129,8 @@ See `references/27-design-quality-gate.md`.
 | 9 | Accessibility | | |
 | 10 | Mobile readiness | | |
 | 11 | State handling | | |
-| 12 | Engineering safety | | |
+| 12 | Motion appropriateness | | |
+| 13 | Engineering safety | | |
 
 - [ ] No item left below 3 without a recorded fix or a blocking manual-review note.
 - [ ] Scores recorded as an internal review aid only, described as "aligned with Platforms Code

@@ -49,5 +49,5 @@ Do not claim official compliance, copy official logos, invent token values, or u
 - **Before/after framing:** note what looks basic now and what a polished version would improve
   (`references/21-before-after-review.md`).
 - **Internal design quality gate:** score 1–5 per item; flag any item below 3 with a fix
-  (`references/27-design-quality-gate.md`). Internal review aid only, not an official score.
+  (`references/28-design-quality-gate.md`). Internal review aid only, not an official score.
 - **Boundary:** this is **aligned with Platforms Code principles**, not official DGA compliance.

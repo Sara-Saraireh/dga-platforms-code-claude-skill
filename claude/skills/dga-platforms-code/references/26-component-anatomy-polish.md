@@ -94,4 +94,4 @@ notes**, **common anti-patterns**. Use verified type/color and project/verified 
 - **Anti-patterns:** afterthought footer; missing support/accessibility links; unauthorized marks.
 
 See also: `04-components.md`, `05-forms-and-inputs.md`, `24-high-fidelity-polish-rules.md`,
-`27-design-quality-gate.md`.
+`28-design-quality-gate.md`.

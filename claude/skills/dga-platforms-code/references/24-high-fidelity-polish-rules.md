@@ -58,6 +58,23 @@ high-fidelity, while staying calm and official.
 - Neither should look like an afterthought — give them deliberate structure and spacing.
 - Only render official logos/emblems with authorization.
 
+## Avoiding generic, template-like UI
+
+The most common reason a government UI looks "basic" is that it reads like an unstyled template.
+Watch for and fix these:
+
+- **Generic template feel:** evenly-weighted boxes with no clear focal point, default borders, and
+  no deliberate hierarchy. Establish one focal point and build emphasis from verified type/spacing.
+- **Four or more identical primary CTAs competing visually.** When many cards each carry the same
+  loud primary button, hierarchy collapses. Prefer selection-first + one global CTA, or demote the
+  repeated buttons to quieter affordances.
+- **Excessive empty space.** Large blank desktop regions make a page feel unfinished. Balance the
+  hero and sections; tighten rhythm rather than leaving dead space.
+- **Overuse of green (or any single accent).** Reserve the success/accent color for the genuine
+  success state and the one primary action. Do not use it as decoration, section backgrounds, or on
+  every card — it weakens both hierarchy and the true success signal (see `16`, `01`).
+- **Decorative motion.** Motion that doesn't aid comprehension or feedback (see `27`).
+
 ## Quick polish checklist
 
 - [ ] Hero explains the service and shows the primary task above the fold; no long paragraphs; not empty.
@@ -66,6 +83,8 @@ high-fidelity, while staying calm and official.
 - [ ] Spacing is consistent, from project/verified tokens; no arbitrary values; not empty, not cramped.
 - [ ] Icons aid meaning; directional icons RTL-correct.
 - [ ] Header and footer reinforce trust and are deliberately structured.
+- [ ] Not template-like: clear focal point; no 4+ identical competing CTAs; green not overused.
+- [ ] Motion (if any) is subtle and purposeful, and respects reduced motion.
 
 See also: `17-visual-hierarchy-and-composition.md`, `23-design-direction-framework.md`,
-`26-component-anatomy-polish.md`, `27-design-quality-gate.md`.
+`26-component-anatomy-polish.md`, `27-motion-and-interaction-guidelines.md`, `28-design-quality-gate.md`.

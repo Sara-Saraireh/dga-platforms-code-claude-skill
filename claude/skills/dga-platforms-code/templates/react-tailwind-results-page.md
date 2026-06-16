@@ -80,9 +80,11 @@ export default function ResultPage({ status, reference, details, onPrint, onBack
   details → next step (`references/26-component-anatomy-polish.md`).
 - **CTA hierarchy:** one primary next step ("العودة إلى الخدمات"); "حفظ / طباعة" stays secondary.
 - **States:** handle success, rejected/error, inconclusive/under-review, and not-found explicitly —
-  the `STATUS` map shows the pattern (`references/25-government-page-blueprints.md`, result page).
+  the `STATUS` map shows the pattern (`references/25-page-blueprints.md`, result page).
 - **Mobile:** keep the status block readable and the reference selectable; details collapse to one
   column. Verify RTL alignment.
+- **Motion:** the outcome reads from text + icon + color, never animation; any reveal is subtle and
+  respects `prefers-reduced-motion` (`references/27-motion-and-interaction-guidelines.md`).
 
 **Tokens & spacing**
 - Map status tones to verified Semantic 600 tokens (`tokens/colors-v1.0.json`: Error `#D92D20`,

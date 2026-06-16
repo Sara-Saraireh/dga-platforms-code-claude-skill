@@ -42,5 +42,5 @@ Do not claim official compliance, copy official logos, invent token values, or u
 - **Before/after framing:** note what reads awkwardly now and what a polished RTL version improves
   (`references/21-before-after-review.md`).
 - **Internal design quality gate:** score 1–5 per item (emphasis on RTL correctness and content);
-  flag any item below 3 with a fix (`references/27-design-quality-gate.md`). Internal aid only.
+  flag any item below 3 with a fix (`references/28-design-quality-gate.md`). Internal aid only.
 - **Boundary:** this is **aligned with Platforms Code principles**, not official DGA compliance.

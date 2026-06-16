@@ -4,6 +4,43 @@ All notable changes to this repository are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) principles, and the project uses Semantic
 Versioning (see [GOVERNANCE.md](GOVERNANCE.md)).
 
+## [1.4.0] - 2026-06-16
+
+### Added
+- `research/design-skill-benchmark.md` — read-only methodology benchmark of three external skills
+  (Anthropic frontend-design, UI/UX Pro Max, LottieFiles motion-design), adopting only generic
+  workflow/critique/motion methodology bound to verified DGA references; no third-party text, assets,
+  palettes, fonts, spacing, or code copied.
+- `references/27-motion-and-interaction-guidelines.md` — subtle, purposeful, accessible,
+  `prefers-reduced-motion`-respecting motion guidance; no new animation dependencies without approval.
+- `prompts/10-motion-polish-pass.md` — dedicated subtle-motion/interaction-feedback prompt.
+
+### Changed
+- Restructured the design-excellence references: renamed
+  `25-government-page-blueprints.md` → `25-page-blueprints.md`, and moved the design quality gate
+  `27-design-quality-gate.md` → `28-design-quality-gate.md`, adding a **Motion appropriateness** score
+  (now 13 items). Updated all cross-references repo-wide.
+- `references/23-design-direction-framework.md`: added **Hero approach**, **Motion approach**, and
+  **Risks** to each of the three directions; clarified they are supporting design-review directions,
+  not official DGA categories.
+- `references/24-high-fidelity-polish-rules.md`: added an "avoiding generic, template-like UI" section
+  (4+ identical competing CTAs, excessive empty space, overuse of green, decorative motion).
+- `SKILL.md`: expanded the mandatory Design Excellence Workflow (richer diagnosis; hero/motion in the
+  direction step; preserve routing/state and don't rewrite the whole app; motion + reduced-motion in
+  the polish pass; quality gate is internal-only).
+- Prompts `08`/`09` and `01`–`07`: added motion guidance and routing/state preservation where
+  relevant; `08`/`09` reference the motion guideline and quality gate.
+- Templates: added subtle-motion / `prefers-reduced-motion` notes (state never conveyed by motion
+  alone). `tools/manual-review-template.md`: added a Motion appropriateness review item and a Motion
+  appropriateness row in the internal quality-gate score table.
+
+### Notes
+- No verified token files (`tokens/colors-v1.0.json`, `tokens/typography-v1.0.json`) or extraction
+  references (`13`–`16`) were changed. No official DGA tokens, spacing, components, or compliance
+  claims were added; no product-specific names; no third-party design system is presented as official
+  DGA guidance; no external code/assets/fonts/animations were copied. Copyright and the
+  "aligned with Platforms Code principles" wording are preserved.
+
 ## [1.3.0] - 2026-06-16
 
 ### Added

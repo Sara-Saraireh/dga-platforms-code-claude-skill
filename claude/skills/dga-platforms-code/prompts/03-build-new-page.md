@@ -36,12 +36,15 @@ product, overuse the success/green color, or use real personal data (use clearly
 **Design-excellence additions** (apply when design quality is in scope):
 
 - **Diagnose first:** page type, primary task, target user, and the main decision the user must make
-  (`references/25-government-page-blueprints.md`).
+  (`references/25-page-blueprints.md`).
 - **Design direction:** pick a fitting government-grade direction (Conservative official, Modern
   official, or Data-service official) and state why (`references/23-design-direction-framework.md`).
 - **High-fidelity polish pass:** hero, section rhythm, card anatomy, CTA hierarchy, typography scale,
   header/footer trust, empty/loading/error states, mobile density, RTL, accessibility
   (`references/24-high-fidelity-polish-rules.md`, `references/26-component-anatomy-polish.md`).
+- **Motion (only if purposeful):** subtle, accessible motion that supports feedback/loading/
+  transitions; respect `prefers-reduced-motion`; never state-by-motion-alone; add no animation
+  dependency without approval (`references/27-motion-and-interaction-guidelines.md`).
 - **Before/after framing + quality gate:** summarize the polished result and score 1–5 per item;
-  fix any item below 3 (`references/21-before-after-review.md`, `references/27-design-quality-gate.md`).
+  fix any item below 3 (`references/21-before-after-review.md`, `references/28-design-quality-gate.md`).
 - **Boundary:** this is **aligned with Platforms Code principles**, not official DGA compliance.
