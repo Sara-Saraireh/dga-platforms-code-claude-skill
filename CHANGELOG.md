@@ -4,6 +4,34 @@ All notable changes to this repository are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) principles, and the project uses Semantic
 Versioning (see [GOVERNANCE.md](GOVERNANCE.md)).
 
+## [1.5.0] - 2026-06-16
+
+### Added
+- Verified tokens captured by rendering the official (client-side) DGA foundation pages on
+  2026-06-16:
+  - `tokens/spacing-v1.0.json` — spacing scale (`spacing-none`…`spacing-11xl`, px 0–160), widths,
+    container padding/max-width, paragraph max-width, and breakpoints (px authoritative).
+  - `tokens/elevation-v1.0.json` — 7-level shadow scale (`Shadows-shadow-xs`…`3xl`, color `#101828`)
+    plus backdrop-blur levels.
+  - `references/29-elevation-and-shadows-extraction.md` — verified elevation extraction.
+
+### Changed
+- `references/15-layout-and-spacing-page-extraction.md`: upgraded from "source status / unverified" to
+  a **verified extraction** with the spacing scale table and a rem-vs-px caveat.
+- `SKILL.md`: replaced "no verified spacing (none in repository)" with the verified spacing scale, and
+  added an elevation/shadow rules section.
+- `sources.md` and `tools/source-update-log.md`: recorded the layout-and-spacing and elevation pages
+  as verified sources, added the developing/design-installation entry (delivery model = Figma
+  libraries, not a code package), and listed the new token files.
+
+### Notes
+- Values were **read** from the official pages (rendered in a browser); no Figma/Storybook assets,
+  fonts, code, or animations were copied. px values are authoritative; exact `rem` for the largest
+  spacing steps, the `2xl` shadow Y value, and backdrop-blur level names are flagged to confirm in the
+  official Figma library. Existing verified token files (colors, typography) and references `13`,`14`,
+  `16` are unchanged. No official-compliance claim is made; the "aligned with Platforms Code
+  principles" wording and copyright are preserved.
+
 ## [1.4.0] - 2026-06-16
 
 ### Added
