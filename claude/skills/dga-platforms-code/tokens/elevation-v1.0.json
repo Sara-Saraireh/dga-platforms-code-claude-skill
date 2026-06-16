@@ -1,0 +1,44 @@
+{
+  "source": "DGA Platforms Code — Foundations → Elevation/Shadows (https://design.dga.gov.sa/guidelines/foundations/elevation), official page rendered and read 2026-06-16. Version label on page: الإصدار 1.0.",
+  "classification": "public",
+  "unit": "px",
+  "shadow_color": "#101828",
+  "notes": [
+    "Platforms Code defines 7 shadow effects (xs, sm, md, lg, xl, 2xl, 3xl). sm-xl are two-layer shadows; xs, 2xl, 3xl are single-layer.",
+    "All layers use the shadow color #101828 (rgb 16,24,40) at the per-layer opacity given.",
+    "Each layer maps to CSS box-shadow as: <x>px <y>px <blur>px <spread>px rgba(16,24,40,<opacity>).",
+    "VERIFY in the official Figma library: the 2xl row rendered its Y value ambiguously on the page (shown as '240'); 24 is used here as it sits consistently between xl (y20) and 3xl (y32). Also confirm the backdrop-blur level names.",
+    "Do not present these as official DGA compliance. Verified value extraction for implementation alignment only."
+  ],
+  "shadows": {
+    "Shadows-shadow-xs": [
+      { "x": 0, "y": 1, "blur": 2, "spread": 0, "color": "#101828", "opacity": 0.05 }
+    ],
+    "Shadows-shadow-sm": [
+      { "x": 0, "y": 1, "blur": 3, "spread": 0, "color": "#101828", "opacity": 0.10 },
+      { "x": 0, "y": 1, "blur": 2, "spread": 0, "color": "#101828", "opacity": 0.06 }
+    ],
+    "Shadows-shadow-md": [
+      { "x": 0, "y": 4, "blur": 8, "spread": -2, "color": "#101828", "opacity": 0.10 },
+      { "x": 0, "y": 2, "blur": 4, "spread": -2, "color": "#101828", "opacity": 0.06 }
+    ],
+    "Shadows-shadow-lg": [
+      { "x": 0, "y": 12, "blur": 16, "spread": -6, "color": "#101828", "opacity": 0.08 },
+      { "x": 0, "y": 4, "blur": 6, "spread": -2, "color": "#101828", "opacity": 0.03 }
+    ],
+    "Shadows-shadow-xl": [
+      { "x": 0, "y": 20, "blur": 24, "spread": -4, "color": "#101828", "opacity": 0.08 },
+      { "x": 0, "y": 8, "blur": 8, "spread": -4, "color": "#101828", "opacity": 0.03 }
+    ],
+    "Shadows-shadow-2xl": [
+      { "x": 0, "y": 24, "blur": 48, "spread": -12, "color": "#101828", "opacity": 0.18, "_verify": "y rendered as '240' on source page; confirm 24 in Figma" }
+    ],
+    "Shadows-shadow-3xl": [
+      { "x": 0, "y": 32, "blur": 64, "spread": -12, "color": "#101828", "opacity": 0.14 }
+    ]
+  },
+  "backdrop_blur": {
+    "_verify": "Source rendered level names ambiguously (sm, sm, lg, lg); blur values are clear. Confirm names in Figma.",
+    "levels_px": [8, 16, 24, 40]
+  }
+}
