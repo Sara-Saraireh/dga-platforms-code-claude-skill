@@ -12,10 +12,16 @@ RTL-correct, accessible, and consistent — **without changing behavior**.
 
 Do the following, in order:
 
-1. **Inspect first.** Identify framework, routing, styling stack/tokens, and component structure.
-   Map where UI ends and business logic, APIs, authentication, authorization, and validation begin.
-2. **Read the relevant references** in the skill (foundations, layout, components, forms, service
-   patterns, RTL, accessibility, responsive, content, engineering).
+1. **Design audit first.** Identify framework, routing, styling stack/tokens, and component
+   structure. Map where UI ends and business logic, APIs, authentication, authorization, and
+   validation begin. Read the references (foundations, layout, components, forms, service patterns,
+   RTL, accessibility, responsive, content, engineering) and the supporting design-review layer
+   `references/17-visual-hierarchy-and-composition.md` and
+   `references/18-ux-interaction-patterns.md`. Capture the "before" using
+   `references/21-before-after-review.md` and the rubric `references/19-design-critique-rubric.md`.
+2. **Implementation plan.** Before coding, write a short plan: the problems found and the smallest
+   coherent set of aligned improvements. Reuse existing components and verified tokens; introduce no
+   new tokens, spacing, type styles, or color shades.
 3. **Preserve logic and security.** Do not change business logic, API contracts,
    authentication/authorization, or validation behavior. Improve only presentation.
 4. **Make incremental changes.** Reuse existing components and tokens; centralize new design
@@ -23,7 +29,8 @@ Do the following, in order:
 5. **Ensure RTL and responsive correctness** and accessibility (contrast, focus, keyboard,
    semantics, labels, status not by color alone, touch targets, reduced motion).
 6. **Run available checks** (lint, typecheck, build, tests) and fix issues your change introduces.
-7. **Report.** Output: scope, changed files (one line each), confirmation that logic/APIs/auth/
+7. **Before/after report.** Output: scope, changed files (one line each), the before → after
+   improvement per area (`references/21-before-after-review.md`), confirmation that logic/APIs/auth/
    validation are preserved, checks run and results, and remaining manual-review items. Restate the
    compliance disclaimer.
 

@@ -17,10 +17,15 @@ Do the following, in order:
    component structure, and conventions. Note where UI ends and business logic, API calls,
    authentication, authorization, and validation begin.
 2. **Read the relevant references** in the skill: foundations, layout, components, forms, service
-   patterns, Arabic RTL, accessibility, responsive, content, and the design review checklist.
-3. **Evaluate** the target against `references/12-design-review-checklist.md`. For each area
-   (tone, source alignment, layout, RTL, accessibility, components, forms, content, responsive,
-   engineering safety), list concrete findings with file/line references.
+   patterns, Arabic RTL, accessibility, responsive, content, and the design review checklist. For
+   design quality, also read the supporting design-review layer:
+   `references/17-visual-hierarchy-and-composition.md`, `references/19-design-critique-rubric.md`,
+   `references/20-government-service-content-patterns.md`, and `references/22-ui-anti-patterns.md`.
+3. **Evaluate** the target against `references/12-design-review-checklist.md` and the critique
+   rubric `references/19-design-critique-rubric.md`. For each area (tone, source alignment, layout,
+   **visual hierarchy, CTA hierarchy**, RTL, accessibility, components, forms, **Arabic content
+   patterns**, responsive, **UI anti-patterns**, engineering safety), list concrete findings with
+   file/line references.
 4. **Preserve everything.** Do not modify business logic, API contracts, auth/authorization, or
    validation. Do not apply fixes in this audit.
 5. **Prioritize.** Group findings into Critical / Important / Minor, with a short rationale each.

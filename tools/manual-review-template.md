@@ -61,6 +61,38 @@ template per release/feature and record evidence.
 - [ ] Saudi Font not used as default; only national/seasonal main headings, with license/approval.
 - [ ] No font files included or redistributed.
 
+## 5d. Visual hierarchy (supporting design-review aid)
+
+- [ ] The task and next step are obvious within seconds; visual order matches the RTL reading path.
+- [ ] Emphasis is built only from verified type/color/spacing; no invented styles to force attention.
+- [ ] Related elements are grouped; unrelated groups are clearly separated; calm density, not cramped.
+- [ ] No decoration competes with the content or the primary action.
+
+## 5e. CTA hierarchy (supporting design-review aid)
+
+- [ ] Exactly one primary action per view; secondary/tertiary actions are visibly quieter.
+- [ ] Primary action label is a specific verb (not generic) and clearly emphasized.
+- [ ] Destructive/irreversible actions are de-emphasized and confirmed, naming the consequence.
+
+## 5f. Arabic content patterns (supporting design-review aid)
+
+- [ ] Headings name the task in a recognizable term; labels are short, consistent, unambiguous.
+- [ ] Error messages say what's wrong and how to fix it; no «حدث خطأ» or exposed technical detail.
+- [ ] Success/confirmation copy states the next step and any reference to keep.
+- [ ] Status vocabulary is stable and paired with icon + verified color (not color alone).
+- [ ] Latin names, IDs, codes, and numbers stay readable and bidi-isolated.
+
+## 5g. UI anti-patterns (supporting design-review aid)
+
+- [ ] No competing/weak CTAs, color-only status, placeholder-as-label, or removed focus outlines.
+- [ ] No mirrored codes/IDs/Latin; directional icons mirrored correctly.
+- [ ] No arbitrary one-off spacing; no overloaded cards; no cramped mobile/overflow.
+- [ ] No fabricated outcomes; empty/loading/error states present; no SaaS/marketing gloss.
+
+> Sections 5d–5g are **supporting design-review aids** that align with — and never override — DGA
+> Platforms Code and the verified references/tokens. They add no official rule, token, spacing, or
+> compliance claim.
+
 ## 6. Engineering and security
 
 - [ ] Business logic, API contracts, auth/authorization, and validation preserved.

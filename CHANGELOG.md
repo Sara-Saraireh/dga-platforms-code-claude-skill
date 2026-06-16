@@ -4,6 +4,34 @@ All notable changes to this repository are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) principles, and the project uses Semantic
 Versioning (see [GOVERNANCE.md](GOVERNANCE.md)).
 
+## [1.2.0] - 2026-06-16
+
+### Added
+- Supplemental design-review layer (supporting guidance that aligns with — and never overrides —
+  DGA Platforms Code and the verified references/tokens):
+  - `references/17-visual-hierarchy-and-composition.md` (hierarchy, emphasis, grouping, calm density).
+  - `references/18-ux-interaction-patterns.md` (task clarity, feedback, error recovery, states, flows).
+  - `references/19-design-critique-rubric.md` (structured critique aid; internal, not an official score).
+  - `references/20-government-service-content-patterns.md` (Arabic UX-writing patterns; complements `10`).
+  - `references/21-before-after-review.md` (capture before → improve incrementally → honest after).
+  - `references/22-ui-anti-patterns.md` (anti-patterns to flag with aligned corrective directions).
+- `prompts/07-design-polish-pass.md`: lightweight, low-risk presentation-polish prompt.
+
+### Changed
+- `SKILL.md`: added a "Supplemental design-review layer" section and reframed the mandatory workflow
+  as audit-first → design-plan-before-coding → incremental implementation → before/after review.
+- `prompts/01-audit-existing-ui.md` and `prompts/02-redesign-existing-ui.md`: require visual
+  hierarchy, CTA hierarchy, Arabic content, anti-pattern review, an implementation plan, and a
+  before/after summary, citing references `17`–`22`.
+- `tools/manual-review-template.md`: added sections 5d–5g (visual hierarchy, CTA hierarchy, Arabic
+  content patterns, UI anti-patterns) as supporting design-review aids.
+
+### Notes
+- No verified token files (`tokens/colors-v1.0.json`, `tokens/typography-v1.0.json`) or extraction
+  references (`13`–`16`) were changed. No official DGA tokens, spacing, components, templates, or
+  compliance claims were added; no other design system is presented as official DGA guidance. The
+  safe wording "aligned with Platforms Code principles" is preserved.
+
 ## [1.1.0] - 2026-06-15
 
 ### Added

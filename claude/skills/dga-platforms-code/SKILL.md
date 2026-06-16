@@ -58,20 +58,27 @@ If the task is purely backend, data, or infrastructure with no UI surface, this 
 
 ## Mandatory workflow before editing code
 
-Do these in order. Do not skip to editing.
+Do these in order. Do not skip to editing. The flow is **audit-first → design-plan-before-coding →
+incremental implementation → before/after review**.
 
-1. **Inspect the project.** Read the relevant files. Identify the framework, routing, styling stack
-   (Tailwind config, design tokens, CSS variables), component library, and existing component
-   structure and conventions.
+1. **Audit first.** Inspect the project. Read the relevant files. Identify the framework, routing,
+   styling stack (Tailwind config, design tokens, CSS variables), component library, and existing
+   component structure and conventions. For design-quality work, run the critique
+   (`references/19-design-critique-rubric.md`) and capture the "before"
+   (`references/21-before-after-review.md`).
 2. **Locate the seams.** Identify where UI ends and business logic, API calls, auth, authorization,
    and validation begin. You will preserve those.
 3. **Read the references.** Pull the relevant `references/` files for the task (foundations, layout,
-   components, forms, service patterns, RTL, accessibility, responsive, content, engineering).
+   components, forms, service patterns, RTL, accessibility, responsive, content, engineering, and
+   the supplemental design-review layer `17`–`22` when judging design quality).
 4. **Confirm scope.** State what you will and will not change. UI-only tasks stay UI-only.
-5. **Plan incrementally.** Prefer the smallest coherent change. Reuse existing components and tokens
-   before writing new ones.
-6. **Implement, then verify.** Make the change, then run available checks.
-7. **Summarize.** Report changed files and remaining manual-review items.
+5. **Design plan before coding.** Produce a short design plan first: the problems found, the aligned
+   improvements, and the smallest coherent change. Reuse existing components and tokens before
+   writing new ones. Introduce no new tokens, spacing, type styles, or color shades.
+6. **Implement incrementally, then verify.** Make focused, reviewable changes, then run available
+   checks.
+7. **Before/after review and summarize.** Report changed files, the before → after improvement, and
+   remaining manual-review items.
 
 ### What you must preserve
 
@@ -200,6 +207,26 @@ See `references/04-components.md`.
   obvious; reflect the server's source of truth and never fabricate official results on the client.
 
 See `references/06-service-patterns.md`.
+
+## Supplemental design-review layer
+
+In addition to the verified rules above, this Skill ships a **supporting design-review layer** for
+judging design quality — visual hierarchy, CTA hierarchy, task clarity, Arabic UX writing, layout
+quality, RTL behavior, accessibility, common anti-patterns, and structured before/after improvement.
+
+- `references/17-visual-hierarchy-and-composition.md` — scanning order, emphasis, grouping, calm density.
+- `references/18-ux-interaction-patterns.md` — task clarity, feedback, error recovery, states, flows.
+- `references/19-design-critique-rubric.md` — a structured critique aid (internal, not an official score).
+- `references/20-government-service-content-patterns.md` — Arabic UX-writing patterns (complements `10`).
+- `references/21-before-after-review.md` — capture before → improve incrementally → honest after.
+- `references/22-ui-anti-patterns.md` — things to flag, each with the aligned corrective direction.
+
+These files are **supporting design-review guidance**. They align with — and never override — DGA
+Platforms Code and the verified references (`13`–`16`) and tokens (`tokens/`). They are generic and
+product-agnostic. They introduce no official DGA rules, tokens, spacing, components, templates, or
+compliance claims. Any general UX best practice they contain is supporting guidance, not an official
+DGA rule; never present another design system as official DGA guidance. The safe wording for any
+review-aid judgment is **"aligned with Platforms Code principles."**
 
 ## Engineering safety rules
 
