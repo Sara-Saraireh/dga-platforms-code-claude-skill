@@ -5,6 +5,7 @@ error association. Adapt to the project's form library and validation — **pres
 validation behavior**; this template only shows presentation.
 
 **Notes**
+
 - Visible `<label>` associated via `htmlFor`/`id`. Placeholders are examples only.
 - Required marked accessibly; help text and error linked with `aria-describedby`.
 - Error is announced (`role="alert"`) and focus moves to the first error on submit (handled by app).
@@ -12,7 +13,15 @@ validation behavior**; this template only shows presentation.
 ```jsx
 // TextField.jsx
 export function TextField({
-  id, label, required = false, hint, error, value, onChange, type = "text", placeholder,
+  id,
+  label,
+  required = false,
+  hint,
+  error,
+  value,
+  onChange,
+  type = "text",
+  placeholder,
 }) {
   const hintId = hint ? `${id}-hint` : undefined;
   const errorId = error ? `${id}-error` : undefined;
@@ -20,16 +29,26 @@ export function TextField({
 
   return (
     <div className="mb-5 text-start">
-      <label htmlFor={id} className="mb-1.5 block text-sm font-medium text-neutral-900">
+      <label
+        htmlFor={id}
+        className="mb-1.5 block text-sm font-medium text-neutral-900"
+      >
         {label}
         {required ? (
-          <span className="text-[--color-error]"> *<span className="sr-only"> (مطلوب)</span></span>
+          <span className="text-[--color-error]">
+            {" "}
+            *<span className="sr-only"> (مطلوب)</span>
+          </span>
         ) : (
           <span className="text-neutral-500"> (اختياري)</span>
         )}
       </label>
 
-      {hint && <p id={hintId} className="mb-1.5 text-sm text-neutral-600">{hint}</p>}
+      {hint && (
+        <p id={hintId} className="mb-1.5 text-sm text-neutral-600">
+          {hint}
+        </p>
+      )}
 
       <input
         id={id}
@@ -49,7 +68,11 @@ export function TextField({
       />
 
       {error && (
-        <p id={errorId} role="alert" className="mt-1.5 text-sm text-[--color-error]">
+        <p
+          id={errorId}
+          role="alert"
+          className="mt-1.5 text-sm text-[--color-error]"
+        >
           {error}
         </p>
       )}
@@ -78,13 +101,27 @@ export default function FormPage({ fields, onSubmit, submitting }) {
 ```
 
 **Adaptation checklist**
+
 - Map `--color-primary` and `--color-error` to project tokens.
 - Keep client-side validation consistent with the server; the server is the source of truth.
 - For barcodes/codes, render values LTR and isolate them (see RTL reference).
 - For long forms, add an error summary and move focus to the first error on submit.
 
+**Polish, states & mobile**
+
+- **Form section anatomy:** section heading → grouped fields → help/errors; group related fields by
+  proximity (`references/26-component-anatomy-polish.md`).
+- **CTA hierarchy:** one primary action ("متابعة"); keep "حفظ كمسودة" / "إلغاء" secondary.
+- **States:** show default, focus, error (specific message), disabled, and a submitting state (shown);
+  for long forms add an error summary and move focus to the first error.
+- **Review-before-submit:** for multi-step flows, follow the review page blueprint before submission
+  (`references/25-government-page-blueprints.md`).
+- **Mobile:** single-column fields, comfortable spacing, large touch targets; verify RTL alignment.
+
 **Tokens & spacing**
+
 - Map colors/type to the verified tokens (`tokens/colors-v1.0.json`, `tokens/typography-v1.0.json`);
   use Text styles for labels, inputs, and helper text.
-- Spacing here is **illustrative**, not official. Map it to approved project (or verified Platforms
-  Code) spacing before production. Do not present it as official DGA spacing.
+- Spacing and the Tailwind utility scale here are **illustrative**, not official. Map them to approved
+  project (or verified Platforms Code) spacing before production. Do not present them as official DGA
+  spacing, and do not introduce unofficial colors, fonts, or spacing tokens.

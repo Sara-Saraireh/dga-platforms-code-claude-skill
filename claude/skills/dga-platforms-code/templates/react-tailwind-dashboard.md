@@ -95,8 +95,19 @@ export default function Dashboard({ stats, rows, loading, nav }) {
 - On small screens, simplify: prioritize key stats and consider stacked cards over wide tables.
 - Keep IDs, numbers, and dates LTR and isolated.
 
+**Polish, states & mobile**
+- **Metric cards:** label → value → short context/timeframe; keep the value prominent and numerals
+  LTR (`references/26-component-anatomy-polish.md`).
+- **Table states:** loading, empty, and a "no results after filter" state are all distinct from each
+  other; the sketch shows loading/empty (`references/25-government-page-blueprints.md`, dashboard).
+- **CTA hierarchy:** scope the primary action to the active region; de-emphasize and confirm
+  destructive actions.
+- **Mobile:** the side nav hides under `md`; consider stacked cards instead of a wide table, and keep
+  density comfortable, not cramped. Verify RTL alignment.
+
 **Tokens & spacing**
 - Map colors/type to the verified tokens (`tokens/colors-v1.0.json`, `tokens/typography-v1.0.json`);
   use semantic 600 tokens only for status.
-- Spacing here is **illustrative**, not official. Map it to approved project (or verified Platforms
-  Code) spacing before production. Do not present it as official DGA spacing.
+- Spacing and the Tailwind utility scale here are **illustrative**, not official. Map them to approved
+  project (or verified Platforms Code) spacing before production. Do not present them as official DGA
+  spacing, and do not introduce unofficial colors, fonts, or spacing tokens.

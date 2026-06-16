@@ -58,20 +58,27 @@ If the task is purely backend, data, or infrastructure with no UI surface, this 
 
 ## Mandatory workflow before editing code
 
-Do these in order. Do not skip to editing.
+Do these in order. Do not skip to editing. The flow is **audit-first → design-plan-before-coding →
+incremental implementation → before/after review**.
 
-1. **Inspect the project.** Read the relevant files. Identify the framework, routing, styling stack
-   (Tailwind config, design tokens, CSS variables), component library, and existing component
-   structure and conventions.
+1. **Audit first.** Inspect the project. Read the relevant files. Identify the framework, routing,
+   styling stack (Tailwind config, design tokens, CSS variables), component library, and existing
+   component structure and conventions. For design-quality work, run the critique
+   (`references/19-design-critique-rubric.md`) and capture the "before"
+   (`references/21-before-after-review.md`).
 2. **Locate the seams.** Identify where UI ends and business logic, API calls, auth, authorization,
    and validation begin. You will preserve those.
 3. **Read the references.** Pull the relevant `references/` files for the task (foundations, layout,
-   components, forms, service patterns, RTL, accessibility, responsive, content, engineering).
+   components, forms, service patterns, RTL, accessibility, responsive, content, engineering, and
+   the supplemental design-review layer `17`–`22` when judging design quality).
 4. **Confirm scope.** State what you will and will not change. UI-only tasks stay UI-only.
-5. **Plan incrementally.** Prefer the smallest coherent change. Reuse existing components and tokens
-   before writing new ones.
-6. **Implement, then verify.** Make the change, then run available checks.
-7. **Summarize.** Report changed files and remaining manual-review items.
+5. **Design plan before coding.** Produce a short design plan first: the problems found, the aligned
+   improvements, and the smallest coherent change. Reuse existing components and tokens before
+   writing new ones. Introduce no new tokens, spacing, type styles, or color shades.
+6. **Implement incrementally, then verify.** Make focused, reviewable changes, then run available
+   checks.
+7. **Before/after review and summarize.** Report changed files, the before → after improvement, and
+   remaining manual-review items.
 
 ### What you must preserve
 
@@ -200,6 +207,65 @@ See `references/04-components.md`.
   obvious; reflect the server's source of truth and never fabricate official results on the client.
 
 See `references/06-service-patterns.md`.
+
+## Supplemental design-review layer
+
+In addition to the verified rules above, this Skill ships a **supporting design-review layer** for
+judging design quality — visual hierarchy, CTA hierarchy, task clarity, Arabic UX writing, layout
+quality, RTL behavior, accessibility, common anti-patterns, and structured before/after improvement.
+
+- `references/17-visual-hierarchy-and-composition.md` — scanning order, emphasis, grouping, calm density.
+- `references/18-ux-interaction-patterns.md` — task clarity, feedback, error recovery, states, flows.
+- `references/19-design-critique-rubric.md` — a structured critique aid (internal, not an official score).
+- `references/20-government-service-content-patterns.md` — Arabic UX-writing patterns (complements `10`).
+- `references/21-before-after-review.md` — capture before → improve incrementally → honest after.
+- `references/22-ui-anti-patterns.md` — things to flag, each with the aligned corrective direction.
+
+For design-excellence (high-fidelity, polished output), also use:
+
+- `references/23-design-direction-framework.md` — the three allowed government-grade directions.
+- `references/24-high-fidelity-polish-rules.md` — hero, cards, CTA, spacing, icons, header/footer.
+- `references/25-government-page-blueprints.md` — completeness checklists per page type.
+- `references/26-component-anatomy-polish.md` — polished anatomy per component.
+- `references/27-design-quality-gate.md` — internal 1–5 quality gate (not an official score).
+
+These files are **supporting design-review guidance**. They align with — and never override — DGA
+Platforms Code and the verified references (`13`–`16`) and tokens (`tokens/`). They are generic and
+product-agnostic. They introduce no official DGA rules, tokens, spacing, components, templates, or
+compliance claims. Any general UX best practice they contain — including ideas inspired by external
+design systems — is supporting guidance only, not an official DGA rule; never present another design
+system as official DGA guidance. The safe wording for any review-aid judgment is
+**"aligned with Platforms Code principles."**
+
+## Design Excellence Workflow (mandatory for design-quality work)
+
+The skill produces safe, clean interfaces; this workflow raises them to complete, polished,
+high-fidelity, government-grade output. Apply it whenever design quality is in scope (new builds,
+redesigns, polish passes). It sits on top of — and never weakens — the verified rules above.
+
+**A. Diagnose before designing.** Before proposing anything, identify: the **page type**, the
+**primary user task**, the **target user**, the **main decision** the user must make, and the current
+**visual**, **UX**, **content**, and **RTL/accessibility** weaknesses. (See `25`, `17`, `18`.)
+
+**B. Propose design direction before coding (redesigns).** For redesign tasks, propose **2–3**
+restrained government-grade directions from `23-design-direction-framework.md` — Conservative
+official, Modern official, or Data-service official. Each proposal states its **layout approach**,
+**visual hierarchy approach**, **CTA approach**, **card/form approach**, **risks**, and a
+**recommendation**. Do not introduce playful, luxury, SaaS-marketing, gaming, glassmorphism-heavy,
+neon, or over-decorated styles.
+
+**C. Implement one selected direction.** After the user approves (or, when no approval is required,
+after choosing the most suitable direction and stating why), implement **incrementally** — reusing
+existing components and verified tokens, inventing no new tokens, spacing, type styles, or colors.
+
+**D. Polish pass.** After implementation, run a focused polish pass over: hero hierarchy, section
+rhythm, card anatomy, CTA hierarchy, typography scale, header/footer trust signals,
+empty/loading/error states, mobile density, RTL alignment, and accessibility. (See `24`, `26`.)
+
+**E. Before/after review.** After coding, summarize: what looked **basic before**, what was
+**improved**, what **still needs human design review**, and what **remains outside official
+compliance**. Then apply the internal design quality gate (`27-design-quality-gate.md`); if any item
+scores below 3, identify a fix before finishing. (See `21-before-after-review.md`.)
 
 ## Engineering safety rules
 

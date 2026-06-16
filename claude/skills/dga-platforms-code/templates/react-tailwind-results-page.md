@@ -75,8 +75,18 @@ export default function ResultPage({ status, reference, details, onPrint, onBack
 - Keep the reference and any IDs LTR and isolated (`<bdi>` / `font-mono`).
 - Don't overuse the success tone; reserve it for genuine positive outcomes.
 
+**Polish, states & mobile**
+- **Result anatomy:** outcome (icon + label + verified color) first and largest → reference →
+  details → next step (`references/26-component-anatomy-polish.md`).
+- **CTA hierarchy:** one primary next step ("العودة إلى الخدمات"); "حفظ / طباعة" stays secondary.
+- **States:** handle success, rejected/error, inconclusive/under-review, and not-found explicitly —
+  the `STATUS` map shows the pattern (`references/25-government-page-blueprints.md`, result page).
+- **Mobile:** keep the status block readable and the reference selectable; details collapse to one
+  column. Verify RTL alignment.
+
 **Tokens & spacing**
 - Map status tones to verified Semantic 600 tokens (`tokens/colors-v1.0.json`: Error `#D92D20`,
   Warning `#DC6803`, Success `#1B8354`, Info `#1570EF`) and type to `tokens/typography-v1.0.json`.
-- Spacing here is **illustrative**, not official. Map it to approved project (or verified Platforms
-  Code) spacing before production. Do not present it as official DGA spacing.
+- Spacing and the Tailwind utility scale here are **illustrative**, not official. Map them to approved
+  project (or verified Platforms Code) spacing before production. Do not present them as official DGA
+  spacing, and do not introduce unofficial colors, fonts, or spacing tokens.
