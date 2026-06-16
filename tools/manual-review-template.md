@@ -61,6 +61,85 @@ template per release/feature and record evidence.
 - [ ] Saudi Font not used as default; only national/seasonal main headings, with license/approval.
 - [ ] No font files included or redistributed.
 
+## 5d. Visual hierarchy (supporting design-review aid)
+
+- [ ] The task and next step are obvious within seconds; visual order matches the RTL reading path.
+- [ ] Emphasis is built only from verified type/color/spacing; no invented styles to force attention.
+- [ ] Related elements are grouped; unrelated groups are clearly separated; calm density, not cramped.
+- [ ] No decoration competes with the content or the primary action.
+
+## 5e. CTA hierarchy (supporting design-review aid)
+
+- [ ] Exactly one primary action per view; secondary/tertiary actions are visibly quieter.
+- [ ] Primary action label is a specific verb (not generic) and clearly emphasized.
+- [ ] Destructive/irreversible actions are de-emphasized and confirmed, naming the consequence.
+
+## 5f. Arabic content patterns (supporting design-review aid)
+
+- [ ] Headings name the task in a recognizable term; labels are short, consistent, unambiguous.
+- [ ] Error messages say what's wrong and how to fix it; no «حدث خطأ» or exposed technical detail.
+- [ ] Success/confirmation copy states the next step and any reference to keep.
+- [ ] Status vocabulary is stable and paired with icon + verified color (not color alone).
+- [ ] Latin names, IDs, codes, and numbers stay readable and bidi-isolated.
+
+## 5g. UI anti-patterns (supporting design-review aid)
+
+- [ ] No competing/weak CTAs, color-only status, placeholder-as-label, or removed focus outlines.
+- [ ] No mirrored codes/IDs/Latin; directional icons mirrored correctly.
+- [ ] No arbitrary one-off spacing; no overloaded cards; no cramped mobile/overflow.
+- [ ] No fabricated outcomes; empty/loading/error states present; no SaaS/marketing gloss.
+
+> Sections 5d–5g are **supporting design-review aids** that align with — and never override — DGA
+> Platforms Code and the verified references/tokens. They add no official rule, token, spacing, or
+> compliance claim.
+
+## 5h. High-fidelity design excellence (supporting design-review aid)
+
+- **Design direction selected:** `<Conservative official | Modern official | Data-service official>`
+  — record the chosen direction and a one-line rationale (`references/23-design-direction-framework.md`).
+- [ ] **First impression:** calm, polished, government-grade within seconds; not basic or unfinished.
+- [ ] **CTA review:** one primary action per decision area; secondaries quieter; no weak/competing CTAs.
+- [ ] **Card anatomy:** title, short description, icon/status, metadata, action; scannable; consistent.
+- [ ] **Footer/header trust:** deliberate header and footer with support/accessibility/privacy links;
+      not an afterthought; only authorized marks.
+- [ ] **Desktop density:** balanced — hero/sections not empty; no excessive blank space.
+- [ ] **Mobile density:** comfortable — not cramped; readable Arabic; RTL correct at all breakpoints.
+- [ ] **State handling:** empty, loading, and error states designed for every relevant component.
+- [ ] **Motion appropriateness:** motion (if any) is subtle and purposeful; respects
+      `prefers-reduced-motion`; state never conveyed by motion alone; no new animation dependency
+      added without approval (`references/27-motion-and-interaction-guidelines.md`).
+- [ ] **High-fidelity polish:** hero hierarchy, section rhythm, typography scale, icons that aid
+      meaning, spacing from verified/project tokens (no arbitrary values).
+
+### Internal design quality gate score (review aid only — not official compliance)
+
+Score each 1–5 (1 basic/broken, 3 acceptable, 5 excellent). If any item is below 3, record a fix.
+See `references/28-design-quality-gate.md`.
+
+| # | Item | Score (1–5) | Note / fix if below 3 |
+|---|------|-------------|------------------------|
+| 1 | First impression | | |
+| 2 | Government trust | | |
+| 3 | Task clarity | | |
+| 4 | Visual hierarchy | | |
+| 5 | CTA clarity | | |
+| 6 | Content clarity | | |
+| 7 | Component polish | | |
+| 8 | RTL correctness | | |
+| 9 | Accessibility | | |
+| 10 | Mobile readiness | | |
+| 11 | State handling | | |
+| 12 | Motion appropriateness | | |
+| 13 | Engineering safety | | |
+
+- [ ] No item left below 3 without a recorded fix or a blocking manual-review note.
+- [ ] Scores recorded as an internal review aid only, described as "aligned with Platforms Code
+      principles" (not "officially compliant").
+
+> Section 5h is a **supporting design-review aid** that aligns with — and never overrides — DGA
+> Platforms Code and the verified references/tokens. It adds no official rule, token, spacing, or
+> compliance claim.
+
 ## 6. Engineering and security
 
 - [ ] Business logic, API contracts, auth/authorization, and validation preserved.

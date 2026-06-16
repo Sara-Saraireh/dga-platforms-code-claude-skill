@@ -33,3 +33,22 @@ Do the following, in order:
 
 Do not claim official compliance, copy official logos, invent token values, make it look like a SaaS
 product, overuse the success/green color, or use real personal data.
+
+---
+
+**Design-excellence additions** (apply when design quality is in scope):
+
+- **Design direction (redesigns):** propose 2–3 government-grade directions before coding —
+  Conservative official, Modern official, or Data-service official
+  (`references/23-design-direction-framework.md`).
+- **High-fidelity polish pass:** hero, section rhythm, card anatomy, CTA hierarchy, typography scale,
+  header/footer trust, empty/loading/error states, mobile density, RTL, accessibility
+  (`references/24-high-fidelity-polish-rules.md`, `references/26-component-anatomy-polish.md`).
+- **Motion (only if purposeful):** subtle, accessible motion that supports feedback/loading/
+  transitions; respect `prefers-reduced-motion`; never state-by-motion-alone; add no animation
+  dependency without approval (`references/27-motion-and-interaction-guidelines.md`).
+- **Before/after review:** what looked basic, what improved, what still needs human design review
+  (`references/21-before-after-review.md`).
+- **Internal design quality gate:** score 1–5 per item; fix any item below 3 before finishing
+  (`references/28-design-quality-gate.md`). Internal review aid only, not an official score.
+- **Boundary:** this is **aligned with Platforms Code principles**, not official DGA compliance.

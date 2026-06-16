@@ -30,3 +30,17 @@ Do the following, in order:
    speaker). Restate the compliance disclaimer.
 
 Do not claim official compliance, copy official logos, invent token values, or use real personal data.
+
+---
+
+**Design-excellence additions** (apply when design quality is in scope):
+
+- **Design direction (redesigns only):** if the task expands into a redesign, propose 2–3
+  government-grade directions before coding (`references/23-design-direction-framework.md`).
+- **High-fidelity polish:** check RTL alignment within hero, cards, CTA hierarchy, header/footer, and
+  state handling (`references/24-high-fidelity-polish-rules.md`, `references/26-component-anatomy-polish.md`).
+- **Before/after framing:** note what reads awkwardly now and what a polished RTL version improves
+  (`references/21-before-after-review.md`).
+- **Internal design quality gate:** score 1–5 per item (emphasis on RTL correctness and content);
+  flag any item below 3 with a fix (`references/28-design-quality-gate.md`). Internal aid only.
+- **Boundary:** this is **aligned with Platforms Code principles**, not official DGA compliance.
