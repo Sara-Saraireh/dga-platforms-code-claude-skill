@@ -4,6 +4,38 @@ All notable changes to this repository are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) principles, and the project uses Semantic
 Versioning (see [GOVERNANCE.md](GOVERNANCE.md)).
 
+## [1.3.0] - 2026-06-16
+
+### Added
+- Design-excellence layer (supporting guidance that aligns with — and never overrides — DGA
+  Platforms Code and the verified references/tokens):
+  - `references/23-design-direction-framework.md` (Conservative / Modern / Data-service official).
+  - `references/24-high-fidelity-polish-rules.md` (hero, cards, CTA, spacing, icons, header/footer).
+  - `references/25-government-page-blueprints.md` (completeness checklists per page type).
+  - `references/26-component-anatomy-polish.md` (polished anatomy per component).
+  - `references/27-design-quality-gate.md` (internal 1–5 quality gate; not an official score).
+- `prompts/08-high-fidelity-redesign.md` (for functional-but-basic screens) and
+  `prompts/09-ui-design-critique-only.md` (read-only critique).
+
+### Changed
+- `SKILL.md`: added the mandatory "Design Excellence Workflow" (diagnose → propose 2–3 directions →
+  implement one → polish pass → before/after review) and listed references `23`–`27`.
+- `prompts/01`–`07`: added design-direction, high-fidelity polish, before/after, and internal
+  design-quality-gate steps, plus the explicit not-official-compliance boundary.
+- `templates/`: stronger hero hierarchy and footer trust section (service home), fuller card anatomy
+  and selection-first note (service card), and polish/states/mobile notes across templates. Spacing
+  and Tailwind utilities remain illustrative; no unofficial colors, fonts, or spacing tokens added.
+- `tools/manual-review-template.md`: added section 5h (design direction, first impression, CTA, card
+  anatomy, footer/header trust, desktop/mobile density, state handling, polish) and the internal
+  design-quality-gate score table.
+
+### Notes
+- No verified token files (`tokens/colors-v1.0.json`, `tokens/typography-v1.0.json`) or extraction
+  references (`13`–`16`) were changed. No official DGA tokens, spacing, components, or compliance
+  claims were added. No product-specific names were introduced. External design-system ideas are used
+  only as general inspiration for critique/workflow structure and are never presented as official DGA
+  guidance. Copyright and the "aligned with Platforms Code principles" wording are preserved.
+
 ## [1.2.0] - 2026-06-16
 
 ### Added

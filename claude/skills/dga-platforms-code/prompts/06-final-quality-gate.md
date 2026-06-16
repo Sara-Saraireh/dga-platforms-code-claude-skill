@@ -29,3 +29,18 @@ Do the following, in order:
 
 Do not claim official compliance, copy official logos, invent token values, change backend/security
 logic, or use real personal data.
+
+---
+
+**Design-excellence additions** (apply when design quality is in scope):
+
+- **High-fidelity polish check:** verify hero, section rhythm, card anatomy, CTA hierarchy,
+  typography scale, header/footer trust, empty/loading/error states, mobile density, RTL, and
+  accessibility (`references/24-high-fidelity-polish-rules.md`, `references/26-component-anatomy-polish.md`).
+- **Internal design quality gate:** score 1–5 per item across first impression, government trust,
+  task clarity, hierarchy, CTA, content, component polish, RTL, accessibility, mobile, state
+  handling, and engineering safety; if any item is below 3, identify a fix before sign-off
+  (`references/27-design-quality-gate.md`). Internal review aid only, not an official score.
+- **Before/after note:** where fixes were applied, summarize what improved
+  (`references/21-before-after-review.md`).
+- **Boundary:** this is **aligned with Platforms Code principles**, not official DGA compliance.

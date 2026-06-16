@@ -221,12 +221,51 @@ quality, RTL behavior, accessibility, common anti-patterns, and structured befor
 - `references/21-before-after-review.md` — capture before → improve incrementally → honest after.
 - `references/22-ui-anti-patterns.md` — things to flag, each with the aligned corrective direction.
 
+For design-excellence (high-fidelity, polished output), also use:
+
+- `references/23-design-direction-framework.md` — the three allowed government-grade directions.
+- `references/24-high-fidelity-polish-rules.md` — hero, cards, CTA, spacing, icons, header/footer.
+- `references/25-government-page-blueprints.md` — completeness checklists per page type.
+- `references/26-component-anatomy-polish.md` — polished anatomy per component.
+- `references/27-design-quality-gate.md` — internal 1–5 quality gate (not an official score).
+
 These files are **supporting design-review guidance**. They align with — and never override — DGA
 Platforms Code and the verified references (`13`–`16`) and tokens (`tokens/`). They are generic and
 product-agnostic. They introduce no official DGA rules, tokens, spacing, components, templates, or
-compliance claims. Any general UX best practice they contain is supporting guidance, not an official
-DGA rule; never present another design system as official DGA guidance. The safe wording for any
-review-aid judgment is **"aligned with Platforms Code principles."**
+compliance claims. Any general UX best practice they contain — including ideas inspired by external
+design systems — is supporting guidance only, not an official DGA rule; never present another design
+system as official DGA guidance. The safe wording for any review-aid judgment is
+**"aligned with Platforms Code principles."**
+
+## Design Excellence Workflow (mandatory for design-quality work)
+
+The skill produces safe, clean interfaces; this workflow raises them to complete, polished,
+high-fidelity, government-grade output. Apply it whenever design quality is in scope (new builds,
+redesigns, polish passes). It sits on top of — and never weakens — the verified rules above.
+
+**A. Diagnose before designing.** Before proposing anything, identify: the **page type**, the
+**primary user task**, the **target user**, the **main decision** the user must make, and the current
+**visual**, **UX**, **content**, and **RTL/accessibility** weaknesses. (See `25`, `17`, `18`.)
+
+**B. Propose design direction before coding (redesigns).** For redesign tasks, propose **2–3**
+restrained government-grade directions from `23-design-direction-framework.md` — Conservative
+official, Modern official, or Data-service official. Each proposal states its **layout approach**,
+**visual hierarchy approach**, **CTA approach**, **card/form approach**, **risks**, and a
+**recommendation**. Do not introduce playful, luxury, SaaS-marketing, gaming, glassmorphism-heavy,
+neon, or over-decorated styles.
+
+**C. Implement one selected direction.** After the user approves (or, when no approval is required,
+after choosing the most suitable direction and stating why), implement **incrementally** — reusing
+existing components and verified tokens, inventing no new tokens, spacing, type styles, or colors.
+
+**D. Polish pass.** After implementation, run a focused polish pass over: hero hierarchy, section
+rhythm, card anatomy, CTA hierarchy, typography scale, header/footer trust signals,
+empty/loading/error states, mobile density, RTL alignment, and accessibility. (See `24`, `26`.)
+
+**E. Before/after review.** After coding, summarize: what looked **basic before**, what was
+**improved**, what **still needs human design review**, and what **remains outside official
+compliance**. Then apply the internal design quality gate (`27-design-quality-gate.md`); if any item
+scores below 3, identify a fix before finishing. (See `21-before-after-review.md`.)
 
 ## Engineering safety rules
 
