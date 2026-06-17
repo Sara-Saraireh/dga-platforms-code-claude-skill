@@ -194,6 +194,15 @@ See `references/08-accessibility.md`.
 
 See `references/04-components.md`.
 
+### Bundled component library
+
+This skill ships a reusable, token-driven React + CSS component library in `components/` (Button,
+Badge, Input, Alert, Card, Stepper, Breadcrumbs, Modal in increment 1), aligned with Platforms Code
+component anatomy and driven entirely by the verified tokens. Prefer reusing or adapting these before
+writing one-off components. They are illustrative and **aligned with Platforms Code principles**, not
+official DGA assets, and assert no official compliance. See `references/30-component-library.md` and
+`components/README.md`; the full official inventory and roadmap are listed there.
+
 ## Forms and inputs rules
 
 - Visible labels always; placeholders are not labels and must not carry essential instructions.

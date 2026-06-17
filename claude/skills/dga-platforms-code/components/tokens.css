@@ -1,0 +1,124 @@
+/*
+ * DGA Platforms Code — verified design tokens as CSS custom properties.
+ *
+ * Values are sourced ONLY from the repository's verified token files:
+ *   - tokens/colors-v1.0.json      (Gray, Gold, SA, Semantic 600)
+ *   - tokens/typography-v1.0.json  (IBM Plex Sans Arabic, weights, scale)
+ *   - tokens/spacing-v1.0.json     (spacing scale, widths, container, breakpoints)
+ *   - tokens/elevation-v1.0.json   (7 shadow levels, color #101828)
+ *
+ * No values are invented here. This is implementation-alignment tooling, NOT official DGA
+ * compliance. Do not redistribute official fonts; load IBM Plex Sans Arabic via the host project.
+ * px values are authoritative; some large-step rem and the 2xl shadow Y are pending Figma
+ * confirmation (see the token files).
+ */
+
+:root {
+  /* ---- Color: Gray ---- */
+  --pc-gray-25: #FCFCFD;
+  --pc-gray-50: #F9FAFB;
+  --pc-gray-100: #F3F4F6;
+  --pc-gray-200: #E5E7EB;
+  --pc-gray-300: #D2D6DB;
+  --pc-gray-400: #9DA4AE;
+  --pc-gray-500: #6C737F;
+  --pc-gray-600: #4D5761;
+  --pc-gray-700: #384250;
+  --pc-gray-800: #1F2A37;
+  --pc-gray-900: #111927;
+  --pc-gray-950: #0D121C;
+
+  /* ---- Color: SA (primary green) ---- */
+  --pc-sa-25: #F7FDF9;
+  --pc-sa-50: #F3FCF6;
+  --pc-sa-100: #DFF6E7;
+  --pc-sa-200: #B8EACB;
+  --pc-sa-300: #88D8AD;
+  --pc-sa-400: #54C08A;
+  --pc-sa-500: #25935F;
+  --pc-sa-600: #1B8354;
+  --pc-sa-700: #166A45;
+  --pc-sa-800: #14573A;
+  --pc-sa-900: #104631;
+  --pc-sa-950: #092A1E;
+
+  /* ---- Color: Gold ---- */
+  --pc-gold-500: #F5BD02;
+  --pc-gold-600: #DBA102;
+  --pc-gold-700: #B87B02;
+
+  /* ---- Color: Semantic 600 (verified) ---- */
+  --pc-error-600: #D92D20;
+  --pc-warning-600: #DC6803;
+  --pc-success-600: #1B8354;
+  --pc-info-600: #1570EF;
+
+  /* ---- Semantic roles (host project may override) ---- */
+  --pc-color-primary: var(--pc-sa-600);
+  --pc-color-primary-hover: var(--pc-sa-700);
+  --pc-color-on-primary: #FFFFFF;
+  --pc-color-text: var(--pc-gray-900);
+  --pc-color-text-muted: var(--pc-gray-500);
+  --pc-color-border: var(--pc-gray-200);
+  --pc-color-border-strong: var(--pc-gray-300);
+  --pc-color-surface: #FFFFFF;
+  --pc-color-surface-subtle: var(--pc-gray-50);
+  --pc-focus-ring: var(--pc-color-primary);
+
+  /* ---- Typography ---- */
+  --pc-font-family: "IBM Plex Sans Arabic", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --pc-font-weight-regular: 400;
+  --pc-font-weight-medium: 500;
+  --pc-font-weight-semibold: 600;
+  --pc-font-weight-bold: 700;
+  /* Text scale (use for UI/body). Display scale exists in the token file for headings only. */
+  --pc-text-xs: 12px;   --pc-text-xs-lh: 18px;
+  --pc-text-sm: 14px;   --pc-text-sm-lh: 20px;
+  --pc-text-md: 16px;   --pc-text-md-lh: 24px;
+  --pc-text-lg: 18px;   --pc-text-lg-lh: 28px;
+  --pc-text-xl: 20px;   --pc-text-xl-lh: 30px;
+
+  /* ---- Spacing (px authoritative) ---- */
+  --pc-space-none: 0px;
+  --pc-space-xxs: 2px;
+  --pc-space-xs: 4px;
+  --pc-space-sm: 6px;
+  --pc-space-md: 8px;
+  --pc-space-lg: 12px;
+  --pc-space-xl: 16px;
+  --pc-space-2xl: 20px;
+  --pc-space-3xl: 24px;
+  --pc-space-4xl: 32px;
+  --pc-space-5xl: 40px;
+  --pc-space-6xl: 48px;
+  --pc-space-7xl: 64px;
+  --pc-space-8xl: 80px;
+
+  /* ---- Container / layout (verified) ---- */
+  --pc-container-padding-mobile: 16px;
+  --pc-container-padding-desktop: 32px;
+  --pc-container-max-width-desktop: 1280px;
+  --pc-paragraph-max-width: 720px;
+
+  /* ---- Radius (illustrative; map to project/Figma before production) ---- */
+  --pc-radius-sm: 6px;
+  --pc-radius-md: 8px;
+  --pc-radius-lg: 12px;
+  --pc-radius-pill: 9999px;
+
+  /* ---- Elevation (verified, color #101828) ---- */
+  --pc-shadow-xs: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+  --pc-shadow-sm: 0 1px 3px 0 rgba(16, 24, 40, 0.10), 0 1px 2px 0 rgba(16, 24, 40, 0.06);
+  --pc-shadow-md: 0 4px 8px -2px rgba(16, 24, 40, 0.10), 0 2px 4px -2px rgba(16, 24, 40, 0.06);
+  --pc-shadow-lg: 0 12px 16px -6px rgba(16, 24, 40, 0.08), 0 4px 6px -2px rgba(16, 24, 40, 0.03);
+  --pc-shadow-xl: 0 20px 24px -4px rgba(16, 24, 40, 0.08), 0 8px 8px -4px rgba(16, 24, 40, 0.03);
+  --pc-shadow-2xl: 0 24px 48px -12px rgba(16, 24, 40, 0.18);
+  --pc-shadow-3xl: 0 32px 64px -12px rgba(16, 24, 40, 0.14);
+
+  /* ---- Motion (subtle; respects reduced-motion below) ---- */
+  --pc-transition: 150ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --pc-transition: 0ms; }
+}

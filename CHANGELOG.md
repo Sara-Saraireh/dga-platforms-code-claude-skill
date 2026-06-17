@@ -4,6 +4,28 @@ All notable changes to this repository are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) principles, and the project uses Semantic
 Versioning (see [GOVERNANCE.md](GOVERNANCE.md)).
 
+## [1.6.0] - 2026-06-17
+
+### Added
+- Bundled, reusable **component library** in `claude/skills/dga-platforms-code/components/`, driven
+  entirely by the verified tokens and aligned with Platforms Code component anatomy:
+  - `tokens.css` — verified colors/typography/spacing/elevation as `--pc-*` CSS custom properties.
+  - `components.css` — token-driven, RTL-aware (CSS logical properties) component styles.
+  - Increment 1 components (React): `Button`, `Badge`, `Input`, `Alert`, `Card`, `Stepper`,
+    `Breadcrumbs`, `Modal`; plus `index.js` and `README.md`.
+- `references/30-component-library.md` — maps the library to the official 50-component inventory,
+  with build rules, the boundary, and the roadmap for the next increments.
+
+### Changed
+- `SKILL.md`: added a "Bundled component library" subsection directing reuse of these components.
+
+### Notes
+- Components are **illustrative and aligned with Platforms Code principles** — not official DGA
+  Figma/Storybook assets, and they assert no official compliance. No official code, assets, or fonts
+  are copied (IBM Plex Sans Arabic is loaded by the host project). All styling uses verified tokens;
+  `radius` is illustrative pending Figma confirmation. Framework-light (React + CSS, no Tailwind
+  required), accessible by default, and RTL-first.
+
 ## [1.5.0] - 2026-06-16
 
 ### Added
