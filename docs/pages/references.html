@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reference guides — DGA Platforms Code Skill</title>
+  <meta name="description" content="The 20 operational design-rule guides that ground the DGA Platforms Code Skill: principles, foundations, layout, components, accent theming, forms, service patterns, RTL, accessibility, and verified extractions." />
+  <link rel="stylesheet" href="../assets/css/docs.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="doc-topbar">
+    <span class="doc-topbar__brand">DGA Platforms Code</span>
+    <button class="doc-menu-btn" data-menu-btn aria-label="Toggle navigation">☰ Menu</button>
+  </header>
+
+  <div class="doc-shell">
+    <aside class="doc-sidebar">
+      <a class="doc-brand" href="../index.html" style="text-decoration:none;color:inherit">
+        <span class="doc-brand__name">DGA Platforms Code</span>
+        <span class="doc-brand__tag">Claude Skill · كود المنصات</span>
+        <span class="doc-brand__badge">v1.7.0 · documentation</span>
+      </a>
+      <nav class="doc-nav" aria-label="Documentation">
+        <a href="../index.html">Home</a>
+        <div class="doc-nav__group">Getting started</div>
+        <a href="overview.html">Overview</a>
+        <a href="principles.html">Design principles</a>
+        <div class="doc-nav__group">Foundations</div>
+        <a href="tokens.html">Design tokens</a>
+        <a href="theming.html">Theming</a>
+        <div class="doc-nav__group">Component library</div>
+        <a href="components.html">Components</a>
+        <a href="charts.html">Charts &amp; data viz</a>
+        <div class="doc-nav__group">Guidance</div>
+        <a href="references.html" aria-current="page">Reference guides</a>
+        <a href="rtl-accessibility.html">RTL &amp; accessibility</a>
+        <div class="doc-nav__group">Build with it</div>
+        <a href="templates.html">Templates &amp; examples</a>
+        <a href="prompts.html">Prompts</a>
+      </nav>
+    </aside>
+
+    <main class="doc-main">
+      <div class="doc-container">
+        <p class="doc-eyebrow">Guidance</p>
+        <h1>Reference guides</h1>
+        <p class="doc-lead">Twenty operational design-rule guides ground the skill. They are
+          <strong>summaries subordinate to the official DGA sources</strong> — the skill reads only the
+          guides relevant to each task. Each card links to its source Markdown.</p>
+
+        <div class="doc-callout doc-callout--info">
+          <span class="doc-callout__icon">📚</span>
+          <p class="doc-callout__body">Files live in
+            <code>claude/skills/dga-platforms-code/references/</code>. Extractions marked
+            <strong>verified</strong> were read directly from the official foundation pages.</p>
+        </div>
+
+        <h2>Source of truth &amp; principles</h2>
+        <div class="doc-cards">
+          <a class="doc-card" href="../../claude/skills/dga-platforms-code/references/00-source-of-truth.md"><div class="doc-card__title">00 · Source of truth</div><p class="doc-card__desc">Hierarchy of official sources vs. repository summaries, and when to use each.</p></a>
+          <a class="doc-card" href="../../claude/skills/dga-platforms-code/references/01-design-principles.md"><div class="doc-card__title">01 · Design principles</div><p class="doc-card__desc">Government-grade tone: trust, service-first, accessibility-first, consistency.</p></a>
+          <a class="doc-card" href="../../claude/skills/dga-platforms-code/references/02-foundations.md"><div class="doc-card__title">02 · Foundations</div><p class="doc-card__desc">Overview of colors, typography, spacing, elevation, and iconography.</p></a>
+        </div>
+
+        <h2>Layout, navigation &amp; components</h2>
+        <div class="doc-cards">
+          <a class="doc-card" href="../../claude/skills/dga-platforms-code/references/03-layout-and-navigation.md"><div class="doc-card__title">03 · Layout &amp; navigation</div><p class="doc-card__desc">Page layout, navigation patterns, and section structure.</p></a>
+          <a class="doc-card" href="../../claude/skills/dga-platforms-code/references/04-components.md"><div class="doc-card__title">04 · Components</div><p class="doc-card__desc">Anatomy for buttons, cards, badges, alerts, tables, modals, steppers.</p></a>
+          <a class="doc-card" href="../../claude/skills/dga-platforms-code/references/05-forms-and-inputs.md"><div class="doc-card__title">05 · Forms &amp; inputs</div><p class="doc-card__desc">Labels, validation, error messages, file uploads, multi-step flows.</p></a>
+          <a class="doc-card" href="../../claude/skills/dga-platforms-code/references/06-service-patterns.md"><div class="doc-card__title">06 · Service patterns</div><p class="doc-card__desc">Landing, selection, upload/review/result, confirmation, admin flows.</p></a>
+          <a class="doc-card" href="../../claude/skills/dga-platforms-code/references/17-accent-theming.md"><div class="doc-card__title">17 · Accent theming</div><p class="doc-card__desc">Opt-in per-service accent presets within verified palettes, with contrast guardrails.</p></a>
+        </div>
+
+        <h2>RTL, accessibility, responsive &amp; content</h2>
+        <div class="doc-cards">
+          <a class="doc-card" href="../../claude/skills/dga-platforms-code/references/07-arabic-rtl.md"><div class="doc-card__title">07 · Arabic RTL</div><p class="doc-card__desc">dir="rtl", logical CSS, text alignment, icon mirroring, number isolation.</p></a>
+          <a class="doc-card" href="../../claude/skills/dga-platforms-code/references/08-accessibility.md"><div class="doc-card__title">08 · Accessibility</div><p class="doc-card__desc">WCAG 2.1 AA: contrast, focus, keyboard, semantics, labels, announcements.</p></a>
+          <a class="doc-card" href="../../claude/skills/dga-platforms-code/references/09-responsive-mobile.md"><div class="doc-card__title">09 · Responsive &amp; mobile</div><p class="doc-card__desc">Mobile-first, breakpoints, touch targets, readable Arabic.</p></a>
+          <a class="doc-card" href="../../claude/skills/dga-platforms-code/references/10-content-style-arabic.md"><div class="doc-card__title">10 · Content style (Arabic)</div><p class="doc-card__desc">Tone, clarity, plain language, and government terminology.</p></a>
+        </div>
+
+        <h2>Engineering &amp; review</h2>
+        <div class="doc-cards">
+          <a class="doc-card" href="../../claude/skills/dga-platforms-code/references/11-engineering-rules.md"><div class="doc-card__title">11 · Engineering rules</div><p class="doc-card__desc">Reuse, centralized tokens, incremental change, no backend logic edits.</p></a>
+          <a class="doc-card" href="../../claude/skills/dga-platforms-code/references/12-design-review-checklist.md"><div class="doc-card__title">12 · Design review checklist</div><p class="doc-card__desc">The 9-point pre-release verification checklist.</p></a>
+        </div>
+
+        <h2>Verified extractions</h2>
+        <div class="doc-cards">
+          <a class="doc-card" href="../../claude/skills/dga-platforms-code/references/13-platforms-code-guide-v1.0-extraction.md"><div class="doc-card__title">13 · Platforms Code Guide v1.0</div><p class="doc-card__desc">Definition, objectives, beneficiaries, and verified tokens from the official PDF.</p></a>
+          <a class="doc-card" href="../../claude/skills/dga-platforms-code/references/14-typography-page-extraction.md"><div class="doc-card__title">14 · Typography page</div><p class="doc-card__desc">IBM Plex Sans Arabic, type scale, weights, and usage rules.</p></a>
+          <a class="doc-card" href="../../claude/skills/dga-platforms-code/references/15-layout-and-spacing-page-extraction.md"><div class="doc-card__title">15 · Layout &amp; spacing <span class="pc-badge">verified</span></div><p class="doc-card__desc">Verified spacing scale (0–160px), widths, container, and breakpoints.</p></a>
+          <a class="doc-card" href="../../claude/skills/dga-platforms-code/references/16-semantic-colors-extraction.md"><div class="doc-card__title">16 · Semantic colors <span class="pc-badge">verified</span></div><p class="doc-card__desc">Error / Warning / Success / Info 600 values only.</p></a>
+          <a class="doc-card" href="../../claude/skills/dga-platforms-code/references/29-elevation-and-shadows-extraction.md"><div class="doc-card__title">29 · Elevation &amp; shadows <span class="pc-badge">verified</span></div><p class="doc-card__desc">The 7-level verified shadow scale, color #101828.</p></a>
+          <a class="doc-card" href="../../claude/skills/dga-platforms-code/references/30-component-library.md"><div class="doc-card__title">30 · Component library</div><p class="doc-card__desc">Official inventory (50 components) and the increment roadmap.</p></a>
+        </div>
+
+        <footer class="doc-footer">
+          <p>Operational summaries subordinate to the official sources — not official DGA compliance.
+            Official source: <a href="https://design.dga.gov.sa/">design.dga.gov.sa</a>.</p>
+        </footer>
+      </div>
+    </main>
+  </div>
+  <script src="../assets/js/docs.js"></script>
+</body>
+</html>

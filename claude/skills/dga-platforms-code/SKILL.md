@@ -20,6 +20,10 @@ engineered without breaking business logic, APIs, authentication, authorization,
 This Skill aligns with DGA principles. It does **not** make an interface officially compliant.
 Never claim or imply official DGA compliance — that requires formal review by the responsible entity.
 
+This repository is a **Claude Code Skill**, not a published npm package and not official DGA
+components. The bundled React/CSS under `components/` is **illustrative implementation guidance** to
+copy and adapt — never present it as an installable package or as official DGA assets.
+
 ### Verified Platforms Code principles
 
 Grounded in the Platforms Code Guide v1.0 (see `references/13-platforms-code-guide-v1.0-extraction.md`):
@@ -110,13 +114,29 @@ Grounded in the typography page (`references/14-typography-page-extraction.md`,
 
 ## Layout and spacing rules
 
-Grounded in the layout-and-spacing source status (`references/15-layout-and-spacing-page-extraction.md`):
+Grounded in the verified layout-and-spacing extraction
+(`references/15-layout-and-spacing-page-extraction.md`, `tokens/spacing-v1.0.json`):
 
 - Treat layout and spacing as a **core quality gate**.
 - Preserve consistent section spacing, component spacing, form spacing, and mobile spacing.
 - Do not use arbitrary one-off spacing unless required to resolve a specific layout defect.
-- Prefer project spacing tokens or verified official Platforms Code spacing tokens.
-- Do not invent official DGA spacing values (none are verified in this repository).
+- Use the **verified Platforms Code spacing scale** (`spacing-none`…`spacing-11xl`, px: 0, 2, 4, 6, 8,
+  12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128, 160), the verified widths/container/breakpoints, or the
+  host project's approved scale mapped to them.
+- Do not introduce spacing values **outside** the verified scale. Confirm exact `rem` for the largest
+  steps in the official Figma library (the page's rem column has apparent typos above `6xl`; px is
+  authoritative).
+
+## Elevation and shadow rules
+
+Grounded in the verified elevation extraction (`references/29-elevation-and-shadows-extraction.md`,
+`tokens/elevation-v1.0.json`):
+
+- Use the verified shadow scale (`Shadows-shadow-xs`…`3xl`, color `#101828` at the per-layer opacity)
+  for depth and hierarchy — sparingly. Prefer the lighter levels for cards/surfaces; heavier levels
+  for overlays/modals only.
+- Do not use shadow as decoration or to manufacture emphasis. Do not invent shadow levels, colors, or
+  opacities beyond the verified set.
 
 ## Semantic color rules
 
@@ -125,11 +145,16 @@ Grounded in the semantic color extraction (`references/16-semantic-colors-extrac
 
 - Error 600 `#D92D20`
 - Warning 600 `#DC6803`
-- Success 600 `#1B8354`
+- Success 600 `#079455` (Success is its own palette — do **not** substitute the SA primary green `#1B8354`)
 - Info 600 `#1570EF`
 
-Do not rely on semantic colors alone — pair state color with labels, icons, and accessible text.
-Do not invent missing semantic shades.
+Each semantic color is a full palette (25–950) on the official color page; the verified ramps are in
+`tokens/colors-v1.0.json`. Do not rely on semantic colors alone — pair state color with labels, icons,
+and accessible text. Do not invent missing semantic shades.
+
+Data visualization uses a **monochromatic green scheme** (no gold/lavender for data series) with a
+neutral gray for a remaining/uncategorized portion; pie/donut supports up to six categories. See the
+chart roles in `components/tokens.css` and `tokens/colors-v1.0.json` (`data_visualization`).
 
 ## Source-boundary rules
 
@@ -177,6 +202,33 @@ See `references/08-accessibility.md`.
 - Result summary cards state the outcome plainly with a clear status and supporting detail.
 
 See `references/04-components.md`.
+
+### Bundled component library
+
+This skill bundles token-driven **illustrative React + CSS templates** in `components/` (Button,
+Badge, Input, Alert, Card, Stepper, Breadcrumbs, Modal in increment 1), aligned with Platforms Code
+component anatomy and driven entirely by the verified tokens. Prefer reusing or adapting these before
+writing one-off components — copy them into the host project (they are **not** a published package).
+They are illustrative and **aligned with Platforms Code principles**, not official DGA assets, and
+assert no official compliance. See `references/30-component-library.md` and `components/README.md`;
+the official inventory (PDF: 55; website: ~50 — a source-status note) and roadmap are listed there.
+
+### Accent theming (per service/section)
+
+The default accent is the unified SA green. You may switch the **primary accent** per service or
+section using the opt-in `data-pc-theme` presets in `components/tokens.css`
+(`green` default, `gold`, `lavender`) — for example
+`<main data-pc-root data-pc-theme="gold">`. Rules:
+
+- Use the **verified palettes only** (SA / Gold / Lavender). Do not invent per-service brand hues.
+- Themes change **only** the primary accent. **Semantic** colors (success/error/warning/info),
+  **neutrals**, **typography**, **spacing**, and the **green chart scheme stay fixed.**
+- Preserve contrast: text-on-accent ≥ 4.5:1 and focus ring ≥ 3:1. White text fails on gold, so the
+  gold preset uses dark text and a darker gold focus ring (already handled in the presets).
+- One primary action per view still holds; the accent is not decoration.
+
+The system is a **unified** national design system; prefer the default green unless a service has a
+clear reason to differentiate. See `references/17-accent-theming.md`.
 
 ## Forms and inputs rules
 

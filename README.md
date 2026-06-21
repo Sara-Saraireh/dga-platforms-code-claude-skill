@@ -33,7 +33,7 @@ compliance; formal compliance requires review by the responsible entity.
 ## Purpose
 
 Public-sector and semi-government digital products must feel official, trustworthy, calm, accessible,
-and correct in Arabic (RTL). This repository packages that intent into an operational Claude Code
+and correct in Arabic (RTL). This repository captures that intent as an operational Claude Code
 Skill so that any team can produce interfaces that are:
 
 - **Official and trustworthy** in visual tone.
@@ -55,8 +55,37 @@ When active, the Skill (`claude/skills/dga-platforms-code`) directs Claude Code 
 5. Run available checks (lint, typecheck, build, tests).
 6. Summarize changed files and the remaining manual-review items.
 
-It also ships reusable `prompts/`, adaptable React + Tailwind `templates/`, and generic,
-product-agnostic `examples/`.
+It also includes a token-driven set of **illustrative component templates** (`components/`) with
+dependency-free **charts** and opt-in **accent theming** (switch the primary accent per service to a
+verified palette — green / gold / lavender — while semantics, neutrals, and charts stay fixed), plus
+reusable `prompts/`, adaptable React + Tailwind `templates/`, and generic, product-agnostic
+`examples/`.
+
+> **This is a Claude Code Skill, not a published npm package.** The bundled React/CSS under
+> `components/` is **illustrative implementation guidance** to copy and adapt — it is **not** an
+> installable package and **not** official DGA components. Do not `npm install` this repository.
+
+## Documentation
+
+A comprehensive, browsable HTML documentation site lives in [`docs/`](docs/). Open
+[`docs/index.html`](docs/index.html) in a browser for a navigable reference covering the overview,
+design principles, **verified design tokens** (color, typography, spacing, elevation), the
+**component library** and **charts** with live previews, **accent theming**, the reference guides,
+RTL & accessibility, templates, examples, and prompts. The component and chart previews are rendered
+with the skill's own `tokens.css` / `components.css` / `charts.css`, so the docs always reflect the
+verified tokens.
+
+| | | |
+|---|---|---|
+| ![Buttons](docs/assets/img/comp-button.png) | ![Line chart](docs/assets/img/chart-line.png) | ![Donut chart](docs/assets/img/chart-donut.png) |
+| Buttons — RTL, token-driven | LineChart — right-to-left time axis | DonutChart — label · value · % |
+| ![Alerts](docs/assets/img/comp-alert.png) | ![Inputs](docs/assets/img/comp-input.png) | ![SA palette](docs/assets/img/tokens-colors-sa.png) |
+| Alerts — meaning beyond color | Inputs — label, hint, error | SA palette — verified tokens |
+| ![Green theme](docs/assets/img/theme-green.png) | ![Gold theme](docs/assets/img/theme-gold.png) | ![Lavender theme](docs/assets/img/theme-lavender.png) |
+| Accent theming — green (default) | Gold (dark text for contrast) | Lavender — semantics stay fixed |
+
+> The docs are documentation only — they do not change the skill, tokens, or components, and assert
+> no official DGA compliance.
 
 ## When to use it
 

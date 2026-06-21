@@ -1,6 +1,13 @@
 {
-  "source": "DGA Platforms Code Guide v1.0, 17 November 2024; semantic colors from official screenshot provided manually",
+  "source": "DGA Platforms Code — Foundations → Color system (https://design.dga.gov.sa/guidelines/foundations/color-system), official page rendered and read 2026-06-21. Version label on page: الإصدار 1.0. Earlier semantic 600 values were confirmed against the full official ramps on this read.",
   "classification": "public",
+  "notes": [
+    "Platforms Code organizes color into Neutral, Primary, and Semantic palettes, plus Secondary (Gold + Lavender) and a Gradient palette. Each color provides 12 steps: black, white, and ten shades (25,50,100,200,300,400,500,600,700,800,900,950).",
+    "The Primary palette is the Saudi green ('SA'). Gold and Lavender are Secondary palettes. The Gradient palette is built from the SA greens.",
+    "Within Gold the 600 step is labelled 'Primary 600'; within Lavender the 500 step is labelled 'Primary 500' on the official page.",
+    "VERIFY: the official page prints Info 50 as #ECFDF3 (identical to Success 50), which appears to be a source typo for a blue palette; confirm in the official Figma library before relying on Info 50.",
+    "Do not present these as official DGA compliance. Verified value extraction for implementation alignment only."
+  ],
   "palettes": {
     "gray": {
       "25": "#FCFCFD",
@@ -16,21 +23,8 @@
       "900": "#111927",
       "950": "#0D121C"
     },
-    "gold": {
-      "25": "#FFFEF7",
-      "50": "#FFFEF2",
-      "100": "#FFFCE6",
-      "200": "#FCF3BD",
-      "300": "#FAE996",
-      "400": "#F7D54D",
-      "500": "#F5BD02",
-      "primary_600": "#DBA102",
-      "700": "#B87B02",
-      "800": "#945C01",
-      "900": "#6E3C00",
-      "950": "#472400"
-    },
     "sa": {
+      "_role": "Primary palette (Saudi green)",
       "25": "#F7FDF9",
       "50": "#F3FCF6",
       "100": "#DFF6E7",
@@ -44,19 +38,108 @@
       "900": "#104631",
       "950": "#092A1E"
     },
+    "gold": {
+      "_role": "Secondary palette (gold); 600 is labelled 'Primary 600'",
+      "25": "#FFFEF7",
+      "50": "#FFFEF2",
+      "100": "#FFFCE6",
+      "200": "#FCF3BD",
+      "300": "#FAE996",
+      "400": "#F7D54D",
+      "500": "#F5BD02",
+      "primary_600": "#DBA102",
+      "700": "#B87B02",
+      "800": "#945C01",
+      "900": "#6E3C00",
+      "950": "#472400"
+    },
+    "lavender": {
+      "_role": "Secondary palette (lavender / الخزامى); 500 is labelled 'Primary 500'",
+      "25": "#FEFCFF",
+      "50": "#F9F5FA",
+      "100": "#F2E9F5",
+      "200": "#E1CCE8",
+      "300": "#CCADD9",
+      "400": "#A57BBA",
+      "primary_500": "#80519F",
+      "600": "#6D428F",
+      "700": "#532D75",
+      "800": "#3D1D5E",
+      "900": "#281047",
+      "950": "#16072E"
+    },
     "semantic": {
       "error": {
-        "600": "#D92D20"
+        "25": "#FFFBFA",
+        "50": "#FEF3F2",
+        "100": "#FEE4E2",
+        "200": "#FECDCA",
+        "300": "#FDA29B",
+        "400": "#F97066",
+        "500": "#F04438",
+        "600": "#D92D20",
+        "700": "#B42318",
+        "800": "#912018",
+        "900": "#7A271A",
+        "950": "#55160C"
       },
       "warning": {
-        "600": "#DC6803"
-      },
-      "success": {
-        "600": "#1B8354"
+        "25": "#FFFCF5",
+        "50": "#FFFAEB",
+        "100": "#FEF0C7",
+        "200": "#FEDF89",
+        "300": "#FEC84B",
+        "400": "#FDB022",
+        "500": "#F79009",
+        "600": "#DC6803",
+        "700": "#B54708",
+        "800": "#93370D",
+        "900": "#7A2E0E",
+        "950": "#4E1D09"
       },
       "info": {
-        "600": "#1570EF"
+        "25": "#F5FAFF",
+        "50": "#ECFDF3",
+        "100": "#D1E9FF",
+        "200": "#B2DDFF",
+        "300": "#84CAFF",
+        "400": "#53B1FD",
+        "500": "#2E90FA",
+        "600": "#1570EF",
+        "700": "#175CD3",
+        "800": "#1849A9",
+        "900": "#194185",
+        "950": "#102A56",
+        "_verify": "Info 50 (#ECFDF3) duplicates Success 50 on the official page and looks like a typo for a blue palette."
+      },
+      "success": {
+        "25": "#F6FEF9",
+        "50": "#ECFDF3",
+        "100": "#DCFAE6",
+        "200": "#ABEFC6",
+        "300": "#75E0A7",
+        "400": "#47CD89",
+        "500": "#17B26A",
+        "600": "#079455",
+        "700": "#067647",
+        "800": "#085D3A",
+        "900": "#074D31",
+        "950": "#053321",
+        "_note": "Success is its OWN palette; do NOT substitute the SA primary green (#1B8354). Success 600 = #079455."
       }
     }
+  },
+  "data_visualization": {
+    "_status": "Implementation guidance (role-mapping of verified color tokens), NOT an official DGA 'chart token' set. The colors below are verified from the official DgaChart example; the role names (series-1..4, neutral) are this repository's mapping.",
+    "_source": "DGA Platforms Code — Components → Data display → Charts (https://design.dga.gov.sa/guidelines/components/data-display/charts). Exact colors taken from the official DgaChart (platformscode-react, ApexCharts-based) component example, confirmed 2026-06-21.",
+    "scheme": "Charts use a monochromatic GREEN scheme (no gold/lavender for data series). A neutral gray (#E5E7EB) is used for a remaining/uncategorized series.",
+    "component": "DgaChart (platformscode-react), ApexCharts-based",
+    "official_colors_by_type": {
+      "donut": ["#1B8354", "#079455", "#B8EACB", "#54C08A"],
+      "line": ["#1B8354", "#079455"],
+      "bar": ["#1B8354", "#54C08A", "#E5E7EB"]
+    },
+    "series_palette_order": ["#1B8354", "#079455", "#B8EACB", "#54C08A"],
+    "neutral_remaining": "#E5E7EB"
   }
 }
