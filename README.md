@@ -58,6 +58,21 @@ When active, the Skill (`claude/skills/dga-platforms-code`) directs Claude Code 
 It also ships reusable `prompts/`, adaptable React + Tailwind `templates/`, and generic,
 product-agnostic `examples/`.
 
+## Chart and Dashboard Support
+
+The skill includes reusable **chart and dashboard** support: chart guidance
+(`references/29-data-visualization-and-charts.md`), chart **role tokens** mapped to verified colors
+(`tokens/chart-tokens-v1.0.json`), React/Tailwind **chart templates** (`templates/charts/` — KPI
+card, bar, horizontal bar, line, donut, container, and empty/loading/error states), chart
+**examples** (`examples/charts/`), and a **dashboard chart prompt**
+(`prompts/11-build-dashboard-charts.md`).
+
+These are implementation aids **aligned with Platforms Code principles** — they are **not** official
+DGA chart components unless verified from official DGA sources. Chart colors use only verified
+repository tokens (no invented palette), charts never rely on color alone, and charting libraries
+(e.g. Recharts) are optional — used only if the host project already uses one or the user approves
+(no dependency is installed by the skill).
+
 ## When to use it
 
 - Building or restyling government / semi-government service interfaces.

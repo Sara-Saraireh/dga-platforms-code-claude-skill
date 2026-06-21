@@ -108,9 +108,43 @@ export default function Dashboard({ stats, rows, loading, nav }) {
   respects `prefers-reduced-motion`; status is never conveyed by motion alone
   (`references/27-motion-and-interaction-guidelines.md`).
 
+**Charts & data visualization (composition)**
+
+A government dashboard typically stacks, top → bottom (all `dir="rtl"`):
+
+```
+الصف: بطاقات المؤشرات (KPI cards) — أرقام رئيسية
+الصف: الاتجاه الشهري (Line chart) — العرض الكامل
+الصف: [ الطلبات حسب النوع (Bar) ]  [ توزيع الحالات (Donut) ]
+الصف: جدول الطلبات (Table) — مراجعة دقيقة على مستوى الصف
+```
+
+- **KPI row:** `grid grid-cols-2 gap-4 sm:grid-cols-4` of `KpiCard`
+  (`templates/charts/kpi-card.react-tailwind.md`).
+- **Line chart section:** full-width trend in a `ChartContainer`
+  (`templates/charts/line-chart.react-recharts.md`).
+- **Bar chart section:** categorical comparison (`templates/charts/bar-chart.react-recharts.md`); use
+  the horizontal bar for many/long Arabic labels.
+- **Donut/status section:** simple part-to-whole with a required legend
+  (`templates/charts/donut-chart.react-recharts.md`).
+- Put bar + donut side by side: `grid gap-4 sm:grid-cols-2`.
+- Keep the **table** as the operational source of truth for exact, row-level review.
+
+**Chart states, RTL & accessibility**
+- Every chart sits in a `ChartContainer` with title, description, accessible summary, and its own
+  **empty / loading / error** state — one failing chart must not blank the dashboard.
+- Charts mirror in RTL (reversed category/time axes, right-side numeric axis); numbers, dates, IDs
+  stay LTR and isolated. Arabic labels are not truncated (use horizontal bar if long).
+- Not color alone: labels/legend/patterns + status text; sufficient contrast; provide table
+  fallbacks where feasible. See `references/29-data-visualization-and-charts.md`.
+- **Charts are optional dependencies:** the Recharts templates require Recharts — use only if the
+  project already uses it or the user approves; otherwise use the no-dependency fallbacks.
+
 **Tokens & spacing**
 - Map colors/type to the verified tokens (`tokens/colors-v1.0.json`, `tokens/typography-v1.0.json`);
-  use semantic 600 tokens only for status.
-- Spacing and the Tailwind utility scale here are **illustrative**, not official. Map them to approved
-  project (or verified Platforms Code) spacing before production. Do not present them as official DGA
-  spacing, and do not introduce unofficial colors, fonts, or spacing tokens.
+  use semantic 600 tokens only for status. Chart colors map to verified roles in
+  `tokens/chart-tokens-v1.0.json` (no invented chart palette).
+- Spacing and the Tailwind utility scale here — **including chart spacing** — are **illustrative**,
+  not official. Map them to approved project (or verified Platforms Code) spacing before production.
+  Do not present them as official DGA spacing, and do not introduce unofficial colors, fonts, or
+  spacing tokens.

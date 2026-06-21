@@ -208,6 +208,27 @@ See `references/04-components.md`.
 
 See `references/06-service-patterns.md`.
 
+## Data Visualization and Charts
+
+Use charts only when they support understanding or decision-making — not for decoration.
+
+- Prefer **KPI cards** for single metrics.
+- Prefer **bar charts** for categorical comparisons.
+- Prefer **line charts** for trends over time.
+- Prefer **donut/pie charts** only for simple part-to-whole relationships (few segments).
+- Prefer **tables** when users need exact, row-level review.
+- Use the chart templates in `templates/charts/` and the role mappings in
+  `tokens/chart-tokens-v1.0.json`. **Do not invent DGA chart tokens or a palette.**
+- **Do not add chart dependencies** (e.g. Recharts) unless the host project already uses one or the
+  user approves; otherwise use the no-dependency fallbacks (table / CSS bars / text summary).
+
+Every chart must have: a clear **title**, a short **description**, an **accessible summary**,
+**readable labels**, an **empty state**, a **loading state**, an **error state**, and an **RTL-safe
+layout**. Do **not** rely on color alone (use labels/legend/patterns + status text). Do **not** use
+decorative, 3D, or playful charts. Keep charts calm, clear, and government-grade.
+
+See `references/29-data-visualization-and-charts.md`.
+
 ## Supplemental design-review layer
 
 In addition to the verified rules above, this Skill ships a **supporting design-review layer** for

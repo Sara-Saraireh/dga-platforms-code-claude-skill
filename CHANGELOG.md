@@ -4,6 +4,38 @@ All notable changes to this repository are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) principles, and the project uses Semantic
 Versioning (see [GOVERNANCE.md](GOVERNANCE.md)).
 
+## [1.5.0] - 2026-06-17
+
+### Added
+- Reusable **chart / data-visualization** layer, aligned with Platforms Code principles:
+  - `references/29-data-visualization-and-charts.md` — charts page **partially extracted** (types:
+    pie/donut, line, column/bar; anatomy + accessibility sections; no chart palette exposed); chart
+    selection, accessibility, RTL, tone, and source-boundary rules.
+  - `tokens/chart-tokens-v1.0.json` — chart color **role mappings** built only from verified
+    `colors-v1.0.json` (primary/secondary series, neutral axis/grid/text, semantic states); marked
+    as implementation roles, not official DGA chart tokens.
+  - `templates/charts/` (9): `chart-container`, `kpi-card`, `bar-chart`, `horizontal-bar-chart`,
+    `line-chart`, `donut-chart`, and `chart-empty-state` / `chart-loading-state` / `chart-error-state`.
+    Recharts is optional (not installed); each Recharts template has a no-dependency fallback.
+  - `examples/charts/` (5): KPI cards, verification trend line, category bar, review-status donut,
+    and an operational dashboard section — generic public-sector mock data only.
+  - `prompts/11-build-dashboard-charts.md`.
+
+### Changed
+- `SKILL.md`: added a **"Data Visualization and Charts"** section.
+- `templates/react-tailwind-dashboard.md`: added KPI row, line/bar/donut sections, chart states, and
+  RTL/accessibility notes (chart spacing flagged illustrative).
+- `tools/manual-review-template.md`: added **"5i. Charts and Data Visualization Review"**.
+- `README.md`: added a **"Chart and Dashboard Support"** section.
+
+### Notes
+- The official charts page is client-rendered and slow; it was rendered in a headless browser
+  (source status recorded as *partially extracted*). **No chart palette/tokens were invented** —
+  chart colors map to verified repository tokens. No dependencies were installed; no DGA
+  Figma/Storybook assets, logos, or code were copied; no product names; verified color/typography
+  tokens unchanged; copyright and "aligned with Platforms Code principles" preserved; no
+  official-compliance claim added.
+
 ## [1.4.0] - 2026-06-16
 
 ### Added

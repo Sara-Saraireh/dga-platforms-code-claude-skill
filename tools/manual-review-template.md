@@ -140,6 +140,26 @@ See `references/28-design-quality-gate.md`.
 > Platforms Code and the verified references/tokens. It adds no official rule, token, spacing, or
 > compliance claim.
 
+## 5i. Charts and Data Visualization Review
+
+- [ ] Chart type matches the decision need (KPI for one number; bar for comparison; line for trend;
+      donut only for simple part-to-whole; table for precise row-level review).
+- [ ] Title and short description explain the metric.
+- [ ] Axes and labels are readable.
+- [ ] Arabic labels are not truncated (wrapped/angled, or a horizontal bar is used).
+- [ ] Color is not the only state/series indicator (labels, legend, patterns, or status text used).
+- [ ] Empty, loading, and error states exist.
+- [ ] Chart is responsive (and stacks sensibly on mobile).
+- [ ] Chart is accessible or has a text summary (and a data-table fallback where feasible).
+- [ ] Data source and date/range are clear when applicable.
+- [ ] Chart does not use unverified DGA values (colors map to `tokens/chart-tokens-v1.0.json`).
+- [ ] Chart does not add unsupported dependencies (no chart library added without approval).
+- [ ] Tables are used when precise, row-level decisions are needed.
+
+> Section 5i is a **supporting design-review aid** aligned with — and never overriding — DGA
+> Platforms Code and the verified references/tokens. It adds no official chart token or compliance
+> claim. See `references/29-data-visualization-and-charts.md`.
+
 ## 6. Engineering and security
 
 - [ ] Business logic, API contracts, auth/authorization, and validation preserved.

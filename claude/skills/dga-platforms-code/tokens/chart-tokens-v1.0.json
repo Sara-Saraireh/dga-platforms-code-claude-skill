@@ -1,0 +1,38 @@
+{
+  "source": "Implementation role mapping built ONLY from this repository's verified tokens. The official DGA charts page (https://design.dga.gov.sa/guidelines/components/data-display/charts) was partially extracted and exposed no chart color tokens/palette; see references/29-data-visualization-and-charts.md.",
+  "classification": "public",
+  "sourceTokens": {
+    "colors": "tokens/colors-v1.0.json",
+    "typography": "tokens/typography-v1.0.json"
+  },
+  "notes": [
+    "These are implementation ROLE MAPPINGS using verified tokens — NOT official DGA chart tokens unless the official charts page or Figma library confirms them.",
+    "Every hex below is copied from tokens/colors-v1.0.json. No chart colors are invented.",
+    "Do not add unverified chart colors. For more than two series, prefer encodings beyond color (labels, patterns, direct value labels) rather than inventing a palette.",
+    "Use IBM Plex Sans Arabic (typography tokens) for chart titles/labels; never rely on color alone."
+  ],
+  "roles": {
+    "primarySeries":   { "token": "sa.600",        "value": "#1B8354" },
+    "secondarySeries": { "token": "gold.primary_600", "value": "#DBA102" },
+    "neutralAxis":     { "token": "gray.500",       "value": "#6C737F" },
+    "neutralGrid":     { "token": "gray.200",       "value": "#E5E7EB" },
+    "neutralText":     { "token": "gray.700",       "value": "#384250" },
+    "strongText":      { "token": "gray.950",       "value": "#0D121C" },
+    "errorState":      { "token": "semantic.error.600",   "value": "#D92D20" },
+    "warningState":    { "token": "semantic.warning.600", "value": "#DC6803" },
+    "successState":    { "token": "semantic.success.600", "value": "#1B8354" },
+    "infoState":       { "token": "semantic.info.600",    "value": "#1570EF" }
+  },
+  "cssVariableSuggestion": {
+    "--chart-series-1": "var(--pc-sa-600, #1B8354)",
+    "--chart-series-2": "var(--pc-gold-600, #DBA102)",
+    "--chart-axis": "var(--pc-gray-500, #6C737F)",
+    "--chart-grid": "var(--pc-gray-200, #E5E7EB)",
+    "--chart-text": "var(--pc-gray-700, #384250)",
+    "--chart-text-strong": "var(--pc-gray-950, #0D121C)",
+    "--chart-error": "var(--pc-error-600, #D92D20)",
+    "--chart-warning": "var(--pc-warning-600, #DC6803)",
+    "--chart-success": "var(--pc-success-600, #1B8354)",
+    "--chart-info": "var(--pc-info-600, #1570EF)"
+  }
+}
