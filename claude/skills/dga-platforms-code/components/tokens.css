@@ -128,8 +128,10 @@
   --pc-shadow-2xl: 0 24px 48px -12px rgba(16, 24, 40, 0.18);
   --pc-shadow-3xl: 0 32px 64px -12px rgba(16, 24, 40, 0.14);
 
-  /* ---- Chart roles (verified against the official DgaChart / platformscode-react component) ---- */
-  /* Official charts use a MONOCHROMATIC GREEN scheme (no gold/lavender for data series), with a
+  /* ---- Chart role-mappings (implementation guidance — NOT official DGA "chart tokens") ---- */
+  /* These map the verified color tokens to chart roles so the output matches the official DgaChart
+     example colors. They are repository implementation guidance, not an official DGA token set.
+     Official charts use a MONOCHROMATIC GREEN scheme (no gold/lavender for data series), with a
      neutral gray for a remaining portion. Exact `colors` arrays from the official DgaChart examples:
        donut: ["#1B8354", "#079455", "#B8EACB", "#54C08A"]
        line:  ["#1B8354", "#079455"]

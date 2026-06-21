@@ -130,6 +130,7 @@
     }
   },
   "data_visualization": {
+    "_status": "Implementation guidance (role-mapping of verified color tokens), NOT an official DGA 'chart token' set. The colors below are verified from the official DgaChart example; the role names (series-1..4, neutral) are this repository's mapping.",
     "_source": "DGA Platforms Code — Components → Data display → Charts (https://design.dga.gov.sa/guidelines/components/data-display/charts). Exact colors taken from the official DgaChart (platformscode-react, ApexCharts-based) component example, confirmed 2026-06-21.",
     "scheme": "Charts use a monochromatic GREEN scheme (no gold/lavender for data series). A neutral gray (#E5E7EB) is used for a remaining/uncategorized series.",
     "component": "DgaChart (platformscode-react), ApexCharts-based",

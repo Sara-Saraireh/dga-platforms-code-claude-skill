@@ -30,7 +30,8 @@ subordinate to it. Do not copy full pages; summarize and link back. Verify exact
 | **Typography page content** (provided manually) | Official page extraction | Typography classification, IBM Plex Sans Arabic usage, Saudi Font usage restrictions, verified type scale, and text accessibility guidance. Extracted in [`references/14-typography-page-extraction.md`](claude/skills/dga-platforms-code/references/14-typography-page-extraction.md). The page is extracted manually because the live page may be slow or client-side rendered. |
 | **Layout and spacing page** (rendered and read 2026-06-16) | Verified extraction | Grounds the spacing scale (`spacing-none`…`spacing-11xl`), widths, container padding/max-width, paragraph max-width, and breakpoints. Stored in `tokens/spacing-v1.0.json`; summarized in [`references/15-layout-and-spacing-page-extraction.md`](claude/skills/dga-platforms-code/references/15-layout-and-spacing-page-extraction.md). px authoritative; exact rem for the largest steps to confirm in Figma. |
 | **Elevation page** (rendered and read 2026-06-16) | Verified extraction | Grounds the 7-level shadow scale (color `#101828`). Stored in `tokens/elevation-v1.0.json`; summarized in [`references/29-elevation-and-shadows-extraction.md`](claude/skills/dga-platforms-code/references/29-elevation-and-shadows-extraction.md). 2xl Y and backdrop-blur names to confirm in Figma. |
-| **Semantic color screenshot** (provided manually) | Verified extraction (Semantic 600 only) | Grounds Error/Warning/Success/Info **600** values only. Extracted in [`references/16-semantic-colors-extraction.md`](claude/skills/dga-platforms-code/references/16-semantic-colors-extraction.md). |
+| **Color system page** (rendered and read 2026-06-21) | Verified extraction | Grounds the full color palettes (Gray, SA/primary green, Gold + Lavender secondaries, and the full Error/Warning/Success/Info 25–950 ramps). Corrected Success 600 to `#079455` (its own palette, not the SA green). Stored in `tokens/colors-v1.0.json`; summarized in [`references/16-semantic-colors-extraction.md`](claude/skills/dga-platforms-code/references/16-semantic-colors-extraction.md). Info 50 (`#ECFDF3`) appears to be a source typo — pending Figma. |
+| **Charts page / `DgaChart` example** (read 2026-06-21) | Verified extraction (colors only) | Grounds the monochromatic-green chart palette (donut `#1B8354,#079455,#B8EACB,#54C08A`; line `#1B8354,#079455`; bar `#1B8354,#54C08A,#E5E7EB`). These map to the verified color tokens as **implementation role-mappings** (`--pc-chart-*`), not an official "chart token" set. Source: https://design.dga.gov.sa/guidelines/components/data-display/charts |
 
 Verified tokens are stored as data in
 [`tokens/colors-v1.0.json`](claude/skills/dga-platforms-code/tokens/colors-v1.0.json),
@@ -60,6 +61,36 @@ Verified tokens are stored as data in
 - Official website links remain the live source for the latest guidance.
 - If sources conflict, record the conflict in the source update log and require manual review before
   updating repository rules.
+
+## Terminology (how claims are worded)
+
+To avoid overclaiming, this repository uses these terms consistently:
+
+- **Verified** — extracted from an official DGA source (a `design.dga.gov.sa` page or the official
+  Platforms Code Guide v1.0 PDF) and confirmed; the source and date are recorded in
+  [`SOURCE_MATRIX.md`](SOURCE_MATRIX.md).
+- **Extracted** — read from an official source; same as verified, emphasising provenance.
+- **Source-bounded** — guidance that restates official intent without asserting exact values.
+- **Pending manual verification** — in use but a specific detail is unconfirmed (usually to confirm
+  in the official Figma library).
+- **Implementation guidance** — repository-authored mapping or example that is *not* an official DGA
+  token/asset (e.g. the `--pc-chart-*` role-mappings, the illustrative components).
+
+Not used: "officially compliant", "certified", "DGA-approved", "production-ready". This repository is
+a **Claude Code Skill, not a published npm package and not official DGA components**; it does not and
+cannot certify official compliance.
+
+## Known conflicts / source status
+
+- **Component count.** The official PDF v1.0 states **55 components** (plus 6 foundations, 17
+  templates, 34 mobile elements). The live `guidelines/components` pages currently enumerate **~50**
+  component pages. This difference is a **source-status note requiring periodic review**, not a
+  resolved number — see [`SOURCE_MATRIX.md`](SOURCE_MATRIX.md) and
+  [tools/source-update-log.md](tools/source-update-log.md).
+- **Pending Figma confirmation:** Info 50 color (apparent typo), `rem` for the largest spacing steps,
+  the `2xl` shadow Y, and backdrop-blur level names. See [`SOURCE_MATRIX.md`](SOURCE_MATRIX.md).
+
+A full pre-cleanup inventory is in [`REPO_AUDIT.md`](REPO_AUDIT.md).
 
 ## Maintenance
 

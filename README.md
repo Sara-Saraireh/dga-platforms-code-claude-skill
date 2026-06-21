@@ -33,7 +33,7 @@ compliance; formal compliance requires review by the responsible entity.
 ## Purpose
 
 Public-sector and semi-government digital products must feel official, trustworthy, calm, accessible,
-and correct in Arabic (RTL). This repository packages that intent into an operational Claude Code
+and correct in Arabic (RTL). This repository captures that intent as an operational Claude Code
 Skill so that any team can produce interfaces that are:
 
 - **Official and trustworthy** in visual tone.
@@ -55,10 +55,15 @@ When active, the Skill (`claude/skills/dga-platforms-code`) directs Claude Code 
 5. Run available checks (lint, typecheck, build, tests).
 6. Summarize changed files and the remaining manual-review items.
 
-It also ships a token-driven **component library** (`components/`) with dependency-free **charts** and
-opt-in **accent theming** (switch the primary accent per service to a verified palette — green /
-gold / lavender — while semantics, neutrals, and charts stay fixed), plus reusable `prompts/`,
-adaptable React + Tailwind `templates/`, and generic, product-agnostic `examples/`.
+It also includes a token-driven set of **illustrative component templates** (`components/`) with
+dependency-free **charts** and opt-in **accent theming** (switch the primary accent per service to a
+verified palette — green / gold / lavender — while semantics, neutrals, and charts stay fixed), plus
+reusable `prompts/`, adaptable React + Tailwind `templates/`, and generic, product-agnostic
+`examples/`.
+
+> **This is a Claude Code Skill, not a published npm package.** The bundled React/CSS under
+> `components/` is **illustrative implementation guidance** to copy and adapt — it is **not** an
+> installable package and **not** official DGA components. Do not `npm install` this repository.
 
 ## Documentation
 

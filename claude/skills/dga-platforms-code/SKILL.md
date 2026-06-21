@@ -20,6 +20,10 @@ engineered without breaking business logic, APIs, authentication, authorization,
 This Skill aligns with DGA principles. It does **not** make an interface officially compliant.
 Never claim or imply official DGA compliance — that requires formal review by the responsible entity.
 
+This repository is a **Claude Code Skill**, not a published npm package and not official DGA
+components. The bundled React/CSS under `components/` is **illustrative implementation guidance** to
+copy and adapt — never present it as an installable package or as official DGA assets.
+
 ### Verified Platforms Code principles
 
 Grounded in the Platforms Code Guide v1.0 (see `references/13-platforms-code-guide-v1.0-extraction.md`):
@@ -201,12 +205,13 @@ See `references/04-components.md`.
 
 ### Bundled component library
 
-This skill ships a reusable, token-driven React + CSS component library in `components/` (Button,
+This skill bundles token-driven **illustrative React + CSS templates** in `components/` (Button,
 Badge, Input, Alert, Card, Stepper, Breadcrumbs, Modal in increment 1), aligned with Platforms Code
 component anatomy and driven entirely by the verified tokens. Prefer reusing or adapting these before
-writing one-off components. They are illustrative and **aligned with Platforms Code principles**, not
-official DGA assets, and assert no official compliance. See `references/30-component-library.md` and
-`components/README.md`; the full official inventory and roadmap are listed there.
+writing one-off components — copy them into the host project (they are **not** a published package).
+They are illustrative and **aligned with Platforms Code principles**, not official DGA assets, and
+assert no official compliance. See `references/30-component-library.md` and `components/README.md`;
+the official inventory (PDF: 55; website: ~50 — a source-status note) and roadmap are listed there.
 
 ### Accent theming (per service/section)
 

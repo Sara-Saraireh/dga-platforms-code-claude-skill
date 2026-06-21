@@ -1,8 +1,9 @@
-// DGA Platforms Code — component library.
-// Import the CSS once at your app root: tokens.css then components.css (then charts.css for charts).
-//   import "dga-platforms-code/components/tokens.css";
-//   import "dga-platforms-code/components/components.css";
-//   import "dga-platforms-code/components/charts/charts.css";
+// DGA Platforms Code — illustrative component templates (NOT a published npm package).
+// Copy this folder into your project, then import from your local copy. Load the CSS once at your
+// app root: tokens.css then components.css (then charts/charts.css for charts), e.g.:
+//   import "./components/tokens.css";
+//   import "./components/components.css";
+//   import "./components/charts/charts.css";
 export { default as Button } from "./Button.jsx";
 export { default as Badge } from "./Badge.jsx";
 export { default as Input } from "./Input.jsx";

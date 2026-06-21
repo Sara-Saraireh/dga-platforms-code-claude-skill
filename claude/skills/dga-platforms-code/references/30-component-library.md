@@ -2,22 +2,28 @@
 
 ## A. What this is
 
-A bundled, reusable **React + CSS** component library in
-[`components/`](../components/), aligned with DGA Platforms Code component anatomy and driven entirely
-by the repository's verified tokens (`tokens/`). It ships with the skill so components are available
-on every install. Usage, props, and customization are documented in
-[`components/README.md`](../components/README.md).
+A set of **illustrative React + CSS templates** in [`components/`](../components/), aligned with DGA
+Platforms Code component anatomy and driven entirely by the repository's verified tokens (`tokens/`).
+They are bundled with the skill so Claude (or you) can copy and adapt them into a host project.
+Usage, props, and customization are documented in [`components/README.md`](../components/README.md).
 
-This is implementation-alignment tooling. The components are **aligned with Platforms Code
-principles** — they are **not** official DGA Figma/Storybook assets and do **not** assert official DGA
-compliance. No official code, assets, or fonts are copied.
+This is implementation guidance. The templates are **aligned with Platforms Code principles** — they
+are **not** a published npm package, **not** official DGA Figma/Storybook assets, and do **not**
+assert official DGA compliance. No official code, assets, or fonts are copied.
 
-## B. Official component inventory (50)
+## B. Official component inventory
+
+**Count — source-status note.** The official Platforms Code Guide v1.0 PDF states **55 components**
+(plus 6 foundations, 17 templates, 34 mobile elements). The live website `guidelines/components`
+pages currently enumerate **~50** component pages (listed below). Do not treat either number as final
+— this difference is a **source-status note requiring periodic review** (see `SOURCE_MATRIX.md` and
+`tools/source-update-log.md`).
 
 The official component pages live under `https://design.dga.gov.sa/guidelines/components/…`. They are
 **Figma-delivered** (there is no official public code package — see `sources.md`). Each official page
 documents the same anatomy: **Types (الأنواع) · Styles (الأنماط) · States/Behaviors (السلوكيات/
-الحالات) · Anatomy (التركيب) · Accessibility (إمكانية الوصول)**. The library mirrors that structure.
+الحالات) · Anatomy (التركيب) · Accessibility (إمكانية الوصول)**. The templates here mirror that
+structure but are illustrative, not official.
 
 | Category | Components (official slug) |
 |----------|----------------------------|

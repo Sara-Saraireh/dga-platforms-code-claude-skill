@@ -1,13 +1,15 @@
-# DGA Platforms Code — component library
+# DGA Platforms Code — illustrative component templates
 
-Generic, reusable **React + CSS** components aligned with DGA Platforms Code component anatomy and
-driven entirely by this repository's **verified tokens**. They ship with the skill so they are
-available on every install.
+Generic, reusable **React + CSS** code aligned with DGA Platforms Code component anatomy and driven
+entirely by this repository's **verified tokens**. These are **illustrative implementation templates**
+that ship with the skill so Claude (or you) can copy and adapt them into a host project.
 
-> **Boundary.** These are illustrative, product-agnostic components **aligned with Platforms Code
-> principles** — they are **not** official DGA Figma/Storybook assets and do **not** assert official
-> DGA compliance. They copy no official code, assets, or fonts. Confirm against the official sources
-> and complete the manual review before release.
+> **Boundary.** These are illustrative, product-agnostic templates **aligned with Platforms Code
+> principles** — they are **not** a published npm package, **not** official DGA Figma/Storybook
+> assets, and do **not** assert official DGA compliance. They copy no official code, assets, or fonts.
+> **Do not `npm install` this** — copy/adapt the files into your project and confirm against the
+> official sources before release. The import lines below are illustrative; adjust the paths to
+> wherever you place the copied files.
 
 ## What's included (increment 1)
 
@@ -22,14 +24,16 @@ available on every install.
 | `Breadcrumbs` | `Breadcrumbs.jsx` | navigational/breadcrumbs — مسار التصفح |
 | `Modal` | `Modal.jsx` | feedback/modal — النوافذ المنبثقة |
 
-The full official inventory (50 components) and the roadmap for the next increments are in
-`references/30-component-library.md`.
+The official inventory and the roadmap for the next increments are in
+`references/30-component-library.md`. (The official Platforms Code Guide v1.0 PDF states **55
+components**; the live website currently enumerates ~50 component pages — see `SOURCE_MATRIX.md`.)
 
 ## Charts (increment 2)
 
 Ready-to-use, **dependency-free** chart components in `components/charts/` — plain SVG/CSS, **no
 Recharts or other library required**. Aligned with the official charts page (pie/donut, line,
-column/bar) and driven by the verified chart-role tokens.
+column/bar) and driven by the `--pc-chart-*` role-mappings (implementation guidance built from the
+verified color tokens — not an official DGA "chart token" set).
 
 | Component | Use |
 |-----------|-----|
@@ -41,10 +45,12 @@ column/bar) and driven by the verified chart-role tokens.
 | `ChartEmpty` / `ChartLoading` / `ChartError` | Calm, accessible chart states. |
 
 ```jsx
-import "dga-platforms-code/components/tokens.css";
-import "dga-platforms-code/components/components.css";
-import "dga-platforms-code/components/charts/charts.css";
-import { ChartContainer, LineChart, KpiCard } from "dga-platforms-code/components";
+// After copying this components/ folder into your project, import from your local copy
+// (adjust the paths to wherever you placed it):
+import "./components/tokens.css";
+import "./components/components.css";
+import "./components/charts/charts.css";
+import { ChartContainer, LineChart, KpiCard } from "./components";
 
 <div dir="rtl" lang="ar" data-pc-root>
   <KpiCard label="إجمالي الطلبات" value="12,480"
@@ -66,13 +72,14 @@ import { ChartContainer, LineChart, KpiCard } from "dga-platforms-code/component
 </div>
 ```
 
-Charts use a **monochromatic green scheme** per the official charts page — the verified
-`--pc-chart-series-1…6` greens (SA + Success palettes), with a neutral gray for any remaining
-portion (**no gold/lavender for data series**). Pie/donut supports up to six categories. **No
-invented palette**, never color alone (labels/legend/dashes carry meaning), RTL-correct, with a
-required text `summary` for screen readers. For a Recharts-based variant and detailed guidance, see
-the chart **templates** (`templates/charts/`), **examples** (`examples/charts/`), reference
-`29-data-visualization-and-charts.md`, and `tokens/chart-tokens-v1.0.json`.
+Charts use a **monochromatic green scheme** matching the official `DgaChart` example — the
+`--pc-chart-series-1…4` greens plus `--pc-chart-neutral` (gray), with **no gold/lavender for data
+series**. Pie/donut supports up to six categories (the four colors cycle). **No invented palette**,
+never color alone (labels/legend/dashes carry meaning), RTL-correct, with a required text `summary`
+for screen readers. The exact official color arrays and the role-mapping are recorded in
+`references/30-component-library.md` and the `data_visualization` block of
+`tokens/colors-v1.0.json`. **Recharts is not required** here; use it only if your host project
+already uses it or you approve it.
 
 ## How it's built
 
@@ -91,11 +98,11 @@ the chart **templates** (`templates/charts/`), **examples** (`examples/charts/`)
 ## Usage
 
 ```jsx
-// once, at your app root:
-import "dga-platforms-code/components/tokens.css";
-import "dga-platforms-code/components/components.css";
+// once, at your app root (paths point at your local copy of this components/ folder):
+import "./components/tokens.css";
+import "./components/components.css";
 
-import { Button, Input, Alert, Stepper } from "dga-platforms-code/components";
+import { Button, Input, Alert, Stepper } from "./components";
 
 export default function Example() {
   return (

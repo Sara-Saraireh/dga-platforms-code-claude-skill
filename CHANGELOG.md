@@ -6,6 +6,27 @@ Versioning (see [GOVERNANCE.md](GOVERNANCE.md)).
 
 ## [Unreleased]
 
+### Changed — repository cleanup (scope clarified to "Claude Code Skill first")
+- **De-packaged the bundled code.** Removed npm-package framing: `import … from
+  "dga-platforms-code/components"` examples are now relative-path / "copy into your project" snippets
+  (`components/README.md`, `components/index.js`, `components/charts/index.js`, the docs code
+  samples), and `components/` is relabeled as **illustrative implementation templates — not a
+  published npm package and not official DGA components** (`README.md`, `SKILL.md`,
+  `references/30-component-library.md`). No files were moved or deleted.
+- **Reconciled the component count.** Replaced the bare "50 components" with a source-status note:
+  the official PDF v1.0 states **55**; the website currently enumerates **~50**. Recorded as a
+  periodic-review item (`references/30`, `components/README.md`, `SOURCE_MATRIX.md`, `sources.md`).
+- **Reframed chart colors as implementation role-mappings.** `--pc-chart-*` are now clearly labeled
+  implementation guidance built from verified color tokens + the official `DgaChart` example, not an
+  official DGA "chart token" set (`components/tokens.css`, `tokens/colors-v1.0.json`,
+  `components/README.md`). Fixed broken references that pointed to non-existent files
+  (`templates/charts/`, `examples/charts/`, `29-data-visualization-and-charts.md`,
+  `chart-tokens-v1.0.json`) and the stale `series-1…6` (now `series-1…4` + neutral).
+- **Docs marked optional.** Added an "optional documentation — not a source of truth, not official
+  components, not a package" banner to `docs/index.html`.
+- **Added** `REPO_AUDIT.md`, `SOURCE_MATRIX.md`, and a terminology glossary + known-conflicts section
+  in `sources.md`.
+
 ### Fixed
 - **Semantic colors corrected and completed against the official Color system page**
   (read live 2026-06-21). The earlier value of **Success 600 was wrong** (`#1B8354`, the SA primary
@@ -76,8 +97,9 @@ Versioning (see [GOVERNANCE.md](GOVERNANCE.md)).
   - `components.css` — token-driven, RTL-aware (CSS logical properties) component styles.
   - Increment 1 components (React): `Button`, `Badge`, `Input`, `Alert`, `Card`, `Stepper`,
     `Breadcrumbs`, `Modal`; plus `index.js` and `README.md`.
-- `references/30-component-library.md` — maps the library to the official 50-component inventory,
-  with build rules, the boundary, and the roadmap for the next increments.
+- `references/30-component-library.md` — maps the templates to the official component inventory
+  (PDF v1.0 lists 55; website enumerates ~50 — a source-status note), with build rules, the
+  boundary, and the roadmap for the next increments.
 
 ### Changed
 - `SKILL.md`: added a "Bundled component library" subsection directing reuse of these components.
