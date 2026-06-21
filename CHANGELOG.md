@@ -4,6 +4,29 @@ All notable changes to this repository are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) principles, and the project uses Semantic
 Versioning (see [GOVERNANCE.md](GOVERNANCE.md)).
 
+## [1.7.0] - 2026-06-17
+
+### Added
+- **Chart components (component library increment 2)** in `components/charts/` — reusable,
+  **dependency-free** React chart components (pure SVG/CSS, no Recharts):
+  - `ChartContainer` (title, description, required accessible summary, legend, source,
+    empty/loading/error state switch), `KpiCard`, `LineChart`, `BarChart`
+    (`orientation="horizontal"` for long Arabic labels), `DonutChart`, and
+    `ChartEmpty`/`ChartLoading`/`ChartError`; plus `charts/charts.css` and `charts/index.js`.
+- `components/tokens.css`: added verified `--pc-chart-*` role variables (series 1/2, axis, grid,
+  text, semantic states) mapped to existing verified color tokens.
+
+### Changed
+- `components/index.js`: re-export the chart components.
+- `components/README.md`: added a "Charts (increment 2)" section with usage.
+
+### Notes
+- Charts are **illustrative and aligned with Platforms Code principles** — not official DGA
+  Figma/Storybook assets, no official-compliance claim. **No charting dependency is added** (pure
+  SVG). All chart colors use only verified `--pc-chart-*` roles (no invented palette); charts never
+  rely on color alone (labels/legend/dashes), are RTL-correct, and require a text `summary` for
+  screen readers. Verified color/typography/spacing/elevation tokens are unchanged.
+
 ## [1.6.0] - 2026-06-17
 
 ### Added

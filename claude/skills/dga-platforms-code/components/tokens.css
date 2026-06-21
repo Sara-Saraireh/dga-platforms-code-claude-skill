@@ -115,6 +115,18 @@
   --pc-shadow-2xl: 0 24px 48px -12px rgba(16, 24, 40, 0.18);
   --pc-shadow-3xl: 0 32px 64px -12px rgba(16, 24, 40, 0.14);
 
+  /* ---- Chart roles (verified tokens only — see references/29 data-viz on the charts branch) ---- */
+  --pc-chart-series-1: var(--pc-sa-600);    /* SA 600 */
+  --pc-chart-series-2: var(--pc-gold-600);  /* Gold primary_600 */
+  --pc-chart-axis: var(--pc-gray-500);
+  --pc-chart-grid: var(--pc-gray-200);
+  --pc-chart-text: var(--pc-gray-700);
+  --pc-chart-text-strong: var(--pc-gray-950);
+  --pc-chart-error: var(--pc-error-600);
+  --pc-chart-warning: var(--pc-warning-600);
+  --pc-chart-success: var(--pc-success-600);
+  --pc-chart-info: var(--pc-info-600);
+
   /* ---- Motion (subtle; respects reduced-motion below) ---- */
   --pc-transition: 150ms ease-out;
 }
