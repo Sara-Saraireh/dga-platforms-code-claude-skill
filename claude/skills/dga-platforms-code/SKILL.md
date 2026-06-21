@@ -110,13 +110,29 @@ Grounded in the typography page (`references/14-typography-page-extraction.md`,
 
 ## Layout and spacing rules
 
-Grounded in the layout-and-spacing source status (`references/15-layout-and-spacing-page-extraction.md`):
+Grounded in the verified layout-and-spacing extraction
+(`references/15-layout-and-spacing-page-extraction.md`, `tokens/spacing-v1.0.json`):
 
 - Treat layout and spacing as a **core quality gate**.
 - Preserve consistent section spacing, component spacing, form spacing, and mobile spacing.
 - Do not use arbitrary one-off spacing unless required to resolve a specific layout defect.
-- Prefer project spacing tokens or verified official Platforms Code spacing tokens.
-- Do not invent official DGA spacing values (none are verified in this repository).
+- Use the **verified Platforms Code spacing scale** (`spacing-none`…`spacing-11xl`, px: 0, 2, 4, 6, 8,
+  12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128, 160), the verified widths/container/breakpoints, or the
+  host project's approved scale mapped to them.
+- Do not introduce spacing values **outside** the verified scale. Confirm exact `rem` for the largest
+  steps in the official Figma library (the page's rem column has apparent typos above `6xl`; px is
+  authoritative).
+
+## Elevation and shadow rules
+
+Grounded in the verified elevation extraction (`references/29-elevation-and-shadows-extraction.md`,
+`tokens/elevation-v1.0.json`):
+
+- Use the verified shadow scale (`Shadows-shadow-xs`…`3xl`, color `#101828` at the per-layer opacity)
+  for depth and hierarchy — sparingly. Prefer the lighter levels for cards/surfaces; heavier levels
+  for overlays/modals only.
+- Do not use shadow as decoration or to manufacture emphasis. Do not invent shadow levels, colors, or
+  opacities beyond the verified set.
 
 ## Semantic color rules
 
@@ -177,6 +193,15 @@ See `references/08-accessibility.md`.
 - Result summary cards state the outcome plainly with a clear status and supporting detail.
 
 See `references/04-components.md`.
+
+### Bundled component library
+
+This skill ships a reusable, token-driven React + CSS component library in `components/` (Button,
+Badge, Input, Alert, Card, Stepper, Breadcrumbs, Modal in increment 1), aligned with Platforms Code
+component anatomy and driven entirely by the verified tokens. Prefer reusing or adapting these before
+writing one-off components. They are illustrative and **aligned with Platforms Code principles**, not
+official DGA assets, and assert no official compliance. See `references/30-component-library.md` and
+`components/README.md`; the full official inventory and roadmap are listed there.
 
 ## Forms and inputs rules
 
