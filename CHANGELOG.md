@@ -4,6 +4,46 @@ All notable changes to this repository are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) principles, and the project uses Semantic
 Versioning (see [GOVERNANCE.md](GOVERNANCE.md)).
 
+## [Unreleased]
+
+### Fixed
+- **Semantic colors corrected and completed against the official Color system page**
+  (read live 2026-06-21). The earlier value of **Success 600 was wrong** (`#1B8354`, the SA primary
+  green); the official **Success 600 is `#079455`** — Success is its own palette. Added the full
+  verified 25–950 ramps for Error/Warning/Info/Success in `tokens/colors-v1.0.json`, updated
+  `components/tokens.css` (`--pc-success-600`), the success badge/alert styles, `SKILL.md`, and
+  `references/16-semantic-colors-extraction.md`.
+- **Data-visualization palette corrected to the official `DgaChart` (`platformscode-react`,
+  ApexCharts) colors.** The scheme is monochromatic green (no gold for data series). Exact arrays:
+  donut `#1B8354 · #079455 · #B8EACB · #54C08A`, line `#1B8354 · #079455`, bar
+  `#1B8354 · #54C08A · #E5E7EB`. `components/tokens.css` now exposes `--pc-chart-series-1…4`
+  (in the official order) plus `--pc-chart-neutral` (`#E5E7EB`); `DonutChart` uses those four series
+  roles and cycles for more categories. `tokens/colors-v1.0.json` records the arrays under
+  `data_visualization`; the docs charts page and screenshots were updated to match.
+
+### Added
+- **Opt-in accent theming (`data-pc-theme`)** in `components/tokens.css` — switch only the primary
+  accent per service/section to another **verified** palette: `green` (default), `gold`, `lavender`.
+  Semantic colors, neutrals, typography, spacing, and the green chart scheme stay fixed. Presets are
+  contrast-checked (white text fails on gold, so the gold preset uses dark text + a darker focus
+  ring). Added `--pc-color-primary-tint` (used by tertiary-button hover), `--pc-gold-50` /
+  `--pc-lavender-50` tints, a new `references/17-accent-theming.md`, an "Accent theming" section in
+  `SKILL.md` and `components/README.md`, and a docs **Theming** page with live previews.
+- **Lavender (الخزامى) secondary palette** — the official secondary palette that was missing — added
+  to `tokens/colors-v1.0.json` and `components/tokens.css`, and documented on the docs tokens page.
+- A `data_visualization` block in `tokens/colors-v1.0.json` recording the verified chart greens.
+- **Comprehensive HTML documentation site** in `docs/` — a dependency-free, multi-page static site
+  (landing page plus Overview, Design principles, Design tokens, Components, Charts, Reference guides,
+  RTL & accessibility, Templates & examples, and Prompts). Component and chart pages show **live
+  previews** rendered with the skill's own `tokens.css` / `components.css` / `charts/charts.css`, plus
+  captured PNG screenshots in `docs/assets/img/`. Shared chrome in `docs/assets/css/docs.css` and
+  `docs/assets/js/docs.js` (mobile nav, copy-to-clipboard, RTL/LTR preview toggle).
+- README: a **Documentation** section with a screenshot gallery linking to `docs/index.html`.
+
+### Notes
+- Documentation only — the skill, verified tokens, and components are unchanged. The docs are
+  illustrative and assert **no official DGA compliance**.
+
 ## [1.7.0] - 2026-06-17
 
 ### Added

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Components — DGA Platforms Code Skill</title>
+  <meta name="description" content="Live previews of the bundled DGA Platforms Code component library: Button, Badge, Input, Alert, Card, Stepper, Breadcrumbs, and Modal — token-driven and RTL-first." />
+  <link rel="stylesheet" href="../assets/css/docs.css" />
+  <!-- The skill's own verified tokens + component styles power every live preview below -->
+  <link rel="stylesheet" href="../../claude/skills/dga-platforms-code/components/tokens.css" />
+  <link rel="stylesheet" href="../../claude/skills/dga-platforms-code/components/components.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="doc-topbar">
+    <span class="doc-topbar__brand">DGA Platforms Code</span>
+    <button class="doc-menu-btn" data-menu-btn aria-label="Toggle navigation">☰ Menu</button>
+  </header>
+
+  <div class="doc-shell">
+    <aside class="doc-sidebar">
+      <a class="doc-brand" href="../index.html" style="text-decoration:none;color:inherit">
+        <span class="doc-brand__name">DGA Platforms Code</span>
+        <span class="doc-brand__tag">Claude Skill · كود المنصات</span>
+        <span class="doc-brand__badge">v1.7.0 · documentation</span>
+      </a>
+      <nav class="doc-nav" aria-label="Documentation">
+        <a href="../index.html">Home</a>
+        <div class="doc-nav__group">Getting started</div>
+        <a href="overview.html">Overview</a>
+        <a href="principles.html">Design principles</a>
+        <div class="doc-nav__group">Foundations</div>
+        <a href="tokens.html">Design tokens</a>
+        <a href="theming.html">Theming</a>
+        <div class="doc-nav__group">Component library</div>
+        <a href="components.html" aria-current="page">Components</a>
+        <a href="charts.html">Charts &amp; data viz</a>
+        <div class="doc-nav__group">Guidance</div>
+        <a href="references.html">Reference guides</a>
+        <a href="rtl-accessibility.html">RTL &amp; accessibility</a>
+        <div class="doc-nav__group">Build with it</div>
+        <a href="templates.html">Templates &amp; examples</a>
+        <a href="prompts.html">Prompts</a>
+      </nav>
+    </aside>
+
+    <main class="doc-main">
+      <div class="doc-container">
+        <p class="doc-eyebrow">Component library · increment 1</p>
+        <h1>Components</h1>
+        <p class="doc-lead">Eight generic, reusable <strong>React + plain-CSS</strong> components aligned
+          with Platforms Code component anatomy and driven entirely by the verified tokens. Each preview
+          below is real DOM styled by the skill's own <code>tokens.css</code> and <code>components.css</code>.
+          Use the <strong>RTL ↔ LTR</strong> button to see mirroring.</p>
+
+        <div class="doc-callout doc-callout--boundary">
+          <span class="doc-callout__icon">⚖️</span>
+          <p class="doc-callout__body"><strong>Illustrative, not official.</strong> These are
+            product-agnostic components aligned with Platforms Code principles — not official DGA
+            Figma/Storybook assets, and they assert no official compliance. They copy no official code,
+            assets, or fonts. Load IBM Plex Sans Arabic in your host project.</p>
+        </div>
+
+        <div class="doc-code"><pre><code>import "dga-platforms-code/components/tokens.css";
+import "dga-platforms-code/components/components.css";
+import { Button, Input, Alert, Stepper } from "dga-platforms-code/components";</code></pre></div>
+
+        <!-- ===================== BUTTON ===================== -->
+        <h2>Button</h2>
+        <p>Aligned with «الأزرار». One primary action per view; secondary/tertiary are quieter. Renders
+          a real <code class="doc-inline">&lt;button&gt;</code> with a visible focus ring and a 44px touch target.</p>
+        <div class="doc-preview">
+          <div class="doc-preview__bar"><span class="doc-preview__title">Button — variants, sizes &amp; states</span><button class="doc-toggle-rtl" data-dir-toggle>RTL ↔ LTR</button></div>
+          <div class="doc-preview__stage" dir="rtl" lang="ar" data-pc-root>
+            <button class="pc-button pc-button--primary"><span>ابدأ الخدمة</span></button>
+            <button class="pc-button pc-button--secondary"><span>حفظ كمسودة</span></button>
+            <button class="pc-button pc-button--tertiary"><span>إلغاء</span></button>
+            <button class="pc-button pc-button--destructive"><span>حذف الطلب</span></button>
+            <button class="pc-button pc-button--primary pc-button--sm"><span>صغير</span></button>
+            <button class="pc-button pc-button--primary pc-button--lg"><span>كبير</span></button>
+            <button class="pc-button pc-button--primary" disabled><span>معطّل</span></button>
+          </div>
+        </div>
+        <table class="doc-table">
+          <thead><tr><th>Prop</th><th>Type</th><th>Default</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><code>variant</code></td><td>primary · secondary · tertiary · destructive</td><td><code>primary</code></td><td>Visual style.</td></tr>
+            <tr><td><code>size</code></td><td>sm · md · lg</td><td><code>md</code></td><td>Height 36 / 44 / 48px.</td></tr>
+            <tr><td><code>block</code></td><td>boolean</td><td><code>false</code></td><td>Full-width button.</td></tr>
+            <tr><td><code>leadingIcon</code> / <code>trailingIcon</code></td><td>node</td><td><code>null</code></td><td>Decorative icons (<code>aria-hidden</code>).</td></tr>
+            <tr><td><code>disabled</code></td><td>boolean</td><td><code>false</code></td><td>Disabled state.</td></tr>
+          </tbody>
+        </table>
+        <div class="doc-code"><pre><code>&lt;Button variant="primary"&gt;ابدأ الخدمة&lt;/Button&gt;
+&lt;Button variant="secondary"&gt;حفظ كمسودة&lt;/Button&gt;
+&lt;Button variant="destructive" size="sm"&gt;حذف&lt;/Button&gt;</code></pre></div>
+
+        <!-- ===================== BADGE ===================== -->
+        <h2>Badge / Tag</h2>
+        <p>Aligned with «العلامات». Status uses text (and an optional dot) — never color alone.</p>
+        <div class="doc-preview">
+          <div class="doc-preview__bar"><span class="doc-preview__title">Badge — tones</span><button class="doc-toggle-rtl" data-dir-toggle>RTL ↔ LTR</button></div>
+          <div class="doc-preview__stage" dir="rtl" lang="ar" data-pc-root>
+            <span class="pc-badge pc-badge--neutral"><span>مسودة</span></span>
+            <span class="pc-badge pc-badge--success"><span class="pc-badge__dot"></span><span>مكتمل</span></span>
+            <span class="pc-badge pc-badge--error"><span class="pc-badge__dot"></span><span>مرفوض</span></span>
+            <span class="pc-badge pc-badge--warning"><span class="pc-badge__dot"></span><span>قيد المراجعة</span></span>
+            <span class="pc-badge pc-badge--info"><span class="pc-badge__dot"></span><span>جديد</span></span>
+          </div>
+        </div>
+        <table class="doc-table">
+          <thead><tr><th>Prop</th><th>Type</th><th>Default</th></tr></thead>
+          <tbody>
+            <tr><td><code>tone</code></td><td>neutral · success · error · warning · info</td><td><code>neutral</code></td></tr>
+            <tr><td><code>dot</code></td><td>boolean</td><td><code>false</code></td></tr>
+          </tbody>
+        </table>
+        <div class="doc-code"><pre><code>&lt;Badge tone="success" dot&gt;مكتمل&lt;/Badge&gt;
+&lt;Badge tone="warning" dot&gt;قيد المراجعة&lt;/Badge&gt;</code></pre></div>
+
+        <!-- ===================== INPUT ===================== -->
+        <h2>Input</h2>
+        <p>Aligned with «المدخلات». The label is always visible (placeholders are never labels). Errors
+          are announced (<code class="doc-inline">role="alert"</code>) and linked to the field.</p>
+        <div class="doc-preview">
+          <div class="doc-preview__bar"><span class="doc-preview__title">Input — default, hint, required &amp; error</span><button class="doc-toggle-rtl" data-dir-toggle>RTL ↔ LTR</button></div>
+          <div class="doc-preview__stage doc-preview__stage--column" dir="rtl" lang="ar" data-pc-root style="max-width:420px">
+            <div class="pc-field">
+              <label class="pc-label" for="d-i1">رقم الطلب<span class="pc-label__optional"> (اختياري)</span></label>
+              <p id="d-i1-hint" class="pc-hint">مثال: 12345678</p>
+              <input id="d-i1" class="pc-input" type="text" placeholder="أدخل رقم الطلب" aria-describedby="d-i1-hint" />
+            </div>
+            <div class="pc-field">
+              <label class="pc-label" for="d-i2">البريد الإلكتروني<span class="pc-label__required"> *<span class="pc-sr-only"> (مطلوب)</span></span></label>
+              <input id="d-i2" class="pc-input" type="email" value="example@gov.sa" aria-required="true" aria-invalid="true" aria-describedby="d-i2-error" />
+              <p id="d-i2-error" class="pc-error" role="alert">صيغة البريد الإلكتروني غير صحيحة.</p>
+            </div>
+            <div class="pc-field">
+              <label class="pc-label" for="d-i3">الحقل المعطّل<span class="pc-label__optional"> (اختياري)</span></label>
+              <input id="d-i3" class="pc-input" type="text" value="قيمة غير قابلة للتعديل" disabled />
+            </div>
+          </div>
+        </div>
+        <table class="doc-table">
+          <thead><tr><th>Prop</th><th>Type</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><code>label</code></td><td>string</td><td>Always rendered, linked to the input.</td></tr>
+            <tr><td><code>hint</code></td><td>string</td><td>Helper text, linked via <code>aria-describedby</code>.</td></tr>
+            <tr><td><code>error</code></td><td>string</td><td>Sets <code>aria-invalid</code> and announces the message.</td></tr>
+            <tr><td><code>required</code></td><td>boolean</td><td>Shows <code>*</code> + screen-reader “(مطلوب)”.</td></tr>
+            <tr><td><code>optionalText</code></td><td>string</td><td>Defaults to <code>(اختياري)</code>.</td></tr>
+          </tbody>
+        </table>
+        <div class="doc-code"><pre><code>&lt;Input label="رقم الطلب" hint="مثال: 12345678" /&gt;
+&lt;Input label="البريد الإلكتروني" required
+       error="صيغة البريد الإلكتروني غير صحيحة." /&gt;</code></pre></div>
+
+        <!-- ===================== ALERT ===================== -->
+        <h2>Alert</h2>
+        <p>Aligned with «الإشعارات». Severity is shown by icon + text, never color alone. Uses
+          <code class="doc-inline">role="alert"</code> for error/warning and <code class="doc-inline">role="status"</code> otherwise.</p>
+        <div class="doc-preview">
+          <div class="doc-preview__bar"><span class="doc-preview__title">Alert — info, success, warning &amp; error</span><button class="doc-toggle-rtl" data-dir-toggle>RTL ↔ LTR</button></div>
+          <div class="doc-preview__stage doc-preview__stage--column" dir="rtl" lang="ar" data-pc-root>
+            <div class="pc-alert pc-alert--info" role="status"><span class="pc-alert__icon" aria-hidden="true">ℹ</span><div><p class="pc-alert__title">معلومة</p><div class="pc-alert__body">سيتم حفظ تقدمك تلقائيًا أثناء تعبئة النموذج.</div></div></div>
+            <div class="pc-alert pc-alert--success" role="status"><span class="pc-alert__icon" aria-hidden="true">✓</span><div><p class="pc-alert__title">تم الإرسال</p><div class="pc-alert__body">يمكنك متابعة الحالة من صفحة طلباتي.</div></div></div>
+            <div class="pc-alert pc-alert--warning" role="alert"><span class="pc-alert__icon" aria-hidden="true">⚠</span><div><p class="pc-alert__title">انتبه</p><div class="pc-alert__body">سينتهي وقت الجلسة خلال خمس دقائق.</div></div></div>
+            <div class="pc-alert pc-alert--error" role="alert"><span class="pc-alert__icon" aria-hidden="true">✕</span><div><p class="pc-alert__title">تعذّر الإرسال</p><div class="pc-alert__body">يرجى التحقق من الحقول المطلوبة والمحاولة مجددًا.</div></div></div>
+          </div>
+        </div>
+        <table class="doc-table">
+          <thead><tr><th>Prop</th><th>Type</th><th>Default</th></tr></thead>
+          <tbody>
+            <tr><td><code>tone</code></td><td>info · success · warning · error</td><td><code>info</code></td></tr>
+            <tr><td><code>title</code></td><td>string</td><td>—</td></tr>
+            <tr><td><code>icon</code></td><td>node</td><td><code>null</code></td></tr>
+          </tbody>
+        </table>
+        <div class="doc-code"><pre><code>&lt;Alert tone="success" title="تم الإرسال"&gt;
+  يمكنك متابعة الحالة من صفحة طلباتي.
+&lt;/Alert&gt;</code></pre></div>
+
+        <!-- ===================== CARD ===================== -->
+        <h2>Card</h2>
+        <p>Aligned with «البطاقة». Consistent padding, radius, and elevation. The interactive variant
+          renders a real keyboard-operable <code class="doc-inline">&lt;button&gt;</code>.</p>
+        <div class="doc-preview">
+          <div class="doc-preview__bar"><span class="doc-preview__title">Card — static &amp; interactive</span><button class="doc-toggle-rtl" data-dir-toggle>RTL ↔ LTR</button></div>
+          <div class="doc-preview__stage" dir="rtl" lang="ar" data-pc-root>
+            <div class="pc-card" style="max-width:300px"><h3 class="pc-card__title">إصدار شهادة</h3><div class="pc-card__body">قدّم طلبًا لإصدار شهادة رسمية واستلمها إلكترونيًا خلال دقائق.</div></div>
+            <button type="button" class="pc-card pc-card--interactive" style="max-width:300px"><h3 class="pc-card__title">تجديد ترخيص</h3><div class="pc-card__body">جدّد ترخيصك قبل انتهائه. مرّر للاختيار — البطاقة بأكملها قابلة للنقر.</div></button>
+          </div>
+        </div>
+        <table class="doc-table">
+          <thead><tr><th>Prop</th><th>Type</th><th>Default</th></tr></thead>
+          <tbody>
+            <tr><td><code>title</code></td><td>string</td><td>—</td></tr>
+            <tr><td><code>interactive</code></td><td>boolean</td><td><code>false</code></td></tr>
+            <tr><td><code>footer</code></td><td>node</td><td><code>null</code></td></tr>
+            <tr><td><code>as</code></td><td>element type</td><td><code>div</code></td></tr>
+          </tbody>
+        </table>
+
+        <!-- ===================== STEPPER ===================== -->
+        <h2>Stepper</h2>
+        <p>Aligned with «الخطوات». Steps flow right-to-left in document order; the current step is
+          conveyed via <code class="doc-inline">aria-current="step"</code>. States: complete · current · upcoming.</p>
+        <div class="doc-preview">
+          <div class="doc-preview__bar"><span class="doc-preview__title">Stepper — 3 steps, current = 2</span><button class="doc-toggle-rtl" data-dir-toggle>RTL ↔ LTR</button></div>
+          <div class="doc-preview__stage" dir="rtl" lang="ar" data-pc-root>
+            <nav aria-label="خطوات الخدمة">
+              <ol class="pc-stepper">
+                <li class="pc-step pc-step--complete"><span class="pc-step__marker" aria-hidden="true">✓</span><span class="pc-step__label">البيانات</span></li>
+                <li class="pc-step pc-step--current" aria-current="step"><span class="pc-step__marker" aria-hidden="true">2</span><span class="pc-step__label">المراجعة</span></li>
+                <li class="pc-step pc-step--upcoming"><span class="pc-step__marker" aria-hidden="true">3</span><span class="pc-step__label">الإرسال</span></li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+        <div class="doc-code"><pre><code>&lt;Stepper current={1}
+  steps={[{ label: "البيانات" }, { label: "المراجعة" }, { label: "الإرسال" }]} /&gt;</code></pre></div>
+
+        <!-- ===================== BREADCRUMBS ===================== -->
+        <h2>Breadcrumbs</h2>
+        <p>Aligned with «مسار التصفح». Wrapped in a labelled <code class="doc-inline">&lt;nav&gt;</code>; the last item is the
+          current page. Separators sit in the RTL flow and mirror automatically.</p>
+        <div class="doc-preview">
+          <div class="doc-preview__bar"><span class="doc-preview__title">Breadcrumbs</span><button class="doc-toggle-rtl" data-dir-toggle>RTL ↔ LTR</button></div>
+          <div class="doc-preview__stage" dir="rtl" lang="ar" data-pc-root>
+            <nav aria-label="مسار التصفح">
+              <ol class="pc-breadcrumb">
+                <li class="pc-breadcrumb__item"><a href="#">الرئيسية</a><span class="pc-breadcrumb__sep" aria-hidden="true">/</span></li>
+                <li class="pc-breadcrumb__item"><a href="#">الخدمات</a><span class="pc-breadcrumb__sep" aria-hidden="true">/</span></li>
+                <li class="pc-breadcrumb__item"><span aria-current="page">إصدار شهادة</span></li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+        <div class="doc-code"><pre><code>&lt;Breadcrumbs items={[
+  { label: "الرئيسية", href: "/" },
+  { label: "الخدمات", href: "/services" },
+  { label: "إصدار شهادة" },
+]} /&gt;</code></pre></div>
+
+        <!-- ===================== MODAL ===================== -->
+        <h2>Modal</h2>
+        <p>Aligned with «النوافذ المنبثقة». A labelled dialog with a focus trap while open, focus restore
+          on close, and Escape to dismiss. The static preview below shows the dialog surface.</p>
+        <div class="doc-preview">
+          <div class="doc-preview__bar"><span class="doc-preview__title">Modal — dialog surface</span><button class="doc-toggle-rtl" data-dir-toggle>RTL ↔ LTR</button></div>
+          <div class="doc-preview__stage doc-preview__stage--center" dir="rtl" lang="ar" data-pc-root style="background:#1f2a37">
+            <div class="pc-modal" role="dialog" aria-modal="true" aria-labelledby="d-modal-t" style="max-width:420px">
+              <div class="pc-modal__header">
+                <h2 id="d-modal-t" class="pc-modal__title">تأكيد الإرسال</h2>
+                <button type="button" class="pc-modal__close" aria-label="إغلاق">✕</button>
+              </div>
+              <div class="pc-modal__body">هل تريد إرسال الطلب؟ لا يمكن التعديل بعد الإرسال.</div>
+              <div class="pc-modal__footer">
+                <button class="pc-button pc-button--primary"><span>تأكيد الإرسال</span></button>
+                <button class="pc-button pc-button--secondary"><span>رجوع</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <table class="doc-table">
+          <thead><tr><th>Prop</th><th>Type</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><code>open</code></td><td>boolean</td><td>Controls visibility; renders nothing when false.</td></tr>
+            <tr><td><code>onClose</code></td><td>function</td><td>Called on overlay click, ✕, and Escape.</td></tr>
+            <tr><td><code>title</code></td><td>string</td><td>Labels the dialog (<code>aria-labelledby</code>).</td></tr>
+            <tr><td><code>footer</code></td><td>node</td><td>Action region.</td></tr>
+          </tbody>
+        </table>
+
+        <div class="doc-callout doc-callout--info">
+          <span class="doc-callout__icon">📄</span>
+          <p class="doc-callout__body">Source files: <code>components/*.jsx</code>,
+            <code>components/components.css</code>, <code>components/README.md</code>. Component rules:
+            <code>references/04-components.md</code>; official inventory &amp; roadmap:
+            <code>references/30-component-library.md</code>.</p>
+        </div>
+
+        <footer class="doc-footer">
+          <p>Illustrative, token-driven components aligned with Platforms Code principles — not official
+            DGA assets. Official source: <a href="https://design.dga.gov.sa/">design.dga.gov.sa</a>.</p>
+        </footer>
+      </div>
+    </main>
+  </div>
+  <script src="../assets/js/docs.js"></script>
+</body>
+</html>

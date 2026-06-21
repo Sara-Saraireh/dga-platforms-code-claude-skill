@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design principles — DGA Platforms Code Skill</title>
+  <meta name="description" content="Government-grade design principles and foundations: trust, service-first, accessibility-first, consistency, and clear hierarchy." />
+  <link rel="stylesheet" href="../assets/css/docs.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="doc-topbar">
+    <span class="doc-topbar__brand">DGA Platforms Code</span>
+    <button class="doc-menu-btn" data-menu-btn aria-label="Toggle navigation">☰ Menu</button>
+  </header>
+
+  <div class="doc-shell">
+    <aside class="doc-sidebar">
+      <a class="doc-brand" href="../index.html" style="text-decoration:none;color:inherit">
+        <span class="doc-brand__name">DGA Platforms Code</span>
+        <span class="doc-brand__tag">Claude Skill · كود المنصات</span>
+        <span class="doc-brand__badge">v1.7.0 · documentation</span>
+      </a>
+      <nav class="doc-nav" aria-label="Documentation">
+        <a href="../index.html">Home</a>
+        <div class="doc-nav__group">Getting started</div>
+        <a href="overview.html">Overview</a>
+        <a href="principles.html" aria-current="page">Design principles</a>
+        <div class="doc-nav__group">Foundations</div>
+        <a href="tokens.html">Design tokens</a>
+        <a href="theming.html">Theming</a>
+        <div class="doc-nav__group">Component library</div>
+        <a href="components.html">Components</a>
+        <a href="charts.html">Charts &amp; data viz</a>
+        <div class="doc-nav__group">Guidance</div>
+        <a href="references.html">Reference guides</a>
+        <a href="rtl-accessibility.html">RTL &amp; accessibility</a>
+        <div class="doc-nav__group">Build with it</div>
+        <a href="templates.html">Templates &amp; examples</a>
+        <a href="prompts.html">Prompts</a>
+      </nav>
+    </aside>
+
+    <main class="doc-main">
+      <div class="doc-container">
+        <p class="doc-eyebrow">Getting started</p>
+        <h1>Design principles</h1>
+        <p class="doc-lead">Six principles set the tone for every screen. They favour trust and clarity
+          over decoration, and treat accessibility and Arabic RTL as baseline requirements rather than
+          enhancements.</p>
+
+        <h2>The six principles</h2>
+        <div class="doc-cards">
+          <div class="doc-card">
+            <div class="doc-card__icon">🛡️</div>
+            <div class="doc-card__title">Trust over flash</div>
+            <p class="doc-card__desc">Calm, official, restrained. No decorative noise, no marketing gloss.</p>
+          </div>
+          <div class="doc-card">
+            <div class="doc-card__icon">🎯</div>
+            <div class="doc-card__title">Service-first</div>
+            <p class="doc-card__desc">Every screen makes the task and the next step obvious. Outcomes are explicit.</p>
+          </div>
+          <div class="doc-card">
+            <div class="doc-card__icon">♿</div>
+            <div class="doc-card__title">Accessibility-first</div>
+            <p class="doc-card__desc">Accessible by default, not as a later pass.</p>
+          </div>
+          <div class="doc-card">
+            <div class="doc-card__icon">🔁</div>
+            <div class="doc-card__title">Arabic RTL correctness</div>
+            <p class="doc-card__desc">A baseline requirement, not an enhancement.</p>
+          </div>
+          <div class="doc-card">
+            <div class="doc-card__icon">🧩</div>
+            <div class="doc-card__title">Consistency over novelty</div>
+            <p class="doc-card__desc">Reuse patterns; do not invent one-off visual treatments.</p>
+          </div>
+          <div class="doc-card">
+            <div class="doc-card__icon">📐</div>
+            <div class="doc-card__title">Clear hierarchy</div>
+            <p class="doc-card__desc">One primary action per view; strong, legible typographic hierarchy.</p>
+          </div>
+        </div>
+
+        <h2>Foundations at a glance</h2>
+        <p>The principles are backed by four verified foundation token sets. Each is documented with
+          live swatches and values on the <a href="tokens.html">Design tokens</a> page.</p>
+        <table class="doc-table">
+          <thead><tr><th>Foundation</th><th>What it covers</th><th>Source</th></tr></thead>
+          <tbody>
+            <tr><td>Color</td><td>Gray, SA (primary green), Gold, and semantic 600 (error/warning/success/info)</td><td><code>tokens/colors-v1.0.json</code></td></tr>
+            <tr><td>Typography</td><td>IBM Plex Sans Arabic; Display scale for headings, Text scale for UI/body</td><td><code>tokens/typography-v1.0.json</code></td></tr>
+            <tr><td>Spacing</td><td>Verified scale <code>spacing-none</code>…<code>spacing-11xl</code> (0–160px), widths, container, breakpoints</td><td><code>tokens/spacing-v1.0.json</code></td></tr>
+            <tr><td>Elevation</td><td>7-level shadow scale (xs–3xl), color <code>#101828</code></td><td><code>tokens/elevation-v1.0.json</code></td></tr>
+          </tbody>
+        </table>
+
+        <h2>Applying the principles</h2>
+        <div class="doc-do-dont">
+          <div class="doc-do">
+            <h4>Do</h4>
+            <ul>
+              <li>Keep one clear primary action per view.</li>
+              <li>Make outcomes and next steps explicit.</li>
+              <li>Reuse verified tokens and existing components.</li>
+              <li>Design empty, loading, and error states up front.</li>
+              <li>Pair status color with text and an icon.</li>
+            </ul>
+          </div>
+          <div class="doc-dont">
+            <h4>Don't</h4>
+            <ul>
+              <li>Add decorative gradients, shadows, or motion for emphasis.</li>
+              <li>Use marketing/SaaS visual language for a government tone.</li>
+              <li>Invent one-off spacing, colors, or shadow levels.</li>
+              <li>Overuse a single accent until hierarchy weakens.</li>
+              <li>Rely on color alone to convey meaning.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="doc-callout doc-callout--info">
+          <span class="doc-callout__icon">📄</span>
+          <p class="doc-callout__body">Sources: <code>references/01-design-principles.md</code> and
+            <code>references/02-foundations.md</code>. See all guides on the
+            <a href="references.html">Reference guides</a> page.</p>
+        </div>
+
+        <footer class="doc-footer">
+          <p>Aligned with Platforms Code principles — not official DGA compliance.
+            Official source: <a href="https://design.dga.gov.sa/">design.dga.gov.sa</a>.</p>
+        </footer>
+      </div>
+    </main>
+  </div>
+  <script src="../assets/js/docs.js"></script>
+</body>
+</html>

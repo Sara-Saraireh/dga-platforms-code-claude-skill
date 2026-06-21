@@ -141,11 +141,16 @@ Grounded in the semantic color extraction (`references/16-semantic-colors-extrac
 
 - Error 600 `#D92D20`
 - Warning 600 `#DC6803`
-- Success 600 `#1B8354`
+- Success 600 `#079455` (Success is its own palette — do **not** substitute the SA primary green `#1B8354`)
 - Info 600 `#1570EF`
 
-Do not rely on semantic colors alone — pair state color with labels, icons, and accessible text.
-Do not invent missing semantic shades.
+Each semantic color is a full palette (25–950) on the official color page; the verified ramps are in
+`tokens/colors-v1.0.json`. Do not rely on semantic colors alone — pair state color with labels, icons,
+and accessible text. Do not invent missing semantic shades.
+
+Data visualization uses a **monochromatic green scheme** (no gold/lavender for data series) with a
+neutral gray for a remaining/uncategorized portion; pie/donut supports up to six categories. See the
+chart roles in `components/tokens.css` and `tokens/colors-v1.0.json` (`data_visualization`).
 
 ## Source-boundary rules
 
@@ -202,6 +207,23 @@ component anatomy and driven entirely by the verified tokens. Prefer reusing or 
 writing one-off components. They are illustrative and **aligned with Platforms Code principles**, not
 official DGA assets, and assert no official compliance. See `references/30-component-library.md` and
 `components/README.md`; the full official inventory and roadmap are listed there.
+
+### Accent theming (per service/section)
+
+The default accent is the unified SA green. You may switch the **primary accent** per service or
+section using the opt-in `data-pc-theme` presets in `components/tokens.css`
+(`green` default, `gold`, `lavender`) — for example
+`<main data-pc-root data-pc-theme="gold">`. Rules:
+
+- Use the **verified palettes only** (SA / Gold / Lavender). Do not invent per-service brand hues.
+- Themes change **only** the primary accent. **Semantic** colors (success/error/warning/info),
+  **neutrals**, **typography**, **spacing**, and the **green chart scheme stay fixed.**
+- Preserve contrast: text-on-accent ≥ 4.5:1 and focus ring ≥ 3:1. White text fails on gold, so the
+  gold preset uses dark text and a darker gold focus ring (already handled in the presets).
+- One primary action per view still holds; the accent is not decoration.
+
+The system is a **unified** national design system; prefer the default green unless a service has a
+clear reason to differentiate. See `references/17-accent-theming.md`.
 
 ## Forms and inputs rules
 

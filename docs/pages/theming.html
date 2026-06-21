@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Theming — DGA Platforms Code Skill</title>
+  <meta name="description" content="Opt-in verified-accent theming for DGA Platforms Code: switch the primary accent per service (green / gold / lavender) using only verified palettes, with semantics, neutrals, and charts kept fixed." />
+  <link rel="stylesheet" href="../assets/css/docs.css" />
+  <link rel="stylesheet" href="../../claude/skills/dga-platforms-code/components/tokens.css" />
+  <link rel="stylesheet" href="../../claude/skills/dga-platforms-code/components/components.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="doc-topbar">
+    <span class="doc-topbar__brand">DGA Platforms Code</span>
+    <button class="doc-menu-btn" data-menu-btn aria-label="Toggle navigation">☰ Menu</button>
+  </header>
+
+  <div class="doc-shell">
+    <aside class="doc-sidebar">
+      <a class="doc-brand" href="../index.html" style="text-decoration:none;color:inherit">
+        <span class="doc-brand__name">DGA Platforms Code</span>
+        <span class="doc-brand__tag">Claude Skill · كود المنصات</span>
+        <span class="doc-brand__badge">v1.7.0 · documentation</span>
+      </a>
+      <nav class="doc-nav" aria-label="Documentation">
+        <a href="../index.html">Home</a>
+        <div class="doc-nav__group">Getting started</div>
+        <a href="overview.html">Overview</a>
+        <a href="principles.html">Design principles</a>
+        <div class="doc-nav__group">Foundations</div>
+        <a href="tokens.html">Design tokens</a>
+        <a href="theming.html" aria-current="page">Theming</a>
+        <div class="doc-nav__group">Component library</div>
+        <a href="components.html">Components</a>
+        <a href="charts.html">Charts &amp; data viz</a>
+        <div class="doc-nav__group">Guidance</div>
+        <a href="references.html">Reference guides</a>
+        <a href="rtl-accessibility.html">RTL &amp; accessibility</a>
+        <div class="doc-nav__group">Build with it</div>
+        <a href="templates.html">Templates &amp; examples</a>
+        <a href="prompts.html">Prompts</a>
+      </nav>
+    </aside>
+
+    <main class="doc-main">
+      <div class="doc-container">
+        <p class="doc-eyebrow">Foundations</p>
+        <h1>Theming</h1>
+        <p class="doc-lead">Platforms Code is a <strong>unified</strong> national design system — the
+          default accent is the Saudi green. When a service or section genuinely needs to be
+          distinguished, you can switch <strong>only the primary accent</strong> to another
+          <strong>verified</strong> palette via an opt-in <code>data-pc-theme</code> preset. Everything
+          else stays the same.</p>
+
+        <div class="doc-callout doc-callout--boundary">
+          <span class="doc-callout__icon">⚖️</span>
+          <p class="doc-callout__body"><strong>Accent only — no invented palettes.</strong> Themes
+            reassign the primary accent to a verified palette (SA / Gold / Lavender). Semantic colors
+            (success/error/warning/info), neutrals, typography, spacing, and the green chart scheme stay
+            fixed. Prefer the default green unless there's a clear reason to differentiate.</p>
+        </div>
+
+        <h2>Usage</h2>
+        <p>Set <code>data-pc-theme</code> on a themed root (typically the same element with
+          <code>data-pc-root</code>). No attribute = the default green.</p>
+        <div class="doc-code"><pre><code>&lt;main data-pc-root dir="rtl" lang="ar" data-pc-theme="gold"&gt;
+  &lt;Button variant="primary"&gt;ابدأ الخدمة&lt;/Button&gt;   {/* gold accent, dark text */}
+&lt;/main&gt;</code></pre></div>
+
+        <h2>Presets</h2>
+        <table class="doc-table">
+          <thead><tr><th><code>data-pc-theme</code></th><th>Primary</th><th>Hover</th><th>Text on accent</th><th>Focus ring</th><th>Contrast</th></tr></thead>
+          <tbody>
+            <tr><td>(none) / <code>green</code></td><td>SA-600 <code>#1B8354</code></td><td>SA-700</td><td>white</td><td>SA-600</td><td>4.75:1 ✓</td></tr>
+            <tr><td><code>gold</code></td><td>Gold-600 <code>#DBA102</code></td><td>Gold-700</td><td><strong>gray-900</strong> <code>#111927</code></td><td>Gold-700</td><td>7.64:1 ✓ (white would be 2.3:1 ✗)</td></tr>
+            <tr><td><code>lavender</code></td><td>Lavender-500 <code>#80519F</code></td><td>Lavender-600</td><td>white</td><td>Lavender-500</td><td>5.84:1 ✓</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Live previews</h2>
+        <p>The same components under each preset. Notice the <strong>success badge stays green</strong>
+          and is identical across themes — semantics never follow the accent.</p>
+
+        <h3>Green (default)</h3>
+        <div class="doc-preview">
+          <div class="doc-preview__bar"><span class="doc-preview__title">data-pc-theme="green"</span><button class="doc-toggle-rtl" data-dir-toggle>RTL ↔ LTR</button></div>
+          <div class="doc-preview__stage" dir="rtl" lang="ar" data-pc-root data-pc-theme="green">
+            <button class="pc-button pc-button--primary"><span>ابدأ الخدمة</span></button>
+            <button class="pc-button pc-button--secondary"><span>حفظ كمسودة</span></button>
+            <button class="pc-button pc-button--tertiary"><span>إلغاء</span></button>
+            <span class="pc-badge pc-badge--success"><span class="pc-badge__dot"></span><span>مكتمل</span></span>
+            <nav aria-label="خطوات الخدمة"><ol class="pc-stepper">
+              <li class="pc-step pc-step--complete"><span class="pc-step__marker" aria-hidden="true">✓</span><span class="pc-step__label">البيانات</span></li>
+              <li class="pc-step pc-step--current" aria-current="step"><span class="pc-step__marker" aria-hidden="true">2</span><span class="pc-step__label">المراجعة</span></li>
+              <li class="pc-step pc-step--upcoming"><span class="pc-step__marker" aria-hidden="true">3</span><span class="pc-step__label">الإرسال</span></li>
+            </ol></nav>
+          </div>
+        </div>
+
+        <h3>Gold</h3>
+        <div class="doc-preview">
+          <div class="doc-preview__bar"><span class="doc-preview__title">data-pc-theme="gold"</span><button class="doc-toggle-rtl" data-dir-toggle>RTL ↔ LTR</button></div>
+          <div class="doc-preview__stage" dir="rtl" lang="ar" data-pc-root data-pc-theme="gold">
+            <button class="pc-button pc-button--primary"><span>ابدأ الخدمة</span></button>
+            <button class="pc-button pc-button--secondary"><span>حفظ كمسودة</span></button>
+            <button class="pc-button pc-button--tertiary"><span>إلغاء</span></button>
+            <span class="pc-badge pc-badge--success"><span class="pc-badge__dot"></span><span>مكتمل</span></span>
+            <nav aria-label="خطوات الخدمة"><ol class="pc-stepper">
+              <li class="pc-step pc-step--complete"><span class="pc-step__marker" aria-hidden="true">✓</span><span class="pc-step__label">البيانات</span></li>
+              <li class="pc-step pc-step--current" aria-current="step"><span class="pc-step__marker" aria-hidden="true">2</span><span class="pc-step__label">المراجعة</span></li>
+              <li class="pc-step pc-step--upcoming"><span class="pc-step__marker" aria-hidden="true">3</span><span class="pc-step__label">الإرسال</span></li>
+            </ol></nav>
+          </div>
+        </div>
+
+        <h3>Lavender</h3>
+        <div class="doc-preview">
+          <div class="doc-preview__bar"><span class="doc-preview__title">data-pc-theme="lavender"</span><button class="doc-toggle-rtl" data-dir-toggle>RTL ↔ LTR</button></div>
+          <div class="doc-preview__stage" dir="rtl" lang="ar" data-pc-root data-pc-theme="lavender">
+            <button class="pc-button pc-button--primary"><span>ابدأ الخدمة</span></button>
+            <button class="pc-button pc-button--secondary"><span>حفظ كمسودة</span></button>
+            <button class="pc-button pc-button--tertiary"><span>إلغاء</span></button>
+            <span class="pc-badge pc-badge--success"><span class="pc-badge__dot"></span><span>مكتمل</span></span>
+            <nav aria-label="خطوات الخدمة"><ol class="pc-stepper">
+              <li class="pc-step pc-step--complete"><span class="pc-step__marker" aria-hidden="true">✓</span><span class="pc-step__label">البيانات</span></li>
+              <li class="pc-step pc-step--current" aria-current="step"><span class="pc-step__marker" aria-hidden="true">2</span><span class="pc-step__label">المراجعة</span></li>
+              <li class="pc-step pc-step--upcoming"><span class="pc-step__marker" aria-hidden="true">3</span><span class="pc-step__label">الإرسال</span></li>
+            </ol></nav>
+          </div>
+        </div>
+
+        <h2>Guardrails</h2>
+        <div class="doc-do-dont">
+          <div class="doc-do">
+            <h4>Do</h4>
+            <ul>
+              <li>Switch the accent only to a <strong>verified</strong> palette (SA / Gold / Lavender).</li>
+              <li>Keep semantics, neutrals, type, spacing, and charts fixed across themes.</li>
+              <li>Preserve contrast — use dark text on gold; keep focus rings ≥ 3:1.</li>
+              <li>Keep one primary action per view.</li>
+              <li>Prefer the default green unless there's a clear reason to differentiate.</li>
+            </ul>
+          </div>
+          <div class="doc-dont">
+            <h4>Don't</h4>
+            <ul>
+              <li>Invent a per-service brand hue outside the verified palettes.</li>
+              <li>Let the accent recolor success/error/warning/info or the chart greens.</li>
+              <li>Use white text on a gold accent (fails contrast at ~2.3:1).</li>
+              <li>Theme purely for decoration or to manufacture emphasis.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="doc-callout doc-callout--info">
+          <span class="doc-callout__icon">📄</span>
+          <p class="doc-callout__body">Presets live in <code>components/tokens.css</code>
+            (<code>[data-pc-theme]</code>). Full guidance:
+            <code>references/17-accent-theming.md</code>. Verified palettes are on the
+            <a href="tokens.html">Design tokens</a> page.</p>
+        </div>
+
+        <footer class="doc-footer">
+          <p>A unified national design system — theming stays within verified tokens; not official DGA
+            compliance. Official source: <a href="https://design.dga.gov.sa/">design.dga.gov.sa</a>.</p>
+        </footer>
+      </div>
+    </main>
+  </div>
+  <script src="../assets/js/docs.js"></script>
+</body>
+</html>

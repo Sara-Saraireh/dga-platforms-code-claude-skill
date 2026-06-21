@@ -42,21 +42,34 @@
   --pc-sa-900: #104631;
   --pc-sa-950: #092A1E;
 
-  /* ---- Color: Gold ---- */
+  /* ---- Color: Gold (secondary) ---- */
+  --pc-gold-50: #FFFEF2;
   --pc-gold-500: #F5BD02;
   --pc-gold-600: #DBA102;
   --pc-gold-700: #B87B02;
 
-  /* ---- Color: Semantic 600 (verified) ---- */
+  /* ---- Color: Lavender (secondary) ---- */
+  --pc-lavender-50: #F9F5FA;
+  --pc-lavender-100: #F2E9F5;
+  --pc-lavender-200: #E1CCE8;
+  --pc-lavender-400: #A57BBA;
+  --pc-lavender-500: #80519F;
+  --pc-lavender-600: #6D428F;
+  --pc-lavender-700: #532D75;
+
+  /* ---- Color: Semantic 600 (verified — each is its own palette) ---- */
   --pc-error-600: #D92D20;
   --pc-warning-600: #DC6803;
-  --pc-success-600: #1B8354;
+  --pc-success-600: #079455; /* Success palette 600 (NOT the SA primary green) */
+  --pc-success-50: #ECFDF3;
+  --pc-success-700: #067647;
   --pc-info-600: #1570EF;
 
-  /* ---- Semantic roles (host project may override) ---- */
+  /* ---- Semantic roles (host project may override; switched by data-pc-theme below) ---- */
   --pc-color-primary: var(--pc-sa-600);
   --pc-color-primary-hover: var(--pc-sa-700);
-  --pc-color-on-primary: #FFFFFF;
+  --pc-color-on-primary: #FFFFFF;          /* text/icon on the primary accent */
+  --pc-color-primary-tint: var(--pc-sa-50); /* subtle accent wash (e.g. tertiary hover) */
   --pc-color-text: var(--pc-gray-900);
   --pc-color-text-muted: var(--pc-gray-500);
   --pc-color-border: var(--pc-gray-200);
@@ -115,9 +128,18 @@
   --pc-shadow-2xl: 0 24px 48px -12px rgba(16, 24, 40, 0.18);
   --pc-shadow-3xl: 0 32px 64px -12px rgba(16, 24, 40, 0.14);
 
-  /* ---- Chart roles (verified tokens only — see references/29 data-viz on the charts branch) ---- */
-  --pc-chart-series-1: var(--pc-sa-600);    /* SA 600 */
-  --pc-chart-series-2: var(--pc-gold-600);  /* Gold primary_600 */
+  /* ---- Chart roles (verified against the official DgaChart / platformscode-react component) ---- */
+  /* Official charts use a MONOCHROMATIC GREEN scheme (no gold/lavender for data series), with a
+     neutral gray for a remaining portion. Exact `colors` arrays from the official DgaChart examples:
+       donut: ["#1B8354", "#079455", "#B8EACB", "#54C08A"]
+       line:  ["#1B8354", "#079455"]
+       bar:   ["#1B8354", "#54C08A", "#E5E7EB"]
+     Series roles follow the donut (richest) order; the palette cycles for more categories. */
+  --pc-chart-series-1: var(--pc-sa-600);      /* #1B8354 */
+  --pc-chart-series-2: var(--pc-success-600); /* #079455 */
+  --pc-chart-series-3: var(--pc-sa-200);      /* #B8EACB */
+  --pc-chart-series-4: var(--pc-sa-400);      /* #54C08A */
+  --pc-chart-neutral: var(--pc-gray-200);     /* #E5E7EB — remaining / 3rd bar series */
   --pc-chart-axis: var(--pc-gray-500);
   --pc-chart-grid: var(--pc-gray-200);
   --pc-chart-text: var(--pc-gray-700);
@@ -133,4 +155,35 @@
 
 @media (prefers-reduced-motion: reduce) {
   :root { --pc-transition: 0ms; }
+}
+
+/*
+ * Opt-in accent theming. Set data-pc-theme on a root (e.g. data-pc-root) to switch ONLY the primary
+ * accent to another VERIFIED palette. The default (no attribute) is the unified SA green.
+ *
+ * Guardrails: themes change the primary accent only. Semantic colors (success/error/warning/info),
+ * neutrals, typography, spacing, and the green chart scheme stay fixed. Use verified palettes only —
+ * no invented hues. Values below are chosen to meet WCAG AA: text-on-accent >= 4.5:1 and focus ring
+ * >= 3:1. White text fails on gold, so the gold theme uses dark text and a darker gold focus ring.
+ */
+[data-pc-theme="green"] {
+  --pc-color-primary: var(--pc-sa-600);
+  --pc-color-primary-hover: var(--pc-sa-700);
+  --pc-color-on-primary: #FFFFFF;          /* 4.75:1 on SA-600 */
+  --pc-color-primary-tint: var(--pc-sa-50);
+  --pc-focus-ring: var(--pc-sa-600);
+}
+[data-pc-theme="gold"] {
+  --pc-color-primary: var(--pc-gold-600);
+  --pc-color-primary-hover: var(--pc-gold-700);
+  --pc-color-on-primary: var(--pc-gray-900); /* dark text: 7.64:1 on Gold-600 (white would be 2.3:1) */
+  --pc-color-primary-tint: var(--pc-gold-50);
+  --pc-focus-ring: var(--pc-gold-700);       /* 3.58:1 vs white (Gold-600 would be 2.3:1) */
+}
+[data-pc-theme="lavender"] {
+  --pc-color-primary: var(--pc-lavender-500);
+  --pc-color-primary-hover: var(--pc-lavender-600);
+  --pc-color-on-primary: #FFFFFF;          /* 5.84:1 on Lavender-500 */
+  --pc-color-primary-tint: var(--pc-lavender-50);
+  --pc-focus-ring: var(--pc-lavender-500);
 }

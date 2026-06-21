@@ -55,8 +55,32 @@ When active, the Skill (`claude/skills/dga-platforms-code`) directs Claude Code 
 5. Run available checks (lint, typecheck, build, tests).
 6. Summarize changed files and the remaining manual-review items.
 
-It also ships reusable `prompts/`, adaptable React + Tailwind `templates/`, and generic,
-product-agnostic `examples/`.
+It also ships a token-driven **component library** (`components/`) with dependency-free **charts** and
+opt-in **accent theming** (switch the primary accent per service to a verified palette — green /
+gold / lavender — while semantics, neutrals, and charts stay fixed), plus reusable `prompts/`,
+adaptable React + Tailwind `templates/`, and generic, product-agnostic `examples/`.
+
+## Documentation
+
+A comprehensive, browsable HTML documentation site lives in [`docs/`](docs/). Open
+[`docs/index.html`](docs/index.html) in a browser for a navigable reference covering the overview,
+design principles, **verified design tokens** (color, typography, spacing, elevation), the
+**component library** and **charts** with live previews, **accent theming**, the reference guides,
+RTL & accessibility, templates, examples, and prompts. The component and chart previews are rendered
+with the skill's own `tokens.css` / `components.css` / `charts.css`, so the docs always reflect the
+verified tokens.
+
+| | | |
+|---|---|---|
+| ![Buttons](docs/assets/img/comp-button.png) | ![Line chart](docs/assets/img/chart-line.png) | ![Donut chart](docs/assets/img/chart-donut.png) |
+| Buttons — RTL, token-driven | LineChart — right-to-left time axis | DonutChart — label · value · % |
+| ![Alerts](docs/assets/img/comp-alert.png) | ![Inputs](docs/assets/img/comp-input.png) | ![SA palette](docs/assets/img/tokens-colors-sa.png) |
+| Alerts — meaning beyond color | Inputs — label, hint, error | SA palette — verified tokens |
+| ![Green theme](docs/assets/img/theme-green.png) | ![Gold theme](docs/assets/img/theme-gold.png) | ![Lavender theme](docs/assets/img/theme-lavender.png) |
+| Accent theming — green (default) | Gold (dark text for contrast) | Lavender — semantics stay fixed |
+
+> The docs are documentation only — they do not change the skill, tokens, or components, and assert
+> no official DGA compliance.
 
 ## When to use it
 

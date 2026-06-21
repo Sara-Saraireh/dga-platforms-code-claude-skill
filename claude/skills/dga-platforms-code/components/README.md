@@ -66,7 +66,9 @@ import { ChartContainer, LineChart, KpiCard } from "dga-platforms-code/component
 </div>
 ```
 
-Charts use only the verified `--pc-chart-*` roles (SA-600, Gold-600, grays, semantic 600) — **no
+Charts use a **monochromatic green scheme** per the official charts page — the verified
+`--pc-chart-series-1…6` greens (SA + Success palettes), with a neutral gray for any remaining
+portion (**no gold/lavender for data series**). Pie/donut supports up to six categories. **No
 invented palette**, never color alone (labels/legend/dashes carry meaning), RTL-correct, with a
 required text `summary` for screen readers. For a Recharts-based variant and detailed guidance, see
 the chart **templates** (`templates/charts/`), **examples** (`examples/charts/`), reference
@@ -113,13 +115,38 @@ export default function Example() {
 
 ## Customizing
 
-Override the role variables in your own CSS to map the library to a project palette — for example to
-set a different primary color from the verified palette:
+### Accent theming (opt-in)
+
+The default accent is the unified SA green. To give a service or section a different **primary
+accent**, set `data-pc-theme` on a themed root — the presets switch only the accent, to another
+**verified** palette:
+
+```jsx
+<main data-pc-root dir="rtl" lang="ar" data-pc-theme="gold">
+  <Button variant="primary">ابدأ الخدمة</Button>   {/* gold accent, dark text */}
+</main>
+```
+
+| `data-pc-theme` | Primary | Text on accent | Focus ring |
+|-----------------|---------|----------------|------------|
+| (none) / `green` | SA-600 | white | SA-600 |
+| `gold` | Gold-600 | **gray-900** (white fails AA on gold) | Gold-700 |
+| `lavender` | Lavender-500 | white | Lavender-500 |
+
+Themes change **only** the primary accent. Semantic colors (success/error/warning/info), neutrals,
+typography, spacing, and the green chart scheme stay fixed. Keep accents within the verified palettes
+and preserve contrast (text-on-accent ≥ 4.5:1, focus ring ≥ 3:1). See
+[`references/17-accent-theming.md`](../references/17-accent-theming.md).
+
+### Manual overrides
+
+You can also override the role variables directly (e.g. for a one-off mapping to a verified token):
 
 ```css
 :root {
-  --pc-color-primary: var(--pc-gold-600);     /* still a verified token */
-  --pc-color-primary-hover: var(--pc-gold-700);
+  --pc-color-primary: var(--pc-lavender-500);  /* still a verified token */
+  --pc-color-primary-hover: var(--pc-lavender-600);
+  --pc-color-on-primary: #FFFFFF;
 }
 ```
 

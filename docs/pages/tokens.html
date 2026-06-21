@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design tokens — DGA Platforms Code Skill</title>
+  <meta name="description" content="Verified DGA Platforms Code design tokens: color palettes, typography scale, spacing scale, and elevation — with live swatches and values." />
+  <link rel="stylesheet" href="../assets/css/docs.css" />
+  <!-- The skill's own verified tokens, used live for the elevation samples -->
+  <link rel="stylesheet" href="../../claude/skills/dga-platforms-code/components/tokens.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="doc-topbar">
+    <span class="doc-topbar__brand">DGA Platforms Code</span>
+    <button class="doc-menu-btn" data-menu-btn aria-label="Toggle navigation">☰ Menu</button>
+  </header>
+
+  <div class="doc-shell">
+    <aside class="doc-sidebar">
+      <a class="doc-brand" href="../index.html" style="text-decoration:none;color:inherit">
+        <span class="doc-brand__name">DGA Platforms Code</span>
+        <span class="doc-brand__tag">Claude Skill · كود المنصات</span>
+        <span class="doc-brand__badge">v1.7.0 · documentation</span>
+      </a>
+      <nav class="doc-nav" aria-label="Documentation">
+        <a href="../index.html">Home</a>
+        <div class="doc-nav__group">Getting started</div>
+        <a href="overview.html">Overview</a>
+        <a href="principles.html">Design principles</a>
+        <div class="doc-nav__group">Foundations</div>
+        <a href="tokens.html" aria-current="page">Design tokens</a>
+        <a href="theming.html">Theming</a>
+        <div class="doc-nav__group">Component library</div>
+        <a href="components.html">Components</a>
+        <a href="charts.html">Charts &amp; data viz</a>
+        <div class="doc-nav__group">Guidance</div>
+        <a href="references.html">Reference guides</a>
+        <a href="rtl-accessibility.html">RTL &amp; accessibility</a>
+        <div class="doc-nav__group">Build with it</div>
+        <a href="templates.html">Templates &amp; examples</a>
+        <a href="prompts.html">Prompts</a>
+      </nav>
+    </aside>
+
+    <main class="doc-main">
+      <div class="doc-container">
+        <p class="doc-eyebrow">Foundations</p>
+        <h1>Design tokens</h1>
+        <p class="doc-lead">Every value below is a <strong>verified extraction</strong> from the
+          official Platforms Code foundation pages — no invented colors, sizes, spacing, or shadows.
+          They ship as JSON in <code>tokens/</code> and as CSS custom properties (<code>--pc-*</code>)
+          in <code>components/tokens.css</code>.</p>
+
+        <div class="doc-callout doc-callout--boundary">
+          <span class="doc-callout__icon">⚖️</span>
+          <p class="doc-callout__body"><strong>Verified, not official compliance.</strong> Pixel values
+            are authoritative. Some large-step <code>rem</code> values, the <code>2xl</code> shadow Y,
+            and radius values are pending confirmation in the official Figma library and are flagged in
+            the token files.</p>
+        </div>
+
+        <!-- ===================== COLOR ===================== -->
+        <h2>Color</h2>
+        <p>Source: <code>tokens/colors-v1.0.json</code>. Pair every status color with text and an icon —
+          never rely on color alone.</p>
+
+        <h3>Gray</h3>
+        <div class="doc-swatches">
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#FCFCFD"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">Gray 25</span><span class="doc-swatch__hex">#FCFCFD</span><code class="doc-swatch__var">--pc-gray-25</code></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#F9FAFB"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">Gray 50</span><span class="doc-swatch__hex">#F9FAFB</span><code class="doc-swatch__var">--pc-gray-50</code></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#F3F4F6"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">Gray 100</span><span class="doc-swatch__hex">#F3F4F6</span><code class="doc-swatch__var">--pc-gray-100</code></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#E5E7EB"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">Gray 200</span><span class="doc-swatch__hex">#E5E7EB</span><code class="doc-swatch__var">--pc-gray-200</code></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#D2D6DB"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">Gray 300</span><span class="doc-swatch__hex">#D2D6DB</span><code class="doc-swatch__var">--pc-gray-300</code></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#9DA4AE"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">Gray 400</span><span class="doc-swatch__hex">#9DA4AE</span><code class="doc-swatch__var">--pc-gray-400</code></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#6C737F"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">Gray 500</span><span class="doc-swatch__hex">#6C737F</span><code class="doc-swatch__var">--pc-gray-500</code></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#4D5761"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">Gray 600</span><span class="doc-swatch__hex">#4D5761</span><code class="doc-swatch__var">--pc-gray-600</code></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#384250"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">Gray 700</span><span class="doc-swatch__hex">#384250</span><code class="doc-swatch__var">--pc-gray-700</code></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#1F2A37"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">Gray 800</span><span class="doc-swatch__hex">#1F2A37</span><code class="doc-swatch__var">--pc-gray-800</code></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#111927"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">Gray 900</span><span class="doc-swatch__hex">#111927</span><code class="doc-swatch__var">--pc-gray-900</code></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#0D121C"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">Gray 950</span><span class="doc-swatch__hex">#0D121C</span><code class="doc-swatch__var">--pc-gray-950</code></div></div>
+        </div>
+
+        <h3>SA — primary green</h3>
+        <div class="doc-swatches">
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#F7FDF9"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">SA 25</span><span class="doc-swatch__hex">#F7FDF9</span><code class="doc-swatch__var">--pc-sa-25</code></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#F3FCF6"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">SA 50</span><span class="doc-swatch__hex">#F3FCF6</span><code class="doc-swatch__var">--pc-sa-50</code></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#DFF6E7"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">SA 100</span><span class="doc-swatch__hex">#DFF6E7</span><code class="doc-swatch__var">--pc-sa-100</code></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#B8EACB"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">SA 200</span><span class="doc-swatch__hex">#B8EACB</span><code class="doc-swatch__var">--pc-sa-200</code></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#88D8AD"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">SA 300</span><span class="doc-swatch__hex">#88D8AD</span><code class="doc-swatch__var">--pc-sa-300</code></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#54C08A"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">SA 400</span><span class="doc-swatch__hex">#54C08A</span><code class="doc-swatch__var">--pc-sa-400</code></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#25935F"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">SA 500</span><span class="doc-swatch__hex">#25935F</span><code class="doc-swatch__var">--pc-sa-500</code></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#1B8354"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">SA 600 · primary</span><span class="doc-swatch__hex">#1B8354</span><code class="doc-swatch__var">--pc-sa-600</code></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#166A45"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">SA 700</span><span class="doc-swatch__hex">#166A45</span><code class="doc-swatch__var">--pc-sa-700</code></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#14573A"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">SA 800</span><span class="doc-swatch__hex">#14573A</span><code class="doc-swatch__var">--pc-sa-800</code></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#104631"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">SA 900</span><span class="doc-swatch__hex">#104631</span><code class="doc-swatch__var">--pc-sa-900</code></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#092A1E"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">SA 950</span><span class="doc-swatch__hex">#092A1E</span><code class="doc-swatch__var">--pc-sa-950</code></div></div>
+        </div>
+
+        <h3>Gold</h3>
+        <div class="doc-swatches">
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#FFFEF7"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">Gold 25</span><span class="doc-swatch__hex">#FFFEF7</span></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#FFFEF2"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">Gold 50</span><span class="doc-swatch__hex">#FFFEF2</span></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#FFFCE6"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">Gold 100</span><span class="doc-swatch__hex">#FFFCE6</span></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#FCF3BD"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">Gold 200</span><span class="doc-swatch__hex">#FCF3BD</span></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#FAE996"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">Gold 300</span><span class="doc-swatch__hex">#FAE996</span></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#F7D54D"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">Gold 400</span><span class="doc-swatch__hex">#F7D54D</span></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#F5BD02"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">Gold 500</span><span class="doc-swatch__hex">#F5BD02</span><code class="doc-swatch__var">--pc-gold-500</code></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#DBA102"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">Gold 600 · primary</span><span class="doc-swatch__hex">#DBA102</span><code class="doc-swatch__var">--pc-gold-600</code></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#B87B02"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">Gold 700</span><span class="doc-swatch__hex">#B87B02</span><code class="doc-swatch__var">--pc-gold-700</code></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#945C01"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">Gold 800</span><span class="doc-swatch__hex">#945C01</span></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#6E3C00"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">Gold 900</span><span class="doc-swatch__hex">#6E3C00</span></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#472400"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">Gold 950</span><span class="doc-swatch__hex">#472400</span></div></div>
+        </div>
+
+        <h3>Lavender — secondary</h3>
+        <p class="doc-section-note">A secondary palette (الخزامى). On the official page the 500 step is labelled “Primary 500”.</p>
+        <div class="doc-swatches">
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#FEFCFF"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">Lavender 25</span><span class="doc-swatch__hex">#FEFCFF</span></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#F9F5FA"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">Lavender 50</span><span class="doc-swatch__hex">#F9F5FA</span></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#F2E9F5"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">Lavender 100</span><span class="doc-swatch__hex">#F2E9F5</span><code class="doc-swatch__var">--pc-lavender-100</code></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#E1CCE8"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">Lavender 200</span><span class="doc-swatch__hex">#E1CCE8</span><code class="doc-swatch__var">--pc-lavender-200</code></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#CCADD9"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">Lavender 300</span><span class="doc-swatch__hex">#CCADD9</span></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#A57BBA"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">Lavender 400</span><span class="doc-swatch__hex">#A57BBA</span><code class="doc-swatch__var">--pc-lavender-400</code></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#80519F"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">Primary 500</span><span class="doc-swatch__hex">#80519F</span><code class="doc-swatch__var">--pc-lavender-500</code></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#6D428F"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">Lavender 600</span><span class="doc-swatch__hex">#6D428F</span><code class="doc-swatch__var">--pc-lavender-600</code></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#532D75"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">Lavender 700</span><span class="doc-swatch__hex">#532D75</span><code class="doc-swatch__var">--pc-lavender-700</code></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#3D1D5E"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">Lavender 800</span><span class="doc-swatch__hex">#3D1D5E</span></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#281047"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">Lavender 900</span><span class="doc-swatch__hex">#281047</span></div></div>
+          <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#16072E"></div><div class="doc-swatch__meta"><span class="doc-swatch__name">Lavender 950</span><span class="doc-swatch__hex">#16072E</span></div></div>
+        </div>
+
+        <h3>Semantic — full ramps</h3>
+        <p class="doc-section-note">Each semantic color is its own 12-step palette. <strong>Success is
+          not the SA primary green</strong> — Success 600 = <code>#079455</code>, SA 600 = <code>#1B8354</code>.
+          Pair every state with a label and an icon.</p>
+
+        <h4 style="margin:18px 0 4px">Error</h4>
+        <div style="display:flex;height:44px;border-radius:8px;overflow:hidden;border:1px solid var(--doc-border)">
+          <div style="flex:1;background:#FFFBFA"></div><div style="flex:1;background:#FEF3F2"></div><div style="flex:1;background:#FEE4E2"></div><div style="flex:1;background:#FECDCA"></div><div style="flex:1;background:#FDA29B"></div><div style="flex:1;background:#F97066"></div><div style="flex:1;background:#F04438"></div><div style="flex:1;background:#D92D20"></div><div style="flex:1;background:#B42318"></div><div style="flex:1;background:#912018"></div><div style="flex:1;background:#7A271A"></div><div style="flex:1;background:#55160C"></div>
+        </div>
+        <p class="doc-section-note">25 #FFFBFA · 50 #FEF3F2 · 100 #FEE4E2 · 200 #FECDCA · 300 #FDA29B · 400 #F97066 · 500 #F04438 · <strong>600 #D92D20</strong> · 700 #B42318 · 800 #912018 · 900 #7A271A · 950 #55160C</p>
+
+        <h4 style="margin:18px 0 4px">Warning</h4>
+        <div style="display:flex;height:44px;border-radius:8px;overflow:hidden;border:1px solid var(--doc-border)">
+          <div style="flex:1;background:#FFFCF5"></div><div style="flex:1;background:#FFFAEB"></div><div style="flex:1;background:#FEF0C7"></div><div style="flex:1;background:#FEDF89"></div><div style="flex:1;background:#FEC84B"></div><div style="flex:1;background:#FDB022"></div><div style="flex:1;background:#F79009"></div><div style="flex:1;background:#DC6803"></div><div style="flex:1;background:#B54708"></div><div style="flex:1;background:#93370D"></div><div style="flex:1;background:#7A2E0E"></div><div style="flex:1;background:#4E1D09"></div>
+        </div>
+        <p class="doc-section-note">25 #FFFCF5 · 50 #FFFAEB · 100 #FEF0C7 · 200 #FEDF89 · 300 #FEC84B · 400 #FDB022 · 500 #F79009 · <strong>600 #DC6803</strong> · 700 #B54708 · 800 #93370D · 900 #7A2E0E · 950 #4E1D09</p>
+
+        <h4 style="margin:18px 0 4px">Info</h4>
+        <div style="display:flex;height:44px;border-radius:8px;overflow:hidden;border:1px solid var(--doc-border)">
+          <div style="flex:1;background:#F5FAFF"></div><div style="flex:1;background:#ECFDF3"></div><div style="flex:1;background:#D1E9FF"></div><div style="flex:1;background:#B2DDFF"></div><div style="flex:1;background:#84CAFF"></div><div style="flex:1;background:#53B1FD"></div><div style="flex:1;background:#2E90FA"></div><div style="flex:1;background:#1570EF"></div><div style="flex:1;background:#175CD3"></div><div style="flex:1;background:#1849A9"></div><div style="flex:1;background:#194185"></div><div style="flex:1;background:#102A56"></div>
+        </div>
+        <p class="doc-section-note">25 #F5FAFF · 50 #ECFDF3 ⚠ · 100 #D1E9FF · 200 #B2DDFF · 300 #84CAFF · 400 #53B1FD · 500 #2E90FA · <strong>600 #1570EF</strong> · 700 #175CD3 · 800 #1849A9 · 900 #194185 · 950 #102A56 &nbsp;<em>(⚠ official page prints Info 50 = #ECFDF3, an apparent source typo — verify in Figma)</em></p>
+
+        <h4 style="margin:18px 0 4px">Success</h4>
+        <div style="display:flex;height:44px;border-radius:8px;overflow:hidden;border:1px solid var(--doc-border)">
+          <div style="flex:1;background:#F6FEF9"></div><div style="flex:1;background:#ECFDF3"></div><div style="flex:1;background:#DCFAE6"></div><div style="flex:1;background:#ABEFC6"></div><div style="flex:1;background:#75E0A7"></div><div style="flex:1;background:#47CD89"></div><div style="flex:1;background:#17B26A"></div><div style="flex:1;background:#079455"></div><div style="flex:1;background:#067647"></div><div style="flex:1;background:#085D3A"></div><div style="flex:1;background:#074D31"></div><div style="flex:1;background:#053321"></div>
+        </div>
+        <p class="doc-section-note">25 #F6FEF9 · 50 #ECFDF3 · 100 #DCFAE6 · 200 #ABEFC6 · 300 #75E0A7 · 400 #47CD89 · 500 #17B26A · <strong>600 #079455</strong> · 700 #067647 · 800 #085D3A · 900 #074D31 · 950 #053321</p>
+
+        <!-- ===================== TYPOGRAPHY ===================== -->
+        <h2>Typography</h2>
+        <p>Family: <strong>IBM Plex Sans Arabic</strong>. Use <strong>Display</strong> for headings and
+          large emphasis only; use <strong>Text</strong> for body, labels, forms, tables, and UI.
+          Source: <code>tokens/typography-v1.0.json</code>.</p>
+
+        <h3>Display scale</h3>
+        <div dir="rtl" lang="ar" style="font-family:var(--pc-font-family)">
+          <div class="doc-type-row"><span class="doc-type-row__meta">Display 2xl · 72/90</span><span class="doc-type-row__sample" style="font-size:72px;line-height:1;font-weight:700">منصة</span></div>
+          <div class="doc-type-row"><span class="doc-type-row__meta">Display xl · 60/72</span><span class="doc-type-row__sample" style="font-size:60px;line-height:1;font-weight:700">منصة حكومية</span></div>
+          <div class="doc-type-row"><span class="doc-type-row__meta">Display lg · 48/60</span><span class="doc-type-row__sample" style="font-size:48px;line-height:1;font-weight:600">منصة حكومية موحّدة</span></div>
+          <div class="doc-type-row"><span class="doc-type-row__meta">Display md · 36/44</span><span class="doc-type-row__sample" style="font-size:36px;line-height:1.1;font-weight:600">تصميم خدمات رقمية</span></div>
+          <div class="doc-type-row"><span class="doc-type-row__meta">Display sm · 30/38</span><span class="doc-type-row__sample" style="font-size:30px;line-height:1.2;font-weight:600">تصميم خدمات رقمية موثوقة</span></div>
+          <div class="doc-type-row"><span class="doc-type-row__meta">Display xs · 24/32</span><span class="doc-type-row__sample" style="font-size:24px;line-height:1.3;font-weight:600">تصميم خدمات رقمية موثوقة للجميع</span></div>
+        </div>
+
+        <h3>Text scale</h3>
+        <div dir="rtl" lang="ar" style="font-family:var(--pc-font-family)">
+          <div class="doc-type-row"><span class="doc-type-row__meta">Text xl · 20/30 · <code>--pc-text-xl</code></span><span class="doc-type-row__sample" style="font-size:20px;line-height:30px">نص واجهة المستخدم — العنوان الفرعي</span></div>
+          <div class="doc-type-row"><span class="doc-type-row__meta">Text lg · 18/28 · <code>--pc-text-lg</code></span><span class="doc-type-row__sample" style="font-size:18px;line-height:28px">نص واجهة المستخدم — عنوان البطاقة</span></div>
+          <div class="doc-type-row"><span class="doc-type-row__meta">Text md · 16/24 · <code>--pc-text-md</code></span><span class="doc-type-row__sample" style="font-size:16px;line-height:24px">نص الفقرة الأساسي للمحتوى والنماذج والجداول.</span></div>
+          <div class="doc-type-row"><span class="doc-type-row__meta">Text sm · 14/20 · <code>--pc-text-sm</code></span><span class="doc-type-row__sample" style="font-size:14px;line-height:20px">نص مساعد وتسميات الحقول ورسائل الخطأ.</span></div>
+          <div class="doc-type-row"><span class="doc-type-row__meta">Text xs · 12/18 · <code>--pc-text-xs</code></span><span class="doc-type-row__sample" style="font-size:12px;line-height:18px">نص ثانوي صغير، مثل المصدر أو الطابع الزمني.</span></div>
+          <div class="doc-type-row"><span class="doc-type-row__meta">Text 2xs · 10/14</span><span class="doc-type-row__sample" style="font-size:10px;line-height:14px">أصغر مقاس — للاستخدام المحدود فقط.</span></div>
+        </div>
+        <p class="doc-section-note">Weights: Regular 400, Medium 500, Semibold 600, Bold 700. Saudi Font
+          is reserved for national/seasonal contexts and main headings only — never default body.</p>
+
+        <!-- ===================== SPACING ===================== -->
+        <h2>Spacing</h2>
+        <p>Use the verified scale only — no arbitrary one-off spacing. Pixel values are authoritative.
+          Source: <code>tokens/spacing-v1.0.json</code>.</p>
+        <div>
+          <div class="doc-space-row"><span class="doc-space-row__meta"><code>spacing-none</code> · 0px</span><span class="doc-space-row__bar" style="width:1px"></span></div>
+          <div class="doc-space-row"><span class="doc-space-row__meta"><code>spacing-xxs</code> · 2px</span><span class="doc-space-row__bar" style="width:2px"></span></div>
+          <div class="doc-space-row"><span class="doc-space-row__meta"><code>spacing-xs</code> · 4px</span><span class="doc-space-row__bar" style="width:4px"></span></div>
+          <div class="doc-space-row"><span class="doc-space-row__meta"><code>spacing-sm</code> · 6px</span><span class="doc-space-row__bar" style="width:6px"></span></div>
+          <div class="doc-space-row"><span class="doc-space-row__meta"><code>spacing-md</code> · 8px</span><span class="doc-space-row__bar" style="width:8px"></span></div>
+          <div class="doc-space-row"><span class="doc-space-row__meta"><code>spacing-lg</code> · 12px</span><span class="doc-space-row__bar" style="width:12px"></span></div>
+          <div class="doc-space-row"><span class="doc-space-row__meta"><code>spacing-xl</code> · 16px</span><span class="doc-space-row__bar" style="width:16px"></span></div>
+          <div class="doc-space-row"><span class="doc-space-row__meta"><code>spacing-2xl</code> · 20px</span><span class="doc-space-row__bar" style="width:20px"></span></div>
+          <div class="doc-space-row"><span class="doc-space-row__meta"><code>spacing-3xl</code> · 24px</span><span class="doc-space-row__bar" style="width:24px"></span></div>
+          <div class="doc-space-row"><span class="doc-space-row__meta"><code>spacing-4xl</code> · 32px</span><span class="doc-space-row__bar" style="width:32px"></span></div>
+          <div class="doc-space-row"><span class="doc-space-row__meta"><code>spacing-5xl</code> · 40px</span><span class="doc-space-row__bar" style="width:40px"></span></div>
+          <div class="doc-space-row"><span class="doc-space-row__meta"><code>spacing-6xl</code> · 48px</span><span class="doc-space-row__bar" style="width:48px"></span></div>
+          <div class="doc-space-row"><span class="doc-space-row__meta"><code>spacing-7xl</code> · 64px</span><span class="doc-space-row__bar" style="width:64px"></span></div>
+          <div class="doc-space-row"><span class="doc-space-row__meta"><code>spacing-8xl</code> · 80px</span><span class="doc-space-row__bar" style="width:80px"></span></div>
+          <div class="doc-space-row"><span class="doc-space-row__meta"><code>spacing-9xl</code> · 96px</span><span class="doc-space-row__bar" style="width:96px"></span></div>
+          <div class="doc-space-row"><span class="doc-space-row__meta"><code>spacing-10xl</code> · 128px</span><span class="doc-space-row__bar" style="width:128px"></span></div>
+          <div class="doc-space-row"><span class="doc-space-row__meta"><code>spacing-11xl</code> · 160px</span><span class="doc-space-row__bar" style="width:160px"></span></div>
+        </div>
+        <table class="doc-table">
+          <thead><tr><th>Layout token</th><th>Value</th></tr></thead>
+          <tbody>
+            <tr><td>Container padding (mobile / desktop)</td><td>16px / 32px</td></tr>
+            <tr><td>Container max-width (desktop)</td><td>1280px</td></tr>
+            <tr><td>Paragraph max-width</td><td>720px</td></tr>
+            <tr><td>Breakpoints</td><td>mobile 0–599 · tablet 600–959 · desktop 960–1279 · xl 1280+</td></tr>
+          </tbody>
+        </table>
+
+        <!-- ===================== ELEVATION ===================== -->
+        <h2>Elevation</h2>
+        <p>Seven verified shadow levels, all using color <code>#101828</code>. Prefer lighter levels for
+          cards; reserve heavier levels for overlays and modals. Source:
+          <code>tokens/elevation-v1.0.json</code>. These cards use the live <code>--pc-shadow-*</code>
+          variables.</p>
+        <div class="doc-elev-grid" style="background:var(--doc-bg);border-radius:16px">
+          <div class="doc-elev-card" style="box-shadow:var(--pc-shadow-xs)"><div class="doc-elev-card__name">xs</div><div class="doc-elev-card__val">--pc-shadow-xs</div></div>
+          <div class="doc-elev-card" style="box-shadow:var(--pc-shadow-sm)"><div class="doc-elev-card__name">sm</div><div class="doc-elev-card__val">--pc-shadow-sm</div></div>
+          <div class="doc-elev-card" style="box-shadow:var(--pc-shadow-md)"><div class="doc-elev-card__name">md</div><div class="doc-elev-card__val">--pc-shadow-md</div></div>
+          <div class="doc-elev-card" style="box-shadow:var(--pc-shadow-lg)"><div class="doc-elev-card__name">lg</div><div class="doc-elev-card__val">--pc-shadow-lg</div></div>
+          <div class="doc-elev-card" style="box-shadow:var(--pc-shadow-xl)"><div class="doc-elev-card__name">xl</div><div class="doc-elev-card__val">--pc-shadow-xl</div></div>
+          <div class="doc-elev-card" style="box-shadow:var(--pc-shadow-2xl)"><div class="doc-elev-card__name">2xl</div><div class="doc-elev-card__val">--pc-shadow-2xl</div></div>
+          <div class="doc-elev-card" style="box-shadow:var(--pc-shadow-3xl)"><div class="doc-elev-card__name">3xl</div><div class="doc-elev-card__val">--pc-shadow-3xl</div></div>
+        </div>
+
+        <footer class="doc-footer">
+          <p>Verified value extractions for implementation alignment — not official DGA compliance.
+            Official source: <a href="https://design.dga.gov.sa/">design.dga.gov.sa</a>.</p>
+        </footer>
+      </div>
+    </main>
+  </div>
+  <script src="../assets/js/docs.js"></script>
+</body>
+</html>

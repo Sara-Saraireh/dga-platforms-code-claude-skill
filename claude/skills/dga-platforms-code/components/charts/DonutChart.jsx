@@ -3,11 +3,13 @@
 // alone. Illustrative, token-driven; not an official DGA asset.
 import React from "react";
 
+// Official DgaChart donut colors, in order: ["#1B8354","#079455","#B8EACB","#54C08A"].
+// The palette cycles when there are more segments than colors.
 const ROLE_FILLS = [
   "var(--pc-chart-series-1)",
   "var(--pc-chart-series-2)",
-  "var(--pc-chart-axis)",
-  "var(--pc-chart-grid)",
+  "var(--pc-chart-series-3)",
+  "var(--pc-chart-series-4)",
 ];
 
 // data: [{ label: string, value: number }]

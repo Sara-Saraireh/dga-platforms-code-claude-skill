@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Charts &amp; data viz — DGA Platforms Code Skill</title>
+  <meta name="description" content="Dependency-free DGA Platforms Code chart components: KPI cards, line, bar, and donut charts, plus empty/loading/error states — pure SVG, token-driven, RTL-first." />
+  <link rel="stylesheet" href="../assets/css/docs.css" />
+  <!-- The skill's own tokens + component + chart styles power every live chart below -->
+  <link rel="stylesheet" href="../../claude/skills/dga-platforms-code/components/tokens.css" />
+  <link rel="stylesheet" href="../../claude/skills/dga-platforms-code/components/components.css" />
+  <link rel="stylesheet" href="../../claude/skills/dga-platforms-code/components/charts/charts.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="doc-topbar">
+    <span class="doc-topbar__brand">DGA Platforms Code</span>
+    <button class="doc-menu-btn" data-menu-btn aria-label="Toggle navigation">☰ Menu</button>
+  </header>
+
+  <div class="doc-shell">
+    <aside class="doc-sidebar">
+      <a class="doc-brand" href="../index.html" style="text-decoration:none;color:inherit">
+        <span class="doc-brand__name">DGA Platforms Code</span>
+        <span class="doc-brand__tag">Claude Skill · كود المنصات</span>
+        <span class="doc-brand__badge">v1.7.0 · documentation</span>
+      </a>
+      <nav class="doc-nav" aria-label="Documentation">
+        <a href="../index.html">Home</a>
+        <div class="doc-nav__group">Getting started</div>
+        <a href="overview.html">Overview</a>
+        <a href="principles.html">Design principles</a>
+        <div class="doc-nav__group">Foundations</div>
+        <a href="tokens.html">Design tokens</a>
+        <a href="theming.html">Theming</a>
+        <div class="doc-nav__group">Component library</div>
+        <a href="components.html">Components</a>
+        <a href="charts.html" aria-current="page">Charts &amp; data viz</a>
+        <div class="doc-nav__group">Guidance</div>
+        <a href="references.html">Reference guides</a>
+        <a href="rtl-accessibility.html">RTL &amp; accessibility</a>
+        <div class="doc-nav__group">Build with it</div>
+        <a href="templates.html">Templates &amp; examples</a>
+        <a href="prompts.html">Prompts</a>
+      </nav>
+    </aside>
+
+    <main class="doc-main">
+      <div class="doc-container">
+        <p class="doc-eyebrow">Component library · increment 2</p>
+        <h1>Charts &amp; data visualization</h1>
+        <p class="doc-lead">Ready-to-use, <strong>dependency-free</strong> chart components — plain
+          SVG/CSS, no charting library required. They match the official
+          <code>DgaChart</code> (<code>platformscode-react</code>) palette exactly — a
+          <strong>monochromatic green scheme</strong> (<em>no gold or lavender for data series</em>)
+          with a neutral gray for any remaining series. They never distinguish data by color alone,
+          read right-to-left, and require a text <code>summary</code> for screen readers. Pie/donut
+          supports up to six categories.</p>
+
+        <p class="doc-section-note">Official <code>DgaChart</code> color arrays:
+          <strong>donut</strong> <code>#1B8354 · #079455 · #B8EACB · #54C08A</code> ·
+          <strong>line</strong> <code>#1B8354 · #079455</code> ·
+          <strong>bar</strong> <code>#1B8354 · #54C08A · #E5E7EB</code>. The skill exposes these as
+          <code>--pc-chart-series-1…4</code> + <code>--pc-chart-neutral</code>.</p>
+
+        <div class="doc-callout doc-callout--boundary">
+          <span class="doc-callout__icon">⚖️</span>
+          <p class="doc-callout__body"><strong>Illustrative, not official.</strong> Aligned with the
+            Platforms Code charts page (pie/donut, line, column/bar) — not official DGA assets, and no
+            compliance claim. No invented palette; labels, legend, and dashes carry meaning.</p>
+        </div>
+
+        <div class="doc-code"><pre><code>import "dga-platforms-code/components/tokens.css";
+import "dga-platforms-code/components/components.css";
+import "dga-platforms-code/components/charts/charts.css";
+import { ChartContainer, LineChart, BarChart, DonutChart, KpiCard } from "dga-platforms-code/components";</code></pre></div>
+
+        <!-- ===================== KPI ===================== -->
+        <h2>KpiCard</h2>
+        <p>A single-number indicator: label → value → trend → context. The trend is text + icon, never
+          color alone.</p>
+        <div class="doc-preview">
+          <div class="doc-preview__bar"><span class="doc-preview__title">KpiCard — trend up / down / flat &amp; loading</span></div>
+          <div class="doc-preview__stage" dir="rtl" lang="ar" data-pc-root>
+            <div class="pc-kpi" style="min-width:200px">
+              <p class="pc-kpi__label">إجمالي الطلبات</p>
+              <p class="pc-kpi__value pc-num">12,480</p>
+              <p class="pc-kpi__trend pc-kpi__trend--up"><span aria-hidden="true">▲</span><span>+4% عن الشهر السابق</span></p>
+              <p class="pc-kpi__context">حتى نهاية يونيو</p>
+            </div>
+            <div class="pc-kpi" style="min-width:200px">
+              <p class="pc-kpi__label">الطلبات المعلّقة</p>
+              <p class="pc-kpi__value pc-num">312</p>
+              <p class="pc-kpi__trend pc-kpi__trend--down"><span aria-hidden="true">▼</span><span>−8% عن الشهر السابق</span></p>
+            </div>
+            <div class="pc-kpi" style="min-width:200px">
+              <p class="pc-kpi__label">متوسط زمن المعالجة</p>
+              <p class="pc-kpi__value pc-num">2.4 يوم</p>
+              <p class="pc-kpi__trend pc-kpi__trend--flat"><span aria-hidden="true">■</span><span>دون تغيير</span></p>
+            </div>
+            <div class="pc-kpi" style="min-width:200px">
+              <p class="pc-kpi__label">نسبة الإنجاز</p>
+              <div class="pc-chart__skeleton" style="min-block-size:2rem;margin-block-start:8px" aria-hidden="true"><i style="block-size:2rem;max-inline-size:6rem"></i></div>
+            </div>
+          </div>
+        </div>
+        <div class="doc-code"><pre><code>&lt;KpiCard label="إجمالي الطلبات" value="12,480"
+  trend={{ direction: "up", label: "+4% عن الشهر السابق" }}
+  context="حتى نهاية يونيو" /&gt;</code></pre></div>
+
+        <!-- ===================== LINE ===================== -->
+        <h2>LineChart</h2>
+        <p>Trends over time. The time axis reads right-to-left (first period on the right). Up to two
+          series; the second is dashed so it is distinguishable without color. Shown inside a
+          <code>ChartContainer</code> with its required accessible summary, legend, and source.</p>
+        <div class="doc-preview">
+          <div class="doc-preview__bar"><span class="doc-preview__title">LineChart in ChartContainer</span></div>
+          <div class="doc-preview__stage doc-preview__stage--column" dir="rtl" lang="ar" data-pc-root>
+            <figure role="group" aria-labelledby="d-line-t" class="pc-chart">
+              <figcaption class="pc-chart__head">
+                <h3 id="d-line-t" class="pc-chart__title">عدد المعاملات المعالَجة شهريًا</h3>
+                <p class="pc-chart__desc">المعاملات المعالَجة مقابل قيد المراجعة، يناير–يونيو.</p>
+              </figcaption>
+              <p class="pc-sr-only">ارتفع عدد المعاملات المعالَجة من 1,500 في يناير إلى 2,400 في يونيو، بينما بقيت المعاملات قيد المراجعة شبه ثابتة قرب 280.</p>
+              <div class="pc-chart__plot">
+                <svg class="pc-chart__svg" viewBox="0 0 980 240" role="img" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+                  <g>
+                    <line x1="34" x2="946" y1="206" y2="206" stroke="var(--pc-chart-grid)"></line><text x="952" y="210" font-size="11" fill="var(--pc-chart-axis)" class="pc-num">0</text>
+                    <line x1="34" x2="946" y1="171.6" y2="171.6" stroke="var(--pc-chart-grid)"></line><text x="952" y="175.6" font-size="11" fill="var(--pc-chart-axis)" class="pc-num">500</text>
+                    <line x1="34" x2="946" y1="137.2" y2="137.2" stroke="var(--pc-chart-grid)"></line><text x="952" y="141.2" font-size="11" fill="var(--pc-chart-axis)" class="pc-num">1000</text>
+                    <line x1="34" x2="946" y1="102.8" y2="102.8" stroke="var(--pc-chart-grid)"></line><text x="952" y="106.8" font-size="11" fill="var(--pc-chart-axis)" class="pc-num">1500</text>
+                    <line x1="34" x2="946" y1="68.4" y2="68.4" stroke="var(--pc-chart-grid)"></line><text x="952" y="72.4" font-size="11" fill="var(--pc-chart-axis)" class="pc-num">2000</text>
+                    <line x1="34" x2="946" y1="34" y2="34" stroke="var(--pc-chart-grid)"></line><text x="952" y="38" font-size="11" fill="var(--pc-chart-axis)" class="pc-num">2500</text>
+                  </g>
+                  <path d="M946 102.8 L763.6 87.66 L581.2 69.78 L398.8 61.52 L216.4 47.76 L34 40.88" fill="none" stroke="var(--pc-chart-series-1)" stroke-width="2.5"></path>
+                  <path d="M946 185.36 L763.6 186.74 L581.2 186.05 L398.8 186.4 L216.4 187.42 L34 187.08" fill="none" stroke="var(--pc-chart-series-2)" stroke-width="2.5" stroke-dasharray="6 4"></path>
+                  <circle cx="946" cy="102.8" r="3" fill="var(--pc-chart-series-1)"></circle>
+                  <circle cx="763.6" cy="87.66" r="3" fill="var(--pc-chart-series-1)"></circle>
+                  <circle cx="581.2" cy="69.78" r="3" fill="var(--pc-chart-series-1)"></circle>
+                  <circle cx="398.8" cy="61.52" r="3" fill="var(--pc-chart-series-1)"></circle>
+                  <circle cx="216.4" cy="47.76" r="3" fill="var(--pc-chart-series-1)"></circle>
+                  <circle cx="34" cy="40.88" r="3" fill="var(--pc-chart-series-1)"></circle>
+                  <text x="946" y="230" font-size="11" fill="var(--pc-chart-axis)" text-anchor="middle">يناير</text>
+                  <text x="763.6" y="230" font-size="11" fill="var(--pc-chart-axis)" text-anchor="middle">فبراير</text>
+                  <text x="581.2" y="230" font-size="11" fill="var(--pc-chart-axis)" text-anchor="middle">مارس</text>
+                  <text x="398.8" y="230" font-size="11" fill="var(--pc-chart-axis)" text-anchor="middle">أبريل</text>
+                  <text x="216.4" y="230" font-size="11" fill="var(--pc-chart-axis)" text-anchor="middle">مايو</text>
+                  <text x="34" y="230" font-size="11" fill="var(--pc-chart-axis)" text-anchor="middle">يونيو</text>
+                </svg>
+              </div>
+              <div class="pc-chart__legend">
+                <span><i class="pc-chart__swatch" style="background:var(--pc-chart-series-1)"></i> معالَجة</span>
+                <span><i class="pc-chart__swatch" style="background:var(--pc-chart-series-2)"></i> قيد المراجعة (متقطّع)</span>
+              </div>
+              <p class="pc-chart__source"><bdi>المصدر: بيانات تجريبية</bdi></p>
+            </figure>
+          </div>
+        </div>
+        <div class="doc-code"><pre><code>&lt;ChartContainer
+  title="عدد المعاملات المعالَجة شهريًا"
+  description="المعاملات المعالَجة مقابل قيد المراجعة، يناير–يونيو."
+  summary="ارتفع عدد المعاملات المعالَجة من 1,500 في يناير إلى 2,400 في يونيو."
+  source="المصدر: بيانات تجريبية"
+  legend={&lt;&gt;&lt;span&gt;&lt;i className="pc-chart__swatch"
+    style={{ background: "var(--pc-chart-series-1)" }} /&gt; معالَجة&lt;/span&gt;&lt;/&gt;}
+&gt;
+  &lt;LineChart data={[
+    { period: "يناير", series1: 1500, series2: 300 },
+    { period: "يونيو", series1: 2400, series2: 275 },
+  ]} /&gt;
+&lt;/ChartContainer&gt;</code></pre></div>
+
+        <!-- ===================== BAR ===================== -->
+        <h2>BarChart</h2>
+        <p>Categorical comparison. Use <code>orientation="horizontal"</code> for many categories or long
+          Arabic labels (labels get full width and are never truncated). RTL: first category on the
+          right (vertical) or on top (horizontal).</p>
+
+        <div class="doc-preview">
+          <div class="doc-preview__bar"><span class="doc-preview__title">BarChart — vertical</span></div>
+          <div class="doc-preview__stage doc-preview__stage--column" dir="rtl" lang="ar" data-pc-root>
+            <figure role="group" aria-labelledby="d-barv-t" class="pc-chart">
+              <figcaption class="pc-chart__head"><h3 id="d-barv-t" class="pc-chart__title">الطلبات حسب الحالة</h3></figcaption>
+              <p class="pc-sr-only">أعلى حالة هي «منجزة» بـ 1,850 طلبًا، تليها «قيد المعالجة» بـ 1,240، ثم «بانتظار المستند» بـ 920، وأخيرًا «مرفوضة» بـ 540.</p>
+              <div class="pc-chart__plot">
+                <svg class="pc-chart__svg" viewBox="0 0 460 240" role="img" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+                  <g>
+                    <line x1="34" x2="426" y1="206" y2="206" stroke="var(--pc-chart-grid)"></line><text x="432" y="210" font-size="11" fill="var(--pc-chart-axis)" class="pc-num">0</text>
+                    <line x1="34" x2="426" y1="148.6" y2="148.6" stroke="var(--pc-chart-grid)"></line><text x="432" y="152.6" font-size="11" fill="var(--pc-chart-axis)" class="pc-num">667</text>
+                    <line x1="34" x2="426" y1="91.4" y2="91.4" stroke="var(--pc-chart-grid)"></line><text x="432" y="95.4" font-size="11" fill="var(--pc-chart-axis)" class="pc-num">1333</text>
+                    <line x1="34" x2="426" y1="34" y2="34" stroke="var(--pc-chart-grid)"></line><text x="432" y="38" font-size="11" fill="var(--pc-chart-axis)" class="pc-num">2000</text>
+                  </g>
+                  <g>
+                    <rect x="354" y="46.9" width="46" height="159.1" rx="4" fill="var(--pc-chart-series-1)"></rect>
+                    <text x="377" y="230" font-size="11" fill="var(--pc-chart-axis)" text-anchor="middle">منجزة</text>
+                    <text x="377" y="40.9" font-size="11" fill="var(--pc-chart-text)" text-anchor="middle" class="pc-num">1850</text>
+                  </g>
+                  <g>
+                    <rect x="256" y="99.36" width="46" height="106.64" rx="4" fill="var(--pc-chart-series-1)"></rect>
+                    <text x="279" y="230" font-size="11" fill="var(--pc-chart-axis)" text-anchor="middle">قيد المعالجة</text>
+                    <text x="279" y="93.36" font-size="11" fill="var(--pc-chart-text)" text-anchor="middle" class="pc-num">1240</text>
+                  </g>
+                  <g>
+                    <rect x="158" y="126.88" width="46" height="79.12" rx="4" fill="var(--pc-chart-series-1)"></rect>
+                    <text x="181" y="230" font-size="11" fill="var(--pc-chart-axis)" text-anchor="middle">بانتظار مستند</text>
+                    <text x="181" y="120.88" font-size="11" fill="var(--pc-chart-text)" text-anchor="middle" class="pc-num">920</text>
+                  </g>
+                  <g>
+                    <rect x="60" y="159.56" width="46" height="46.44" rx="4" fill="var(--pc-chart-series-1)"></rect>
+                    <text x="83" y="230" font-size="11" fill="var(--pc-chart-axis)" text-anchor="middle">مرفوضة</text>
+                    <text x="83" y="153.56" font-size="11" fill="var(--pc-chart-text)" text-anchor="middle" class="pc-num">540</text>
+                  </g>
+                </svg>
+              </div>
+            </figure>
+          </div>
+        </div>
+
+        <div class="doc-preview">
+          <div class="doc-preview__bar"><span class="doc-preview__title">BarChart — horizontal (long Arabic labels)</span></div>
+          <div class="doc-preview__stage doc-preview__stage--column" dir="rtl" lang="ar" data-pc-root>
+            <figure role="group" aria-labelledby="d-barh-t" class="pc-chart">
+              <figcaption class="pc-chart__head"><h3 id="d-barh-t" class="pc-chart__title">الطلبات حسب نوع الخدمة</h3></figcaption>
+              <p class="pc-sr-only">أعلى خدمة هي «إصدار شهادة جديدة» بـ 3,200 طلبًا، وأدناها «الاعتراض على قرار» بـ 760.</p>
+              <div class="pc-chart__plot">
+                <svg class="pc-chart__svg" viewBox="0 0 720 236" role="img" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+                  <g>
+                    <text x="712" y="35" font-size="12" fill="var(--pc-chart-text)" text-anchor="end">إصدار شهادة جديدة</text>
+                    <rect x="51.9" y="23" width="468.1" height="18" rx="4" fill="var(--pc-chart-series-1)"></rect>
+                    <text x="45.9" y="37" font-size="11" fill="var(--pc-chart-text)" text-anchor="end" class="pc-num">3200</text>
+                  </g>
+                  <g>
+                    <text x="712" y="79" font-size="12" fill="var(--pc-chart-text)" text-anchor="end">تجديد ترخيص ساري</text>
+                    <rect x="117.7" y="67" width="402.3" height="18" rx="4" fill="var(--pc-chart-series-1)"></rect>
+                    <text x="111.7" y="81" font-size="11" fill="var(--pc-chart-text)" text-anchor="end" class="pc-num">2750</text>
+                  </g>
+                  <g>
+                    <text x="712" y="123" font-size="12" fill="var(--pc-chart-text)" text-anchor="end">تحديث بيانات المنشأة</text>
+                    <rect x="230.4" y="111" width="289.6" height="18" rx="4" fill="var(--pc-chart-series-1)"></rect>
+                    <text x="224.4" y="125" font-size="11" fill="var(--pc-chart-text)" text-anchor="end" class="pc-num">1980</text>
+                  </g>
+                  <g>
+                    <text x="712" y="167" font-size="12" fill="var(--pc-chart-text)" text-anchor="end">طلب إفادة رسمية</text>
+                    <rect x="307.9" y="155" width="212.1" height="18" rx="4" fill="var(--pc-chart-series-1)"></rect>
+                    <text x="301.9" y="169" font-size="11" fill="var(--pc-chart-text)" text-anchor="end" class="pc-num">1450</text>
+                  </g>
+                  <g>
+                    <text x="712" y="211" font-size="12" fill="var(--pc-chart-text)" text-anchor="end">الاعتراض على قرار</text>
+                    <rect x="408.8" y="199" width="111.2" height="18" rx="4" fill="var(--pc-chart-series-1)"></rect>
+                    <text x="402.8" y="213" font-size="11" fill="var(--pc-chart-text)" text-anchor="end" class="pc-num">760</text>
+                  </g>
+                </svg>
+              </div>
+            </figure>
+          </div>
+        </div>
+        <div class="doc-code"><pre><code>&lt;BarChart orientation="horizontal" data={[
+  { category: "إصدار شهادة جديدة", value: 3200 },
+  { category: "تجديد ترخيص ساري", value: 2750 },
+  { category: "الاعتراض على قرار", value: 760 },
+]} /&gt;</code></pre></div>
+
+        <!-- ===================== DONUT ===================== -->
+        <h2>DonutChart</h2>
+        <p>Simple part-to-whole for a few segments. A <code>label — value (%)</code> legend sits next to
+          the ring so segments are never distinguished by color alone.</p>
+        <div class="doc-preview">
+          <div class="doc-preview__bar"><span class="doc-preview__title">DonutChart with legend</span></div>
+          <div class="doc-preview__stage doc-preview__stage--column" dir="rtl" lang="ar" data-pc-root>
+            <figure role="group" aria-labelledby="d-donut-t" class="pc-chart">
+              <figcaption class="pc-chart__head"><h3 id="d-donut-t" class="pc-chart__title">توزيع الطلبات حسب الحالة</h3></figcaption>
+              <p class="pc-sr-only">منجزة 620 (48%)، قيد المعالجة 410 (32%)، بانتظار مستند 180 (14%)، مرفوضة 90 (7%)؛ الإجمالي 1,300.</p>
+              <div class="pc-chart__plot">
+                <div class="pc-donut" dir="rtl">
+                  <svg viewBox="0 0 200 200" width="180" height="180" role="img" aria-hidden="true">
+                    <circle cx="100" cy="100" r="70" fill="none" stroke-width="26" stroke="var(--pc-chart-series-1)" stroke-dasharray="209.8 230.0" stroke-dashoffset="0" transform="rotate(-90 100 100)"></circle>
+                    <circle cx="100" cy="100" r="70" fill="none" stroke-width="26" stroke="var(--pc-chart-series-2)" stroke-dasharray="138.7 301.1" stroke-dashoffset="-209.8" transform="rotate(-90 100 100)"></circle>
+                    <circle cx="100" cy="100" r="70" fill="none" stroke-width="26" stroke="var(--pc-chart-series-3)" stroke-dasharray="60.9 378.9" stroke-dashoffset="-348.5" transform="rotate(-90 100 100)"></circle>
+                    <circle cx="100" cy="100" r="70" fill="none" stroke-width="26" stroke="var(--pc-chart-series-4)" stroke-dasharray="30.4 409.4" stroke-dashoffset="-409.4" transform="rotate(-90 100 100)"></circle>
+                    <text x="100" y="98" text-anchor="middle" font-size="22" font-weight="700" fill="var(--pc-chart-text-strong)" class="pc-num">1,300</text>
+                    <text x="100" y="118" text-anchor="middle" font-size="11" fill="var(--pc-chart-axis)">إجمالي الطلبات</text>
+                  </svg>
+                  <div class="pc-donut__legend">
+                    <div><span class="pc-chart__swatch" style="background:var(--pc-chart-series-1)" aria-hidden="true"></span><span>منجزة — <bdi class="pc-num">620</bdi> (<bdi class="pc-num">48%</bdi>)</span></div>
+                    <div><span class="pc-chart__swatch" style="background:var(--pc-chart-series-2)" aria-hidden="true"></span><span>قيد المعالجة — <bdi class="pc-num">410</bdi> (<bdi class="pc-num">32%</bdi>)</span></div>
+                    <div><span class="pc-chart__swatch" style="background:var(--pc-chart-series-3)" aria-hidden="true"></span><span>بانتظار مستند — <bdi class="pc-num">180</bdi> (<bdi class="pc-num">14%</bdi>)</span></div>
+                    <div><span class="pc-chart__swatch" style="background:var(--pc-chart-series-4)" aria-hidden="true"></span><span>مرفوضة — <bdi class="pc-num">90</bdi> (<bdi class="pc-num">7%</bdi>)</span></div>
+                  </div>
+                </div>
+              </div>
+            </figure>
+          </div>
+        </div>
+
+        <!-- ===================== STATES ===================== -->
+        <h2>Chart states</h2>
+        <p>Every chart ships calm, accessible empty / loading / error states via the
+          <code>ChartContainer</code> <code>state</code> prop (<code>ChartEmpty</code>,
+          <code>ChartLoading</code>, <code>ChartError</code>).</p>
+        <div class="doc-preview">
+          <div class="doc-preview__bar"><span class="doc-preview__title">Empty · Loading · Error</span></div>
+          <div class="doc-preview__stage" dir="rtl" lang="ar" data-pc-root style="align-items:stretch">
+            <figure role="group" class="pc-chart" style="flex:1;min-width:240px">
+              <figcaption class="pc-chart__head"><h3 class="pc-chart__title">الحالة الفارغة</h3></figcaption>
+              <div class="pc-chart__plot">
+                <div class="pc-chart__state" dir="rtl">
+                  <p class="pc-chart__state-msg">لا توجد بيانات لعرضها</p>
+                  <p class="pc-chart__state-hint">ستظهر البيانات هنا بمجرد توفّر طلبات في هذه الفترة.</p>
+                </div>
+              </div>
+            </figure>
+            <figure role="group" class="pc-chart" style="flex:1;min-width:240px">
+              <figcaption class="pc-chart__head"><h3 class="pc-chart__title">حالة التحميل</h3></figcaption>
+              <div class="pc-chart__plot">
+                <div role="status" dir="rtl">
+                  <span class="pc-sr-only">جارٍ تحميل الرسم البياني…</span>
+                  <div class="pc-chart__skeleton" aria-hidden="true">
+                    <i style="block-size:60%"></i><i style="block-size:90%"></i><i style="block-size:45%"></i><i style="block-size:75%"></i><i style="block-size:55%"></i>
+                  </div>
+                </div>
+              </div>
+            </figure>
+            <figure role="group" class="pc-chart" style="flex:1;min-width:240px">
+              <figcaption class="pc-chart__head"><h3 class="pc-chart__title">حالة الخطأ</h3></figcaption>
+              <div class="pc-chart__plot">
+                <div class="pc-chart__state pc-chart__state--error" role="alert" dir="rtl">
+                  <p class="pc-chart__state-msg"><span aria-hidden="true">⚠</span><span>تعذّر تحميل الرسم البياني</span></p>
+                  <p class="pc-chart__state-hint">يرجى المحاولة مرة أخرى.</p>
+                  <button type="button" class="pc-button pc-button--secondary pc-button--sm"><span>إعادة المحاولة</span></button>
+                </div>
+              </div>
+            </figure>
+          </div>
+        </div>
+        <div class="doc-code"><pre><code>&lt;ChartContainer title="الطلبات الشهرية" state="loading" /&gt;
+&lt;ChartContainer title="الطلبات الشهرية" state="empty"
+  emptyHint="ستظهر البيانات هنا بمجرد توفّرها." /&gt;
+&lt;ChartContainer title="الطلبات الشهرية" state="error" onRetry={refetch} /&gt;</code></pre></div>
+
+        <div class="doc-callout doc-callout--info">
+          <span class="doc-callout__icon">📄</span>
+          <p class="doc-callout__body">Source files: <code>components/charts/*.jsx</code>,
+            <code>components/charts/charts.css</code>. The SVGs above mirror the components' real output
+            and use the verified <code>--pc-chart-*</code> roles.</p>
+        </div>
+
+        <footer class="doc-footer">
+          <p>Dependency-free, token-driven charts aligned with Platforms Code principles — not official
+            DGA assets. Official source: <a href="https://design.dga.gov.sa/">design.dga.gov.sa</a>.</p>
+        </footer>
+      </div>
+    </main>
+  </div>
+  <script src="../assets/js/docs.js"></script>
+</body>
+</html>
