@@ -157,14 +157,20 @@
         </div>
 
         <h2>Install</h2>
-        <p>The skill is a folder you drop into Claude Code's skills directory. Copy the skill, then ask
-          Claude Code in natural language.</p>
-        <div class="doc-code"><pre><code># User-level (all projects)
+        <p>The skill is the folder <code class="doc-inline">claude/skills/dga-platforms-code</code> in this
+          repository. Clone it first, then copy the skill into Claude Code's skills directory.</p>
+        <div class="doc-code"><pre><code># 1. Get the repo
+git clone https://github.com/Sara-Saraireh/dga-platforms-code-claude-skill.git
+cd dga-platforms-code-claude-skill
+
+# 2a. User-level — all projects (run from the repo root above)
+mkdir -p ~/.claude/skills
 cp -R claude/skills/dga-platforms-code ~/.claude/skills/
 
-# Or project-level (this repo only)
+# 2b. Or project-level — into another project (use the full path to your clone)
+cd /path/to/your-project
 mkdir -p .claude/skills
-cp -R claude/skills/dga-platforms-code .claude/skills/</code></pre></div>
+cp -R /path/to/dga-platforms-code-claude-skill/claude/skills/dga-platforms-code .claude/skills/</code></pre></div>
         <p>Then prompt, for example:
           <code class="doc-inline">"Build an Arabic RTL service landing page aligned with DGA Platforms Code."</code>
         </p>

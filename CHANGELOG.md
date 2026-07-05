@@ -28,6 +28,11 @@ Versioning (see [GOVERNANCE.md](GOVERNANCE.md)).
   in `sources.md`.
 
 ### Fixed
+- **Install instructions corrected** (`README.md`, `docs/index.html`). Added the `git clone` step and
+  made the copy commands CWD-safe: the **personal** install runs from the repo root, and the
+  **project** install uses the full path to the clone. Prevents the
+  `cp: claude/skills/dga-platforms-code: No such file or directory` error that occurred when the
+  commands were run from a different project directory.
 - **Semantic colors corrected and completed against the official Color system page**
   (read live 2026-06-21). The earlier value of **Success 600 was wrong** (`#1B8354`, the SA primary
   green); the official **Success 600 is `#079455`** — Success is its own palette. Added the full

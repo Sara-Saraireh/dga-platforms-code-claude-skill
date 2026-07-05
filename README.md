@@ -105,19 +105,32 @@ verified tokens.
 
 ## Install / copy the Skill
 
-Personal skills directory (available across your projects):
+The skill is the folder `claude/skills/dga-platforms-code` in this repository. Clone the repo first:
+
+```bash
+git clone https://github.com/Sara-Saraireh/dga-platforms-code-claude-skill.git
+cd dga-platforms-code-claude-skill
+```
+
+**Personal** (available across all your projects) — run from the repo root you just `cd`-ed into:
 
 ```bash
 mkdir -p ~/.claude/skills
 cp -R claude/skills/dga-platforms-code ~/.claude/skills/
 ```
 
-Project skills directory (shared with the repository, committed to version control):
+**Project** (only inside one project; commit it to share with your team) — run from **your target
+project's** root, using the full path to your clone:
 
 ```bash
+cd /path/to/your-project
 mkdir -p .claude/skills
-cp -R claude/skills/dga-platforms-code .claude/skills/
+cp -R /path/to/dga-platforms-code-claude-skill/claude/skills/dga-platforms-code .claude/skills/
 ```
+
+> The path `claude/skills/dga-platforms-code` is **relative to this repository**. If you see
+> `cp: claude/skills/dga-platforms-code: No such file or directory`, you are not in the cloned repo:
+> `cd` into your clone (personal install) or use its full path (project install).
 
 Claude Code discovers the skill from its `SKILL.md` front matter. No build step is required.
 
