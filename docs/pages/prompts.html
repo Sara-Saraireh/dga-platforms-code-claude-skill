@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prompts — DGA Platforms Code Skill</title>
+  <meta name="description" content="Reusable Claude Code prompts for the DGA Platforms Code Skill: audit, redesign, build, convert, RTL review, and final quality gate." />
+  <link rel="stylesheet" href="../assets/css/docs.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="doc-topbar">
+    <span class="doc-topbar__brand">DGA Platforms Code</span>
+    <button class="doc-menu-btn" data-menu-btn aria-label="Toggle navigation">☰ Menu</button>
+  </header>
+
+  <div class="doc-shell">
+    <aside class="doc-sidebar">
+      <a class="doc-brand" href="../index.html" style="text-decoration:none;color:inherit">
+        <span class="doc-brand__name">DGA Platforms Code</span>
+        <span class="doc-brand__tag">Claude Skill · كود المنصات</span>
+        <span class="doc-brand__badge">v1.7.0 · documentation</span>
+      </a>
+      <nav class="doc-nav" aria-label="Documentation">
+        <a href="../index.html">Home</a>
+        <div class="doc-nav__group">Getting started</div>
+        <a href="overview.html">Overview</a>
+        <a href="principles.html">Design principles</a>
+        <div class="doc-nav__group">Foundations</div>
+        <a href="tokens.html">Design tokens</a>
+        <a href="theming.html">Theming</a>
+        <div class="doc-nav__group">Component library</div>
+        <a href="components.html">Components</a>
+        <a href="charts.html">Charts &amp; data viz</a>
+        <div class="doc-nav__group">Guidance</div>
+        <a href="references.html">Reference guides</a>
+        <a href="rtl-accessibility.html">RTL &amp; accessibility</a>
+        <div class="doc-nav__group">Build with it</div>
+        <a href="templates.html">Templates &amp; examples</a>
+        <a href="prompts.html" aria-current="page">Prompts</a>
+      </nav>
+    </aside>
+
+    <main class="doc-main">
+      <div class="doc-container">
+        <p class="doc-eyebrow">Build with it</p>
+        <h1>Prompts</h1>
+        <p class="doc-lead">Six reusable prompts cover the common jobs. Drop one into Claude Code with
+          the skill installed, or just describe your task in natural language. Source:
+          <code>claude/skills/dga-platforms-code/prompts/</code>.</p>
+
+        <h2>The prompt set</h2>
+        <table class="doc-table">
+          <thead><tr><th>#</th><th>Prompt</th><th>Use it to…</th></tr></thead>
+          <tbody>
+            <tr><td>01</td><td><a href="../../claude/skills/dga-platforms-code/prompts/01-audit-existing-ui.md">Audit existing UI</a></td><td>Audit a live interface for alignment with Platforms Code principles.</td></tr>
+            <tr><td>02</td><td><a href="../../claude/skills/dga-platforms-code/prompts/02-redesign-existing-ui.md">Redesign existing UI</a></td><td>Redesign an existing page while preserving logic and APIs.</td></tr>
+            <tr><td>03</td><td><a href="../../claude/skills/dga-platforms-code/prompts/03-build-new-page.md">Build a new page</a></td><td>Build a new page from scratch in the correct style.</td></tr>
+            <tr><td>04</td><td><a href="../../claude/skills/dga-platforms-code/prompts/04-convert-to-platforms-code-style.md">Convert to Platforms Code style</a></td><td>Convert an interface to the Platforms Code visual language.</td></tr>
+            <tr><td>05</td><td><a href="../../claude/skills/dga-platforms-code/prompts/05-review-arabic-rtl.md">Review Arabic RTL</a></td><td>Review RTL correctness and Arabic content quality.</td></tr>
+            <tr><td>06</td><td><a href="../../claude/skills/dga-platforms-code/prompts/06-final-quality-gate.md">Final quality gate</a></td><td>Run the pre-release quality check before declaring done.</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Example invocations</h2>
+        <p>With the skill installed, natural language is enough — Claude activates the skill from the
+          task context.</p>
+        <div class="doc-code"><pre><code># Build
+Build an Arabic RTL service landing page for "إصدار شهادة"
+aligned with DGA Platforms Code. UI only — don't touch APIs or auth.
+
+# Audit
+Audit this dashboard against DGA Platforms Code: tone, RTL, accessibility,
+and component usage. List findings and manual-review items.
+
+# Convert
+Convert this React page to the Platforms Code style using the verified
+tokens and the bundled component library. Keep validation behaviour.
+
+# RTL review
+Review this page for Arabic RTL correctness: mirrored icons, logical CSS,
+and number/code isolation. Report what must change.</code></pre></div>
+
+        <div class="doc-callout doc-callout--info">
+          <span class="doc-callout__icon">💬</span>
+          <p class="doc-callout__body">Each task ends with the skill's required report: scope, changed
+            files, what was preserved (logic/APIs/auth/validation), checks run, manual-review items, and
+            a compliance note. See the <a href="overview.html">Overview</a>.</p>
+        </div>
+
+        <footer class="doc-footer">
+          <p>Aligned with Platforms Code principles — not official DGA compliance.
+            Official source: <a href="https://design.dga.gov.sa/">design.dga.gov.sa</a>.</p>
+        </footer>
+      </div>
+    </main>
+  </div>
+  <script src="../assets/js/docs.js"></script>
+</body>
+</html>

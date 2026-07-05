@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RTL &amp; accessibility — DGA Platforms Code Skill</title>
+  <meta name="description" content="Arabic RTL correctness and WCAG 2.1 AA accessibility rules for DGA Platforms Code interfaces: logical CSS, icon mirroring, number isolation, focus, keyboard, and color independence." />
+  <link rel="stylesheet" href="../assets/css/docs.css" />
+  <link rel="stylesheet" href="../../claude/skills/dga-platforms-code/components/tokens.css" />
+  <link rel="stylesheet" href="../../claude/skills/dga-platforms-code/components/components.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="doc-topbar">
+    <span class="doc-topbar__brand">DGA Platforms Code</span>
+    <button class="doc-menu-btn" data-menu-btn aria-label="Toggle navigation">☰ Menu</button>
+  </header>
+
+  <div class="doc-shell">
+    <aside class="doc-sidebar">
+      <a class="doc-brand" href="../index.html" style="text-decoration:none;color:inherit">
+        <span class="doc-brand__name">DGA Platforms Code</span>
+        <span class="doc-brand__tag">Claude Skill · كود المنصات</span>
+        <span class="doc-brand__badge">v1.7.0 · documentation</span>
+      </a>
+      <nav class="doc-nav" aria-label="Documentation">
+        <a href="../index.html">Home</a>
+        <div class="doc-nav__group">Getting started</div>
+        <a href="overview.html">Overview</a>
+        <a href="principles.html">Design principles</a>
+        <div class="doc-nav__group">Foundations</div>
+        <a href="tokens.html">Design tokens</a>
+        <a href="theming.html">Theming</a>
+        <div class="doc-nav__group">Component library</div>
+        <a href="components.html">Components</a>
+        <a href="charts.html">Charts &amp; data viz</a>
+        <div class="doc-nav__group">Guidance</div>
+        <a href="references.html">Reference guides</a>
+        <a href="rtl-accessibility.html" aria-current="page">RTL &amp; accessibility</a>
+        <div class="doc-nav__group">Build with it</div>
+        <a href="templates.html">Templates &amp; examples</a>
+        <a href="prompts.html">Prompts</a>
+      </nav>
+    </aside>
+
+    <main class="doc-main">
+      <div class="doc-container">
+        <p class="doc-eyebrow">Guidance</p>
+        <h1>RTL &amp; accessibility</h1>
+        <p class="doc-lead">Arabic RTL correctness and accessibility are <strong>baseline
+          requirements</strong>, not enhancements. These are the rules that most distinguish a
+          government-grade interface — and the ones easiest to get wrong.</p>
+
+        <h2>Arabic RTL</h2>
+        <p>Source: <code>references/07-arabic-rtl.md</code>.</p>
+        <ul>
+          <li>Set direction at the document/layout root: <code class="doc-inline">dir="rtl"</code> and <code class="doc-inline">lang="ar"</code>.</li>
+          <li>Default text alignment is right; visual flow mirrors left ↔ right.</li>
+          <li>Use logical CSS properties (<code class="doc-inline">inline-start/end</code>, <code class="doc-inline">padding-inline</code>, <code class="doc-inline">margin-block</code>) instead of hardcoded left/right.</li>
+          <li>Mirror directional icons (back, forward, chevrons). Do <strong>not</strong> mirror logos, Latin product names, barcodes, codes, phone numbers, emails, URLs, or code.</li>
+          <li>Keep numbers, IDs, and Latin strings in natural LTR order even inside Arabic — isolate them so they don't reorder surrounding text.</li>
+          <li>Steppers, breadcrumbs, and progress flow right-to-left; "next" advances toward the left edge.</li>
+        </ul>
+
+        <h3>Number &amp; code isolation</h3>
+        <p>Latin codes and numbers stay LTR inside Arabic sentences using <code class="doc-inline">&lt;bdi&gt;</code> or the
+          <code class="doc-inline">.pc-num</code> utility (<code>direction: ltr; unicode-bidi: isolate</code>).</p>
+        <div class="doc-preview">
+          <div class="doc-preview__bar"><span class="doc-preview__title">Isolated number / code in Arabic text</span><button class="doc-toggle-rtl" data-dir-toggle>RTL ↔ LTR</button></div>
+          <div class="doc-preview__stage doc-preview__stage--column" dir="rtl" lang="ar" data-pc-root>
+            <p style="margin:0">رقم الطلب <bdi class="pc-num">REQ-2026-04812</bdi> قيد المراجعة، وسينتهي خلال <bdi class="pc-num">3</bdi> أيام عمل.</p>
+            <p style="margin:0">للتواصل: <bdi class="pc-num">+966 11 000 0000</bdi> — البريد <bdi>support@gov.sa</bdi>.</p>
+          </div>
+        </div>
+
+        <h3>Mirrored navigation</h3>
+        <p>Breadcrumbs and steppers sit in the RTL flow and mirror automatically. Toggle to compare.</p>
+        <div class="doc-preview">
+          <div class="doc-preview__bar"><span class="doc-preview__title">Breadcrumbs + Stepper in RTL</span><button class="doc-toggle-rtl" data-dir-toggle>RTL ↔ LTR</button></div>
+          <div class="doc-preview__stage doc-preview__stage--column" dir="rtl" lang="ar" data-pc-root>
+            <nav aria-label="مسار التصفح">
+              <ol class="pc-breadcrumb">
+                <li class="pc-breadcrumb__item"><a href="#">الرئيسية</a><span class="pc-breadcrumb__sep" aria-hidden="true">‹</span></li>
+                <li class="pc-breadcrumb__item"><a href="#">الخدمات</a><span class="pc-breadcrumb__sep" aria-hidden="true">‹</span></li>
+                <li class="pc-breadcrumb__item"><span aria-current="page">تجديد ترخيص</span></li>
+              </ol>
+            </nav>
+            <nav aria-label="خطوات الخدمة">
+              <ol class="pc-stepper">
+                <li class="pc-step pc-step--complete"><span class="pc-step__marker" aria-hidden="true">✓</span><span class="pc-step__label">البيانات</span></li>
+                <li class="pc-step pc-step--current" aria-current="step"><span class="pc-step__marker" aria-hidden="true">2</span><span class="pc-step__label">المراجعة</span></li>
+                <li class="pc-step pc-step--upcoming"><span class="pc-step__marker" aria-hidden="true">3</span><span class="pc-step__label">الإرسال</span></li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+
+        <h2>Accessibility (WCAG 2.1 AA)</h2>
+        <p>Source: <code>references/08-accessibility.md</code>.</p>
+        <div class="doc-do-dont">
+          <div class="doc-do">
+            <h4>Do</h4>
+            <ul>
+              <li>Meet sufficient contrast for text, icons, and interactive states.</li>
+              <li>Provide visible, clear focus on every interactive element.</li>
+              <li>Use semantic HTML: <code>button</code>, <code>a</code>, <code>nav</code>, <code>main</code>, <code>table</code>, <code>label</code>, ordered headings.</li>
+              <li>Label every input; announce and link errors to their field.</li>
+              <li>Respect reduced-motion; provide adequate touch targets.</li>
+            </ul>
+          </div>
+          <div class="doc-dont">
+            <h4>Don't</h4>
+            <ul>
+              <li>Remove focus outlines without an equal-or-better replacement.</li>
+              <li>Convey status with color alone — pair with text and/or icon.</li>
+              <li>Create keyboard traps or illogical tab order.</li>
+              <li>Use placeholders as labels.</li>
+              <li>Ship tables without proper headers and scope.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>Status without color alone</h3>
+        <p>Every status carries a label and an icon/dot, so meaning survives for color-blind users and
+          in grayscale.</p>
+        <div class="doc-preview">
+          <div class="doc-preview__bar"><span class="doc-preview__title">Badges &amp; alert — meaning beyond color</span><button class="doc-toggle-rtl" data-dir-toggle>RTL ↔ LTR</button></div>
+          <div class="doc-preview__stage doc-preview__stage--column" dir="rtl" lang="ar" data-pc-root>
+            <div style="display:flex;gap:12px;flex-wrap:wrap">
+              <span class="pc-badge pc-badge--success"><span class="pc-badge__dot"></span><span>مكتمل</span></span>
+              <span class="pc-badge pc-badge--warning"><span class="pc-badge__dot"></span><span>قيد المراجعة</span></span>
+              <span class="pc-badge pc-badge--error"><span class="pc-badge__dot"></span><span>مرفوض</span></span>
+            </div>
+            <div class="pc-alert pc-alert--error" role="alert"><span class="pc-alert__icon" aria-hidden="true">✕</span><div><p class="pc-alert__title">تعذّر الإرسال</p><div class="pc-alert__body">يرجى تعبئة الحقول المطلوبة. الخطأ موضّح أسفل كل حقل.</div></div></div>
+          </div>
+        </div>
+
+        <div class="doc-callout doc-callout--info">
+          <span class="doc-callout__icon">📄</span>
+          <p class="doc-callout__body">The bundled components are accessible by default: real semantic
+            elements, visible focus rings, labelled inputs with announced errors, a focus-trapped modal
+            that restores focus, and <code>prefers-reduced-motion</code> honored in <code>tokens.css</code>.</p>
+        </div>
+
+        <footer class="doc-footer">
+          <p>Targets WCAG 2.1 AA per the typography page — aligned with Platforms Code principles, not
+            official DGA compliance. Official source: <a href="https://design.dga.gov.sa/">design.dga.gov.sa</a>.</p>
+        </footer>
+      </div>
+    </main>
+  </div>
+  <script src="../assets/js/docs.js"></script>
+</body>
+</html>

@@ -33,7 +33,7 @@ compliance; formal compliance requires review by the responsible entity.
 ## Purpose
 
 Public-sector and semi-government digital products must feel official, trustworthy, calm, accessible,
-and correct in Arabic (RTL). This repository packages that intent into an operational Claude Code
+and correct in Arabic (RTL). This repository captures that intent as an operational Claude Code
 Skill so that any team can produce interfaces that are:
 
 - **Official and trustworthy** in visual tone.
@@ -55,8 +55,37 @@ When active, the Skill (`claude/skills/dga-platforms-code`) directs Claude Code 
 5. Run available checks (lint, typecheck, build, tests).
 6. Summarize changed files and the remaining manual-review items.
 
-It also ships reusable `prompts/`, adaptable React + Tailwind `templates/`, and generic,
-product-agnostic `examples/`.
+It also includes a token-driven set of **illustrative component templates** (`components/`) with
+dependency-free **charts** and opt-in **accent theming** (switch the primary accent per service to a
+verified palette — green / gold / lavender — while semantics, neutrals, and charts stay fixed), plus
+reusable `prompts/`, adaptable React + Tailwind `templates/`, and generic, product-agnostic
+`examples/`.
+
+> **This is a Claude Code Skill, not a published npm package.** The bundled React/CSS under
+> `components/` is **illustrative implementation guidance** to copy and adapt — it is **not** an
+> installable package and **not** official DGA components. Do not `npm install` this repository.
+
+## Documentation
+
+A comprehensive, browsable HTML documentation site lives in [`docs/`](docs/). Open
+[`docs/index.html`](docs/index.html) in a browser for a navigable reference covering the overview,
+design principles, **verified design tokens** (color, typography, spacing, elevation), the
+**component library** and **charts** with live previews, **accent theming**, the reference guides,
+RTL & accessibility, templates, examples, and prompts. The component and chart previews are rendered
+with the skill's own `tokens.css` / `components.css` / `charts.css`, so the docs always reflect the
+verified tokens.
+
+| | | |
+|---|---|---|
+| ![Buttons](docs/assets/img/comp-button.png) | ![Line chart](docs/assets/img/chart-line.png) | ![Donut chart](docs/assets/img/chart-donut.png) |
+| Buttons — RTL, token-driven | LineChart — right-to-left time axis | DonutChart — label · value · % |
+| ![Alerts](docs/assets/img/comp-alert.png) | ![Inputs](docs/assets/img/comp-input.png) | ![SA palette](docs/assets/img/tokens-colors-sa.png) |
+| Alerts — meaning beyond color | Inputs — label, hint, error | SA palette — verified tokens |
+| ![Green theme](docs/assets/img/theme-green.png) | ![Gold theme](docs/assets/img/theme-gold.png) | ![Lavender theme](docs/assets/img/theme-lavender.png) |
+| Accent theming — green (default) | Gold (dark text for contrast) | Lavender — semantics stay fixed |
+
+> The docs are documentation only — they do not change the skill, tokens, or components, and assert
+> no official DGA compliance.
 
 ## When to use it
 
@@ -76,19 +105,32 @@ product-agnostic `examples/`.
 
 ## Install / copy the Skill
 
-Personal skills directory (available across your projects):
+The skill is the folder `claude/skills/dga-platforms-code` in this repository. Clone the repo first:
+
+```bash
+git clone https://github.com/Sara-Saraireh/dga-platforms-code-claude-skill.git
+cd dga-platforms-code-claude-skill
+```
+
+**Personal** (available across all your projects) — run from the repo root you just `cd`-ed into:
 
 ```bash
 mkdir -p ~/.claude/skills
 cp -R claude/skills/dga-platforms-code ~/.claude/skills/
 ```
 
-Project skills directory (shared with the repository, committed to version control):
+**Project** (only inside one project; commit it to share with your team) — run from **your target
+project's** root, using the full path to your clone:
 
 ```bash
+cd /path/to/your-project
 mkdir -p .claude/skills
-cp -R claude/skills/dga-platforms-code .claude/skills/
+cp -R /path/to/dga-platforms-code-claude-skill/claude/skills/dga-platforms-code .claude/skills/
 ```
+
+> The path `claude/skills/dga-platforms-code` is **relative to this repository**. If you see
+> `cp: claude/skills/dga-platforms-code: No such file or directory`, you are not in the cloned repo:
+> `cd` into your clone (personal install) or use its full path (project install).
 
 Claude Code discovers the skill from its `SKILL.md` front matter. No build step is required.
 

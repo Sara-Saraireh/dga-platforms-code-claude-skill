@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Overview — DGA Platforms Code Skill</title>
+  <meta name="description" content="Purpose, activation triggers, the mandatory workflow, prohibited behaviour, and the final quality gate for the DGA Platforms Code Skill." />
+  <link rel="stylesheet" href="../assets/css/docs.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="doc-topbar">
+    <span class="doc-topbar__brand">DGA Platforms Code</span>
+    <button class="doc-menu-btn" data-menu-btn aria-label="Toggle navigation">☰ Menu</button>
+  </header>
+
+  <div class="doc-shell">
+    <aside class="doc-sidebar">
+      <a class="doc-brand" href="../index.html" style="text-decoration:none;color:inherit">
+        <span class="doc-brand__name">DGA Platforms Code</span>
+        <span class="doc-brand__tag">Claude Skill · كود المنصات</span>
+        <span class="doc-brand__badge">v1.7.0 · documentation</span>
+      </a>
+      <nav class="doc-nav" aria-label="Documentation">
+        <a href="../index.html">Home</a>
+        <div class="doc-nav__group">Getting started</div>
+        <a href="overview.html" aria-current="page">Overview</a>
+        <a href="principles.html">Design principles</a>
+        <div class="doc-nav__group">Foundations</div>
+        <a href="tokens.html">Design tokens</a>
+        <a href="theming.html">Theming</a>
+        <div class="doc-nav__group">Component library</div>
+        <a href="components.html">Components</a>
+        <a href="charts.html">Charts &amp; data viz</a>
+        <div class="doc-nav__group">Guidance</div>
+        <a href="references.html">Reference guides</a>
+        <a href="rtl-accessibility.html">RTL &amp; accessibility</a>
+        <div class="doc-nav__group">Build with it</div>
+        <a href="templates.html">Templates &amp; examples</a>
+        <a href="prompts.html">Prompts</a>
+      </nav>
+    </aside>
+
+    <main class="doc-main">
+      <div class="doc-container">
+        <p class="doc-eyebrow">Getting started</p>
+        <h1>Overview</h1>
+        <p class="doc-lead">The DGA Platforms Code Skill is <strong>directive</strong>. It tells Claude
+          how to design and review Saudi government / semi-government interfaces so they are official,
+          trustworthy, accessible, Arabic-RTL-correct, service-oriented, and consistent — while keeping
+          the existing system safe and working.</p>
+
+        <h2>Purpose</h2>
+        <p>Help produce and review interfaces aligned with the DGA Platforms Code / National Design
+          System. <em>Aligned</em> means: government-grade tone, accessible, RTL-correct, service-first,
+          consistent, and engineered without breaking business logic, APIs, authentication,
+          authorization, or validation.</p>
+        <div class="doc-callout doc-callout--boundary">
+          <span class="doc-callout__icon">⚖️</span>
+          <p class="doc-callout__body"><strong>This skill aligns with DGA principles. It does not make
+            an interface officially compliant.</strong> Official compliance requires formal review by
+            the responsible entity. Never claim or imply official DGA compliance.</p>
+        </div>
+
+        <h3>Verified Platforms Code principles</h3>
+        <p>Grounded in the Platforms Code Guide v1.0:</p>
+        <ul>
+          <li>Platforms Code is a <strong>national reference</strong> for designing and developing
+            government platform interfaces.</li>
+          <li>It supports consistency, unified UI guidance, digital inclusion, and quality improvement.</li>
+          <li>It serves three beneficiary groups: <strong>designers, developers, and product
+            managers</strong>.</li>
+          <li>It preserves accessibility and <strong>WCAG-aware</strong> implementation (target WCAG
+            2.1 AA).</li>
+        </ul>
+
+        <h2>When to activate</h2>
+        <p>Activate when the task involves any of:</p>
+        <div class="doc-pill-row">
+          <span class="doc-pill">Government / semi-gov UI</span>
+          <span class="doc-pill">React · Tailwind</span>
+          <span class="doc-pill">Arabic RTL interfaces</span>
+          <span class="doc-pill">Service landing &amp; selection</span>
+          <span class="doc-pill">Multi-step service flows</span>
+          <span class="doc-pill">Forms &amp; inputs</span>
+          <span class="doc-pill">Upload → review → result</span>
+          <span class="doc-pill">Dashboards</span>
+          <span class="doc-pill">Admin / verification / case management</span>
+          <span class="doc-pill">Government-grade UX review</span>
+        </div>
+        <p class="doc-section-note">If the task is purely backend, data, or infrastructure with no UI
+          surface, the skill does not apply.</p>
+
+        <h2>The mandatory workflow</h2>
+        <p>The skill enforces an ordered workflow before any code is edited — no skipping to edits.</p>
+        <table class="doc-table">
+          <thead><tr><th style="width:42px">#</th><th>Step</th><th>What it means</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Inspect the project</td><td>Read relevant files; identify framework, routing, styling stack, tokens, and conventions.</td></tr>
+            <tr><td>2</td><td>Locate the seams</td><td>Find where UI ends and business logic, APIs, auth, and validation begin — and preserve them.</td></tr>
+            <tr><td>3</td><td>Read the references</td><td>Pull only the relevant <code>references/</code> guides for the task.</td></tr>
+            <tr><td>4</td><td>Confirm scope</td><td>State what will and will not change. UI-only tasks stay UI-only.</td></tr>
+            <tr><td>5</td><td>Plan incrementally</td><td>Smallest coherent change; reuse existing components and tokens first.</td></tr>
+            <tr><td>6</td><td>Implement, then verify</td><td>Make the change, then run available checks.</td></tr>
+            <tr><td>7</td><td>Summarize</td><td>Report changed files and remaining manual-review items.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>What must be preserved</h3>
+        <div class="doc-do-dont">
+          <div class="doc-do">
+            <h4>Always safe to improve</h4>
+            <ul>
+              <li>How validation is <em>presented</em> (labels, messages, focus)</li>
+              <li>Visual hierarchy, spacing, and tone</li>
+              <li>Accessibility and RTL correctness</li>
+            </ul>
+          </div>
+          <div class="doc-dont">
+            <h4>Never change in UI work</h4>
+            <ul>
+              <li>Business logic, data flow, computed results</li>
+              <li>API contracts (endpoints, shapes, headers, keys)</li>
+              <li>Authentication &amp; authorization</li>
+              <li>What passes or fails validation</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2>Prohibited behaviour</h2>
+        <ul>
+          <li>Copying or embedding DGA / government logos, emblems, or official marks without authorization.</li>
+          <li>Claiming or implying official DGA compliance, certification, or approval.</li>
+          <li>Inventing official rules, tokens, or values not in the official sources.</li>
+          <li>Changing backend, API, auth, or security logic during a UI-only task.</li>
+          <li>Uploading sensitive/personal data to external tools, or exposing secrets.</li>
+          <li>Using real personal data (names, national IDs, phones, addresses) in examples — use fake data.</li>
+          <li>Making a governmental interface look like a commercial SaaS / marketing product.</li>
+          <li>Overusing a single accent (e.g. green) until hierarchy and the true success state weaken.</li>
+        </ul>
+
+        <h2>Required output after each task</h2>
+        <p>Every task ends with a concise report covering: <strong>Scope</strong>,
+          <strong>Changed files</strong>, <strong>Preserved</strong> (logic/APIs/auth/validation),
+          <strong>Checks</strong> (honestly reported), <strong>Manual-review items</strong>, and a
+          <strong>Compliance note</strong> restating that the work aligns with DGA principles and is not
+          official compliance.</p>
+
+        <h2>Final quality gate</h2>
+        <p>Before declaring a task done, the skill confirms:</p>
+        <ul class="doc-checklist">
+          <li>Government-grade tone: calm, official, trustworthy — not SaaS / marketing styling.</li>
+          <li>Aligned with official sources; no invented tokens, compliance claims, or copied logos.</li>
+          <li>Layout and hierarchy clear; one primary action per view.</li>
+          <li>Arabic RTL correct, including mixed Arabic/Latin, numbers, codes, and mirrored icons.</li>
+          <li>Accessibility: contrast, focus, keyboard, semantics, labels, error announcements, no color-only status, touch targets, reduced motion.</li>
+          <li>Components and forms follow the rules; empty / loading / error states exist.</li>
+          <li>Content is clear, direct Arabic; messages are specific and helpful.</li>
+          <li>Responsive: mobile-first; no horizontal overflow; readable Arabic on small screens.</li>
+          <li>Engineering safety: logic / APIs / auth / validation preserved; tokens / components reused; checks run.</li>
+          <li>Output report delivered with changed files and manual-review items.</li>
+        </ul>
+
+        <div class="doc-callout doc-callout--info">
+          <span class="doc-callout__icon">📄</span>
+          <p class="doc-callout__body">This page distills <code>SKILL.md</code>. The authoritative,
+            full-length rules live in
+            <code>claude/skills/dga-platforms-code/SKILL.md</code> and the
+            <a href="references.html">reference guides</a>.</p>
+        </div>
+
+        <footer class="doc-footer">
+          <p>Aligned with Platforms Code principles — not official DGA compliance.
+            Official source: <a href="https://design.dga.gov.sa/">design.dga.gov.sa</a>.</p>
+        </footer>
+      </div>
+    </main>
+  </div>
+  <script src="../assets/js/docs.js"></script>
+</body>
+</html>

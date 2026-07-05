@@ -1,0 +1,205 @@
+/*
+ * DGA Platforms Code — component styles (illustrative, token-driven, RTL-aware).
+ *
+ * Every value references a verified token from tokens.css. No raw colors/spacing/shadows are
+ * introduced here. Uses CSS logical properties (inline-start/end, margin-inline, etc.) so layout
+ * mirrors correctly under dir="rtl". Import tokens.css before this file.
+ *
+ * These are generic, product-agnostic components aligned with Platforms Code component anatomy.
+ * They are NOT official DGA Figma/Storybook assets and do not assert official DGA compliance.
+ */
+
+.pc-root,
+[data-pc-root] {
+  font-family: var(--pc-font-family);
+  color: var(--pc-color-text);
+  font-size: var(--pc-text-md);
+  line-height: var(--pc-text-md-lh);
+}
+
+/* Visually hidden but available to assistive tech */
+.pc-sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0);
+  white-space: nowrap; border: 0;
+}
+
+/* Shared focus ring — never removed, always visible */
+.pc-button:focus-visible,
+.pc-input:focus-visible,
+.pc-badge--button:focus-visible,
+.pc-breadcrumb a:focus-visible,
+.pc-modal__close:focus-visible {
+  outline: 2px solid var(--pc-focus-ring);
+  outline-offset: 2px;
+}
+
+/* ---------- Button ---------- */
+.pc-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--pc-space-md);
+  font-family: inherit;
+  font-weight: var(--pc-font-weight-medium);
+  font-size: var(--pc-text-md);
+  line-height: 1;
+  border: 1px solid transparent;
+  border-radius: var(--pc-radius-md);
+  padding-block: 0;
+  padding-inline: var(--pc-space-2xl);
+  block-size: 44px; /* adequate touch target */
+  cursor: pointer;
+  transition: background-color var(--pc-transition), border-color var(--pc-transition),
+    color var(--pc-transition);
+}
+.pc-button--sm { block-size: 36px; padding-inline: var(--pc-space-xl); font-size: var(--pc-text-sm); }
+.pc-button--lg { block-size: 48px; padding-inline: var(--pc-space-3xl); }
+.pc-button[disabled] { opacity: 0.6; cursor: not-allowed; }
+.pc-button--block { display: flex; inline-size: 100%; }
+
+.pc-button--primary { background: var(--pc-color-primary); color: var(--pc-color-on-primary); }
+.pc-button--primary:hover:not([disabled]) { background: var(--pc-color-primary-hover); }
+
+.pc-button--secondary {
+  background: var(--pc-color-surface);
+  color: var(--pc-gray-800);
+  border-color: var(--pc-color-border-strong);
+}
+.pc-button--secondary:hover:not([disabled]) { background: var(--pc-color-surface-subtle); }
+
+.pc-button--tertiary { background: transparent; color: var(--pc-color-primary); }
+.pc-button--tertiary:hover:not([disabled]) { background: var(--pc-color-primary-tint); }
+
+.pc-button--destructive { background: var(--pc-error-600); color: var(--pc-color-on-primary); }
+.pc-button--destructive:hover:not([disabled]) { filter: brightness(0.95); }
+
+.pc-button__icon { display: inline-flex; inline-size: 20px; block-size: 20px; }
+
+/* ---------- Badge / Tag ---------- */
+.pc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--pc-space-xs);
+  font-size: var(--pc-text-xs);
+  line-height: var(--pc-text-xs-lh);
+  font-weight: var(--pc-font-weight-medium);
+  padding-block: var(--pc-space-xxs);
+  padding-inline: var(--pc-space-md);
+  border-radius: var(--pc-radius-pill);
+  border: 1px solid transparent;
+}
+/* Tones use ONLY verified tokens. Success has a verified tint scale (SA); error/warning/info expose
+   only a verified 600, so they use a neutral surface with the 600 color for text + dot (the text
+   label and dot carry the meaning — never color alone). */
+.pc-badge--neutral { background: var(--pc-gray-100); color: var(--pc-gray-700); }
+.pc-badge--success { background: var(--pc-success-50); color: var(--pc-success-700); border-color: var(--pc-sa-200); }
+.pc-badge--error { background: var(--pc-gray-50); color: var(--pc-error-600); border-color: var(--pc-gray-200); }
+.pc-badge--warning { background: var(--pc-gray-50); color: var(--pc-warning-600); border-color: var(--pc-gray-200); }
+.pc-badge--info { background: var(--pc-gray-50); color: var(--pc-info-600); border-color: var(--pc-gray-200); }
+.pc-badge__dot { inline-size: 6px; block-size: 6px; border-radius: 50%; background: currentColor; }
+
+/* ---------- Input ---------- */
+.pc-field { display: flex; flex-direction: column; gap: var(--pc-space-sm); text-align: start; }
+.pc-label { font-size: var(--pc-text-sm); font-weight: var(--pc-font-weight-medium); color: var(--pc-gray-900); }
+.pc-label__optional { color: var(--pc-gray-500); font-weight: var(--pc-font-weight-regular); }
+.pc-label__required { color: var(--pc-error-600); }
+.pc-hint { font-size: var(--pc-text-sm); color: var(--pc-gray-600); }
+.pc-input {
+  font-family: inherit;
+  font-size: var(--pc-text-md);
+  color: var(--pc-gray-900);
+  background: var(--pc-color-surface);
+  border: 1px solid var(--pc-color-border-strong);
+  border-radius: var(--pc-radius-md);
+  padding-block: 10px;
+  padding-inline: var(--pc-space-lg);
+  inline-size: 100%;
+  transition: border-color var(--pc-transition);
+}
+.pc-input::placeholder { color: var(--pc-gray-400); }
+.pc-input[aria-invalid="true"] { border-color: var(--pc-error-600); }
+.pc-input[disabled] { background: var(--pc-gray-50); color: var(--pc-gray-400); cursor: not-allowed; }
+.pc-error { font-size: var(--pc-text-sm); color: var(--pc-error-600); }
+
+/* ---------- Alert (inline notification) ---------- */
+/* Surface is neutral (verified gray) with a 4px inline-start accent in the tone's verified 600.
+   The icon + title (and the text itself) carry meaning — never color alone. All values verified. */
+.pc-alert {
+  display: flex;
+  gap: var(--pc-space-lg);
+  padding: var(--pc-space-xl);
+  border: 1px solid var(--pc-color-border);
+  border-inline-start-width: 4px;
+  border-radius: var(--pc-radius-md);
+  background: var(--pc-gray-50);
+  color: var(--pc-gray-700);
+  text-align: start;
+}
+.pc-alert__icon { flex: none; inline-size: 20px; block-size: 20px; }
+.pc-alert__title { font-weight: var(--pc-font-weight-semibold); font-size: var(--pc-text-sm); }
+.pc-alert__body { font-size: var(--pc-text-sm); margin-block-start: var(--pc-space-xs); color: var(--pc-gray-700); }
+.pc-alert--info { border-inline-start-color: var(--pc-info-600); }
+.pc-alert--info .pc-alert__title, .pc-alert--info .pc-alert__icon { color: var(--pc-info-600); }
+.pc-alert--success { border-inline-start-color: var(--pc-success-600); background: var(--pc-success-50); }
+.pc-alert--success .pc-alert__title, .pc-alert--success .pc-alert__icon { color: var(--pc-success-700); }
+.pc-alert--warning { border-inline-start-color: var(--pc-warning-600); }
+.pc-alert--warning .pc-alert__title, .pc-alert--warning .pc-alert__icon { color: var(--pc-warning-600); }
+.pc-alert--error { border-inline-start-color: var(--pc-error-600); }
+.pc-alert--error .pc-alert__title, .pc-alert--error .pc-alert__icon { color: var(--pc-error-600); }
+
+/* ---------- Card ---------- */
+.pc-card {
+  background: var(--pc-color-surface);
+  border: 1px solid var(--pc-color-border);
+  border-radius: var(--pc-radius-lg);
+  padding: var(--pc-space-3xl);
+  box-shadow: var(--pc-shadow-xs);
+  text-align: start;
+}
+.pc-card--interactive { cursor: pointer; transition: border-color var(--pc-transition), box-shadow var(--pc-transition); }
+.pc-card--interactive:hover { border-color: var(--pc-color-primary); box-shadow: var(--pc-shadow-sm); }
+.pc-card__title { font-weight: var(--pc-font-weight-semibold); font-size: var(--pc-text-lg); }
+.pc-card__body { color: var(--pc-gray-600); font-size: var(--pc-text-sm); margin-block-start: var(--pc-space-md); }
+
+/* ---------- Stepper ---------- */
+.pc-stepper { display: flex; gap: var(--pc-space-xl); list-style: none; margin: 0; padding: 0; }
+.pc-step { display: flex; align-items: center; gap: var(--pc-space-md); }
+.pc-step__marker {
+  display: inline-flex; align-items: center; justify-content: center;
+  inline-size: 28px; block-size: 28px; border-radius: 50%;
+  font-size: var(--pc-text-sm); font-weight: var(--pc-font-weight-semibold);
+  border: 1px solid var(--pc-color-border-strong); color: var(--pc-gray-600);
+  background: var(--pc-color-surface);
+}
+.pc-step--current .pc-step__marker { border-color: var(--pc-color-primary); color: var(--pc-color-primary); }
+.pc-step--complete .pc-step__marker { background: var(--pc-color-primary); border-color: var(--pc-color-primary); color: var(--pc-color-on-primary); }
+.pc-step__label { font-size: var(--pc-text-sm); color: var(--pc-gray-600); }
+.pc-step--current .pc-step__label { color: var(--pc-gray-900); font-weight: var(--pc-font-weight-medium); }
+
+/* ---------- Breadcrumbs ---------- */
+.pc-breadcrumb { display: flex; flex-wrap: wrap; align-items: center; gap: var(--pc-space-md); font-size: var(--pc-text-sm); list-style: none; margin: 0; padding: 0; }
+.pc-breadcrumb__item { display: inline-flex; align-items: center; gap: var(--pc-space-md); }
+.pc-breadcrumb a { color: var(--pc-gray-600); text-decoration: none; }
+.pc-breadcrumb a:hover { color: var(--pc-gray-900); text-decoration: underline; }
+.pc-breadcrumb [aria-current="page"] { color: var(--pc-gray-900); font-weight: var(--pc-font-weight-medium); }
+/* Separator mirrors automatically because it sits in the RTL flow */
+.pc-breadcrumb__sep { color: var(--pc-gray-300); }
+
+/* ---------- Modal ---------- */
+.pc-modal__overlay {
+  position: fixed; inset: 0; background: rgba(16, 24, 40, 0.5);
+  display: flex; align-items: center; justify-content: center; padding: var(--pc-space-xl);
+}
+.pc-modal {
+  background: var(--pc-color-surface); border-radius: var(--pc-radius-lg);
+  box-shadow: var(--pc-shadow-2xl); inline-size: 100%; max-inline-size: 480px;
+  padding: var(--pc-space-3xl); text-align: start;
+}
+.pc-modal__header { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--pc-space-lg); }
+.pc-modal__title { font-weight: var(--pc-font-weight-semibold); font-size: var(--pc-text-lg); }
+.pc-modal__close { background: transparent; border: 0; cursor: pointer; color: var(--pc-gray-500); padding: var(--pc-space-xs); border-radius: var(--pc-radius-sm); }
+.pc-modal__body { margin-block-start: var(--pc-space-lg); color: var(--pc-gray-600); font-size: var(--pc-text-sm); }
+.pc-modal__footer { display: flex; gap: var(--pc-space-md); justify-content: flex-start; margin-block-start: var(--pc-space-3xl); }

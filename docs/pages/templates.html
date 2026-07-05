@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Templates &amp; examples — DGA Platforms Code Skill</title>
+  <meta name="description" content="React + Tailwind page templates and product-agnostic service-flow examples for DGA Platforms Code interfaces: dashboards, forms, results, and service flows." />
+  <link rel="stylesheet" href="../assets/css/docs.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="doc-topbar">
+    <span class="doc-topbar__brand">DGA Platforms Code</span>
+    <button class="doc-menu-btn" data-menu-btn aria-label="Toggle navigation">☰ Menu</button>
+  </header>
+
+  <div class="doc-shell">
+    <aside class="doc-sidebar">
+      <a class="doc-brand" href="../index.html" style="text-decoration:none;color:inherit">
+        <span class="doc-brand__name">DGA Platforms Code</span>
+        <span class="doc-brand__tag">Claude Skill · كود المنصات</span>
+        <span class="doc-brand__badge">v1.7.0 · documentation</span>
+      </a>
+      <nav class="doc-nav" aria-label="Documentation">
+        <a href="../index.html">Home</a>
+        <div class="doc-nav__group">Getting started</div>
+        <a href="overview.html">Overview</a>
+        <a href="principles.html">Design principles</a>
+        <div class="doc-nav__group">Foundations</div>
+        <a href="tokens.html">Design tokens</a>
+        <a href="theming.html">Theming</a>
+        <div class="doc-nav__group">Component library</div>
+        <a href="components.html">Components</a>
+        <a href="charts.html">Charts &amp; data viz</a>
+        <div class="doc-nav__group">Guidance</div>
+        <a href="references.html">Reference guides</a>
+        <a href="rtl-accessibility.html">RTL &amp; accessibility</a>
+        <div class="doc-nav__group">Build with it</div>
+        <a href="templates.html" aria-current="page">Templates &amp; examples</a>
+        <a href="prompts.html">Prompts</a>
+      </nav>
+    </aside>
+
+    <main class="doc-main">
+      <div class="doc-container">
+        <p class="doc-eyebrow">Build with it</p>
+        <h1>Templates &amp; examples</h1>
+        <p class="doc-lead">Adaptable React + Tailwind page templates and product-agnostic service-flow
+          examples. Use them as starting points — they reuse the verified tokens and component
+          patterns, and they contain <strong>only fake data</strong>.</p>
+
+        <h2>React + Tailwind templates</h2>
+        <p>Source: <code>claude/skills/dga-platforms-code/templates/</code>.</p>
+        <div class="doc-cards">
+          <a class="doc-card" href="../../claude/skills/dga-platforms-code/templates/react-tailwind-service-home.md"><div class="doc-card__icon">🏛️</div><div class="doc-card__title">Service landing</div><p class="doc-card__desc">Explains the service, what's needed, and a single clear start CTA.</p></a>
+          <a class="doc-card" href="../../claude/skills/dga-platforms-code/templates/react-tailwind-service-card.md"><div class="doc-card__icon">🃏</div><div class="doc-card__title">Service card</div><p class="doc-card__desc">An equal, scannable, accessible service-option card.</p></a>
+          <a class="doc-card" href="../../claude/skills/dga-platforms-code/templates/react-tailwind-form-page.md"><div class="doc-card__icon">📝</div><div class="doc-card__title">Multi-step form</div><p class="doc-card__desc">A form page with the Stepper and review-before-submit.</p></a>
+          <a class="doc-card" href="../../claude/skills/dga-platforms-code/templates/react-tailwind-results-page.md"><div class="doc-card__icon">✅</div><div class="doc-card__title">Results page</div><p class="doc-card__desc">A result/confirmation page stating outcome, reference, and next steps.</p></a>
+          <a class="doc-card" href="../../claude/skills/dga-platforms-code/templates/react-tailwind-dashboard.md"><div class="doc-card__icon">📊</div><div class="doc-card__title">Admin dashboard</div><p class="doc-card__desc">Side nav + table shell with empty/loading states for case management.</p></a>
+          <a class="doc-card" href="../../claude/skills/dga-platforms-code/templates/ux-copy-patterns-ar.md"><div class="doc-card__icon">✍️</div><div class="doc-card__title">UX copy patterns (AR)</div><p class="doc-card__desc">Arabic UX copy patterns and tone examples.</p></a>
+        </div>
+
+        <h2>Service-flow examples</h2>
+        <p>Product-agnostic flows that tie the patterns together. Source:
+          <code>claude/skills/dga-platforms-code/examples/</code>.</p>
+        <div class="doc-cards">
+          <a class="doc-card" href="../../claude/skills/dga-platforms-code/examples/generic-service-selection.md"><div class="doc-card__icon">🔀</div><div class="doc-card__title">Service selection</div><p class="doc-card__desc">Presenting options as equal, scannable, accessible choices.</p></a>
+          <a class="doc-card" href="../../claude/skills/dga-platforms-code/examples/generic-upload-and-review-flow.md"><div class="doc-card__icon">📤</div><div class="doc-card__title">Upload &amp; review flow</div><p class="doc-card__desc">Upload → review → result with explicit states.</p></a>
+          <a class="doc-card" href="../../claude/skills/dga-platforms-code/examples/generic-results-page.md"><div class="doc-card__icon">📄</div><div class="doc-card__title">Results page</div><p class="doc-card__desc">A trustworthy result/confirmation page example.</p></a>
+          <a class="doc-card" href="../../claude/skills/dga-platforms-code/examples/generic-admin-dashboard.md"><div class="doc-card__icon">🗃️</div><div class="doc-card__title">Admin dashboard</div><p class="doc-card__desc">A dashboard with case-management features.</p></a>
+        </div>
+
+        <div class="doc-callout doc-callout--boundary">
+          <span class="doc-callout__icon">⚖️</span>
+          <p class="doc-callout__body"><strong>Use fake data only.</strong> Never put real names,
+            national IDs, phone numbers, addresses, or record numbers into examples or fixtures.</p>
+        </div>
+
+        <footer class="doc-footer">
+          <p>Adaptable starting points aligned with Platforms Code principles — not official DGA
+            compliance. Official source: <a href="https://design.dga.gov.sa/">design.dga.gov.sa</a>.</p>
+        </footer>
+      </div>
+    </main>
+  </div>
+  <script src="../assets/js/docs.js"></script>
+</body>
+</html>

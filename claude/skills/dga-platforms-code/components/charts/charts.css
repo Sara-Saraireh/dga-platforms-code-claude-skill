@@ -1,0 +1,49 @@
+/*
+ * DGA Platforms Code — chart component styles (illustrative, token-driven, RTL-aware).
+ * Dependency-free: charts are plain SVG/CSS (no Recharts or other library). Every color references a
+ * verified chart-role variable from tokens.css. Import tokens.css and components.css first.
+ * Not official DGA Figma/Storybook assets; asserts no official DGA compliance.
+ */
+
+.pc-chart {
+  background: var(--pc-color-surface);
+  border: 1px solid var(--pc-color-border);
+  border-radius: var(--pc-radius-lg);
+  padding: var(--pc-space-3xl);
+  text-align: start;
+}
+.pc-chart__head { margin-block-end: var(--pc-space-xl); }
+.pc-chart__title { font-size: var(--pc-text-lg); font-weight: var(--pc-font-weight-semibold); color: var(--pc-gray-900); margin: 0; }
+.pc-chart__desc { font-size: var(--pc-text-sm); color: var(--pc-gray-600); margin-block-start: var(--pc-space-xxs); }
+.pc-chart__plot { min-block-size: 16rem; }
+.pc-chart__svg { inline-size: 100%; block-size: auto; display: block; }
+.pc-chart__legend { display: flex; flex-wrap: wrap; gap: var(--pc-space-xl); margin-block-start: var(--pc-space-lg); font-size: var(--pc-text-sm); color: var(--pc-chart-text); }
+.pc-chart__legend span { display: inline-flex; align-items: center; gap: var(--pc-space-sm); }
+.pc-chart__swatch { inline-size: 12px; block-size: 12px; border-radius: 3px; display: inline-block; }
+.pc-chart__source { font-size: var(--pc-text-xs); color: var(--pc-gray-500); margin-block-start: var(--pc-space-md); }
+.pc-num { font-variant-numeric: tabular-nums; direction: ltr; unicode-bidi: isolate; }
+
+/* States */
+.pc-chart__state { display: flex; min-block-size: 16rem; flex-direction: column; align-items: center; justify-content: center; gap: var(--pc-space-md); text-align: center; }
+.pc-chart__state-msg { font-size: var(--pc-text-sm); font-weight: var(--pc-font-weight-medium); color: var(--pc-gray-700); }
+.pc-chart__state-hint { max-inline-size: 24rem; font-size: var(--pc-text-sm); color: var(--pc-gray-500); }
+.pc-chart__state--error .pc-chart__state-msg { color: var(--pc-chart-error); display: inline-flex; align-items: center; gap: var(--pc-space-sm); }
+.pc-chart__skeleton { display: flex; min-block-size: 16rem; align-items: flex-end; gap: var(--pc-space-lg); }
+.pc-chart__skeleton i { flex: 1; border-radius: 6px 6px 0 0; background: var(--pc-gray-100); }
+@media (prefers-reduced-motion: no-preference) { .pc-chart__skeleton i { animation: pc-pulse 1.4s ease-in-out infinite; } }
+@keyframes pc-pulse { 0%,100% { opacity: 1; } 50% { opacity: .5; } }
+
+/* KPI */
+.pc-kpi { background: var(--pc-color-surface); border: 1px solid var(--pc-color-border); border-radius: var(--pc-radius-lg); padding: var(--pc-space-2xl); text-align: start; }
+.pc-kpi__label { font-size: var(--pc-text-sm); color: var(--pc-gray-500); }
+.pc-kpi__value { font-size: 28px; line-height: 1.1; font-weight: var(--pc-font-weight-bold); color: var(--pc-gray-900); margin-block-start: var(--pc-space-xs); }
+.pc-kpi__trend { display: inline-flex; align-items: center; gap: var(--pc-space-xs); font-size: var(--pc-text-sm); margin-block-start: var(--pc-space-sm); }
+.pc-kpi__trend--up { color: var(--pc-chart-success); }
+.pc-kpi__trend--down { color: var(--pc-chart-error); }
+.pc-kpi__trend--flat { color: var(--pc-gray-500); }
+.pc-kpi__context { font-size: var(--pc-text-xs); color: var(--pc-gray-500); margin-block-start: var(--pc-space-xxs); }
+
+/* Donut layout */
+.pc-donut { display: flex; align-items: center; gap: var(--pc-space-xl); flex-wrap: wrap; }
+.pc-donut__legend { font-size: var(--pc-text-sm); color: var(--pc-chart-text); }
+.pc-donut__legend > div { display: flex; align-items: center; gap: var(--pc-space-sm); margin-block: var(--pc-space-xs); }
