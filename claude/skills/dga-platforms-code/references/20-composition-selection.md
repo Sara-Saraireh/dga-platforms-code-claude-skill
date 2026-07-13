@@ -30,6 +30,7 @@ verified tokens (`tokens/`) or constitute official DGA compliance.
 ## Archetypes
 
 ### 1. Guided Service Flow
+
 - **Use cases:** citizen procedures, applications, renewals, onboarding.
 - **Dominant task:** complete the current step and move to the outcome.
 - **Dominant page element:** the **active step / current form**.
@@ -43,6 +44,7 @@ verified tokens (`tokens/`) or constitute official DGA compliance.
   at once.
 
 ### 2. Verification Workbench
+
 - **Use cases:** regulatory review, licensing, document/identity verification, audit rulings.
 - **Dominant task:** examine evidence and record an authoritative decision.
 - **Dominant page element:** the **evidence** (document, record, comparison).
@@ -58,6 +60,7 @@ verified tokens (`tokens/`) or constitute official DGA compliance.
 - **When not to use:** high-volume triage with no per-item evidence (use Operational Workspace).
 
 ### 3. Operational Workspace
+
 - **Use cases:** case queues, ticket/permit handling, coordination consoles.
 - **Dominant task:** triage and act on a stream of items without losing context.
 - **Dominant page element:** the **queue / work list** and the active item.
@@ -72,6 +75,7 @@ verified tokens (`tokens/`) or constitute official DGA compliance.
 - **When not to use:** single procedures (Guided Service Flow) or read-only reading (Narrative Portal).
 
 ### 4. Analytical Canvas
+
 - **Use cases:** performance analytics, monitoring, planning, policy insight.
 - **Dominant task:** answer a specific question from data and support a decision.
 - **Dominant page element:** the **primary visualization** answering the lead question.
@@ -82,12 +86,13 @@ verified tokens (`tokens/`) or constitute official DGA compliance.
 - **Mobile transformation:** primary chart first and full-width; secondary charts stack; simplify
   interactions.
 - **Suitable components:** `LineChart`, `BarChart`, `DonutChart`, `ChartContainer` with a required
-  accessible summary, `KpiCard` as *supporting* context only.
+  accessible summary, `KpiCard` as _supporting_ context only.
 - **Anti-patterns:** equal-weight KPI-card grid with no dominant view; decorative charts with no
   question; every metric an identical tile.
 - **When not to use:** when data is incidental — don't manufacture an analytics page for a service.
 
 ### 5. Case Management Split View
+
 - **Use cases:** investigations, complaints, multi-stage cases with history and actions.
 - **Dominant task:** understand one case in full and move it forward.
 - **Dominant page element:** the **case context** (subject + status + history) with actions.
@@ -101,6 +106,7 @@ verified tokens (`tokens/`) or constitute official DGA compliance.
 - **When not to use:** simple queues without per-case history (Operational Workspace).
 
 ### 6. Narrative Portal
+
 - **Use cases:** public information, editorial pages, guidance, service discovery landing.
 - **Dominant task:** read/understand, or navigate to the right destination.
 - **Dominant page element:** the **content / message and its primary onward action**.
@@ -113,13 +119,14 @@ verified tokens (`tokens/`) or constitute official DGA compliance.
 - **When not to use:** anything transactional or operational.
 
 ### 7. Mobile Action Stack
+
 - **Use cases:** field inspection, on-the-go capture, quick single-purpose mobile tasks.
 - **Dominant task:** capture or act quickly on one thing at a time, hands/context constrained.
 - **Dominant page element:** the **current action / capture control**.
 - **Primary regions:** one action per screen, large targets, sequential steps, offline-tolerant state.
 - **Navigation model:** stacked / stepped, thumb-reachable.
 - **Expected density:** low.
-- **Mobile transformation:** this *is* the mobile form; on larger screens, center a narrow column —
+- **Mobile transformation:** this _is_ the mobile form; on larger screens, center a narrow column —
   do not spread into a desktop dashboard.
 - **Suitable components:** large `Button`s, `Input`, photo/scan capture, `Stepper`, `Alert` for sync
   state.
@@ -128,16 +135,16 @@ verified tokens (`tokens/`) or constitute official DGA compliance.
 
 ## Composition selection matrix
 
-| Primary class | Dominant task | Archetype | Dominant element |
-|---------------|---------------|-----------|------------------|
-| Government service | Complete a procedure | Guided Service Flow | Active step / form |
-| Regulatory verification | Judge evidence, record ruling | Verification Workbench | The evidence |
-| Operational management | Triage a queue | Operational Workspace | Queue + active item |
-| Data intelligence & analytics | Answer a question from data | Analytical Canvas | Primary visualization |
-| Regulatory / investigation (rich cases) | Move one case forward | Case Management Split View | Case context |
-| Public information | Read / navigate | Narrative Portal | Content + onward action |
-| Field inspection | Capture on site | Mobile Action Stack | Current action |
-| Executive / exhibition | Absorb a headline once | Narrative Portal (large-scale) or a single focal view | The message / one signal |
+| Primary class                           | Dominant task                 | Archetype                                             | Dominant element         |
+| --------------------------------------- | ----------------------------- | ----------------------------------------------------- | ------------------------ |
+| Government service                      | Complete a procedure          | Guided Service Flow                                   | Active step / form       |
+| Regulatory verification                 | Judge evidence, record ruling | Verification Workbench                                | The evidence             |
+| Operational management                  | Triage a queue                | Operational Workspace                                 | Queue + active item      |
+| Data intelligence & analytics           | Answer a question from data   | Analytical Canvas                                     | Primary visualization    |
+| Regulatory / investigation (rich cases) | Move one case forward         | Case Management Split View                            | Case context             |
+| Public information                      | Read / navigate               | Narrative Portal                                      | Content + onward action  |
+| Field inspection                        | Capture on site               | Mobile Action Stack                                   | Current action           |
+| Executive / exhibition                  | Absorb a headline once        | Narrative Portal (large-scale) or a single focal view | The message / one signal |
 
 Executive/exhibition experiences are usually a large-scale, low-density focal view rather than a
 standalone archetype — one message or a few big signals dominate; see the Cinematic AI notes in
@@ -149,3 +156,9 @@ enforce them via `references/22-variation-and-repetition-control.md`.
 
 See also: `references/03-layout-and-navigation.md`, `references/09-responsive-mobile.md`,
 `references/30-component-library.md`.
+
+Choose Case Management Split View when each case requires rich history,
+evidence, timeline, participants, or extended case context.
+
+Choose Operational Workspace when the primary task is managing a queue,
+changing lightweight states, assigning work, and progressing items quickly.

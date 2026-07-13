@@ -6,6 +6,14 @@ defines the profiles **conceptually only**. It does **not** implement them: no p
 no themes, no dark mode are created in this phase. Selecting a profile here means naming a direction
 and its constraints, then implementing within the existing verified tokens and components.
 
+A dark or hybrid analytical surface may be appropriate when the environment
+includes large monitoring displays, low-light control rooms, prolonged visual
+monitoring, or a dominant data-visualization canvas.
+
+Dark styling must still preserve readability, semantic clarity, accessible
+contrast, and long-session comfort. It must not be selected merely because
+the product uses artificial intelligence.
+
 **Status:** Interpretive operational guidance
 **Authority:** Secondary to official DGA sources and verified extractions
 **Official DGA token override:** No
@@ -26,12 +34,13 @@ These are different scopes and must not be confused:
   create a complete visual system, and changing the accent is **not** a new design direction
   (`references/22-variation-and-repetition-control.md`).
 - **A visual profile** is a **broader direction** involving composition, density, depth/surfaces,
-  visualization emphasis, and motion. A profile chooses *how the product feels and is structured*;
+  visualization emphasis, and motion. A profile chooses _how the product feels and is structured_;
   the accent is a small decision made inside it.
 
 ## Conceptual profiles
 
 ### Government Service
+
 - **Suitable contexts:** citizen procedures, public-facing services (Guided Service Flow).
 - **Tone:** calm, official, reassuring, uncluttered.
 - **Preferred density:** low.
@@ -43,6 +52,7 @@ These are different scopes and must not be confused:
 - **Prohibited misuse:** analytics chrome, KPI headers, marketing gloss, dark/cinematic styling.
 
 ### Regulatory Workspace
+
 - **Suitable contexts:** verification, licensing, audit rulings (Verification Workbench, Case
   Management Split View).
 - **Tone:** serious, precise, evidence-forward, trustworthy.
@@ -55,6 +65,7 @@ These are different scopes and must not be confused:
 - **Prohibited misuse:** decorative KPI walls, hero banners, shrinking evidence into a card.
 
 ### Operational Command
+
 - **Suitable contexts:** queues, coordination consoles, all-day operations (Operational Workspace).
 - **Tone:** efficient, dense, utilitarian.
 - **Preferred density:** high.
@@ -67,6 +78,7 @@ These are different scopes and must not be confused:
 - **Prohibited misuse:** guided-flow chrome, decorative charts above the queue, over-carding.
 
 ### Data Intelligence
+
 - **Suitable contexts:** analytics, monitoring, planning, long-use analytical systems (Analytical
   Canvas). **This is the practical, default profile for long-use analytical systems** — including most
   AI-assisted monitoring — not Cinematic AI.
@@ -81,6 +93,7 @@ These are different scopes and must not be confused:
 - **Prohibited misuse:** equal-weight KPI grids, decorative charts, gradients/glow as "AI" signaling.
 
 ### Field Mobile
+
 - **Suitable contexts:** on-site capture and inspection (Mobile Action Stack).
 - **Tone:** robust, legible, thumb-first.
 - **Preferred density:** low.
@@ -92,6 +105,7 @@ These are different scopes and must not be confused:
 - **Prohibited misuse:** desktop dashboards on mobile, small targets, hover-dependent UI.
 
 ### Public Editorial
+
 - **Suitable contexts:** public information, guidance, service discovery (Narrative Portal).
 - **Tone:** clear, welcoming, readable.
 - **Preferred density:** low–medium, editorial rhythm.
@@ -103,18 +117,19 @@ These are different scopes and must not be confused:
 - **Prohibited misuse:** admin tables, KPI tiles, workspace chrome around an article.
 
 ### Cinematic AI
+
 - **Suitable contexts:** **exhibitions, launch screens, demos, large displays, and executive
   experiences** — seen briefly, for impact. Not for daily-use systems.
 - **Tone:** high-impact, deliberate, spacious.
 - **Preferred density:** very low — a few large elements.
-- **Light / dark / hybrid:** dark or dramatic is acceptable *here* because the context is presentation,
+- **Light / dark / hybrid:** dark or dramatic is acceptable _here_ because the context is presentation,
   not sustained work.
 - **Surface behavior:** large focal elements, deliberate depth; effects only where they carry meaning.
 - **Visual emphasis:** one headline message or a small set of signals.
 - **Motion level:** expressive is acceptable, but purposeful — never gratuitous.
 - **Prohibited misuse:** applying this to operational tools, review workbenches, or analytics people
   use all day; using dark/cinematic styling **just because a system uses AI**. AI capability is not a
-  reason for cinematic styling — the *context* (exhibition/executive) is.
+  reason for cinematic styling — the _context_ (exhibition/executive) is.
 
 ## Hard rules
 
