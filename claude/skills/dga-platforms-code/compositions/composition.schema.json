@@ -1,0 +1,140 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://design.dga.gov.sa/skill/compositions/composition.schema.json",
+  "title": "Composition record",
+  "description": "Machine-readable shape of a task-driven page composition. Interpretive operational guidance, secondary to official DGA sources and verified extractions. Structure only: no visual-theme, color, or styling fields.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name",
+    "status",
+    "purpose",
+    "suitableFor",
+    "unsuitableFor",
+    "primaryTask",
+    "dominantElement",
+    "pageRegions",
+    "navigationModel",
+    "density",
+    "responsiveBehavior",
+    "accessibilityRequirements",
+    "suitableComponents",
+    "antiPatterns",
+    "variationDimensions",
+    "relatedCompositions"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Lowercase kebab-case identifier matching the folder name.",
+      "pattern": "^[a-z][a-z0-9-]*$"
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-readable composition name."
+    },
+    "status": {
+      "type": "string",
+      "description": "Provenance status; interpretive operational guidance only.",
+      "enum": ["interpretive-operational-guidance"]
+    },
+    "purpose": {
+      "type": "string",
+      "description": "One-line statement of what the composition organizes."
+    },
+    "suitableFor": {
+      "type": "array",
+      "description": "Task/context situations where this composition fits.",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "unsuitableFor": {
+      "type": "array",
+      "description": "Situations where this composition should not be used.",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "primaryTask": {
+      "type": "string",
+      "description": "The single user task the composition is built around."
+    },
+    "dominantElement": {
+      "type": "string",
+      "description": "The one region/element that must own the screen."
+    },
+    "pageRegions": {
+      "type": "array",
+      "description": "Structural regions, in priority order.",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "navigationModel": {
+      "type": "string",
+      "description": "How the user moves within/through the composition.",
+      "enum": ["stepped", "split", "master-detail", "top", "minimal", "stacked", "case-scoped"]
+    },
+    "density": {
+      "type": "string",
+      "description": "Expected information density.",
+      "enum": ["low", "low-medium", "medium", "medium-high", "high", "high-focused"]
+    },
+    "responsiveBehavior": {
+      "type": "object",
+      "description": "How the structure transforms across breakpoints (structure, not styling).",
+      "additionalProperties": false,
+      "required": ["desktop", "tablet", "mobile"],
+      "properties": {
+        "desktop": { "type": "string" },
+        "tablet": { "type": "string" },
+        "mobile": { "type": "string" }
+      }
+    },
+    "accessibilityRequirements": {
+      "type": "array",
+      "description": "Structure-level accessibility requirements (landmarks, order, focus, RTL).",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "suitableComponents": {
+      "type": "array",
+      "description": "Component categories that populate the regions (categories, not code).",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "antiPatterns": {
+      "type": "array",
+      "description": "Structural anti-patterns this composition forbids.",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "variationDimensions": {
+      "type": "array",
+      "description": "Structural dimensions along which variants may differ.",
+      "items": {
+        "type": "string",
+        "enum": [
+          "dominant-region",
+          "ordering",
+          "split-model",
+          "navigation-model",
+          "drill-down-pattern",
+          "density",
+          "interaction-sequence",
+          "responsive-transformation"
+        ]
+      },
+      "minItems": 1
+    },
+    "relatedCompositions": {
+      "type": "array",
+      "description": "Ids of adjacent compositions and when to switch to them.",
+      "items": { "type": "string" }
+    },
+    "variants": {
+      "type": "array",
+      "description": "Optional list of structurally distinct variant names for this composition.",
+      "items": { "type": "string" }
+    }
+  }
+}

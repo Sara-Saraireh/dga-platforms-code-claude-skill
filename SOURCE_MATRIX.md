@@ -65,6 +65,28 @@ presented as an official extraction or as verified tokens.
 These files introduce no official DGA tokens and do not modify verified token values. Visual profiles
 are conceptual only; no profiles/themes/CSS are implemented.
 
+## Composition system (interpretive guidance — Phase 2)
+
+Repository-authored, task-driven page-structure guidance operationalizing `references/20`. Structure
+only; not backed by an official DGA source; must not be presented as an official extraction or verified
+tokens.
+
+| Item | Purpose | Status | Source |
+|------|---------|--------|--------|
+| `compositions/README.md` · `compositions/composition.schema.json` | Composition system overview + record shape | **implementation guidance** (interpretive design guidance) | derived |
+| `compositions/guided-service-flow/` (composition.md + variants.md) | Procedure step structure | **implementation guidance** (interpretive design guidance) | derived |
+| `compositions/verification-workbench/` (composition.md + variants.md) | Evidence-first review structure | **implementation guidance** (interpretive design guidance) | derived |
+| `compositions/analytical-canvas/` (composition.md + variants.md) | Dominant-visualization structure | **implementation guidance** (interpretive design guidance) | derived |
+| `compositions/operational-workspace/` (composition.md + variants.md) | Queue + active-item structure | **implementation guidance** (interpretive design guidance) | derived |
+| `compositions/case-management-split-view/` (composition.md + variants.md) | Rich-case split structure | **implementation guidance** (interpretive design guidance) | derived |
+| `compositions/narrative-portal/` (composition.md + variants.md) | Editorial/onward-action structure | **implementation guidance** (interpretive design guidance) | derived |
+| `compositions/mobile-action-stack/` (composition.md + variants.md) | Field one-action-per-screen structure | **implementation guidance** (interpretive design guidance) | derived |
+| `evaluation/compositions/` (README, rubric, prompts) | Phase 2 composition evaluation | **implementation guidance** (interpretive design guidance) | derived |
+
+Structure only: these files define regions/hierarchy/navigation/density/responsive behavior. They add
+no official DGA tokens, implement no visual profiles/themes/CSS, and do not modify verified token
+values.
+
 ## Counts (Platforms Code Guide v1.0)
 
 | Item | Count | Status | Note |

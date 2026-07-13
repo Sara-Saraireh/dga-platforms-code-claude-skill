@@ -6,6 +6,33 @@ Versioning (see [GOVERNANCE.md](GOVERNANCE.md)).
 
 ## [Unreleased]
 
+### Added — Composition System (Phase 2)
+- **Operational composition system** in `claude/skills/dga-platforms-code/compositions/` that turns the
+  conceptual archetypes in `references/20-composition-selection.md` into reusable, task-driven
+  **structure** guidance. Seven compositions, each with a `composition.md` (regions, dominant element,
+  hierarchy, navigation, density, responsive transformation, RTL, accessibility, anti-patterns) and a
+  `variants.md` with 2–3 structurally distinct variants: `guided-service-flow`,
+  `verification-workbench`, `analytical-canvas`, `operational-workspace`,
+  `case-management-split-view`, `narrative-portal`, `mobile-action-stack`.
+- **`compositions/README.md`** distinguishing composition vs. template vs. visual profile vs. component,
+  a compact selection flow, and maintenance rules; **`compositions/composition.schema.json`**, a
+  minimal machine-readable composition record (structure only — no visual-theme or color fields).
+- **SKILL.md** gains an "Applying the composition" step (read the composition, choose a justified
+  variant, state the dominant element, preserve the composition, don't collapse regions into cards).
+- **Build/redesign prompts** (`prompts/02`, `03`, `04`, `06`) now require selecting a composition and
+  variant, stating the dominant element, avoiding the generic dashboard/card fallback, and validating
+  responsive + RTL structure.
+- **Phase 2 evaluation** under `evaluation/compositions/` (`README.md`, `rubric.md`, six variant-focused
+  briefs) testing composition/variant selection, structural differentiation, the operational vs.
+  case-management distinction, and no visual-theme leakage.
+- Recorded the composition layer in `sources.md` and `SOURCE_MATRIX.md`.
+
+### Notes — Composition System
+- Compositions are **interpretive operational guidance / implementation guidance**, subordinate to the
+  official DGA sources and verified extractions. They define **structure only** — no visual profiles,
+  themes, CSS, React, tokens, or final templates. No verified token values changed; no components,
+  templates, examples, or docs site were modified; no official DGA compliance is claimed.
+
 ### Added — Design Direction Engine (Phase 1)
 - **Mandatory Design Direction Gate before layout.** Added a decision stage between reading the
   references and planning layout so the composition follows the product's task instead of defaulting to

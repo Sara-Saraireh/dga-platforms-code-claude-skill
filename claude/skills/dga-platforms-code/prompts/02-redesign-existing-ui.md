@@ -27,5 +27,11 @@ Do the following, in order:
    validation are preserved, checks run and results, and remaining manual-review items. Restate the
    compliance disclaimer.
 
+**Composition.** Before restyling, run the Design Direction Gate and pick a composition from
+`compositions/`: state the product class, the composition, a justified variant, and the dominant
+element. Preserve the task hierarchy, avoid a generic dashboard / card-grid fallback, do not wrap every
+section in a card, and validate the responsive transformation (desktop/tablet/mobile) and the RTL
+structure.
+
 Do not claim official compliance, copy official logos, invent token values, make it look like a SaaS
 product, overuse the success/green color, or use real personal data.

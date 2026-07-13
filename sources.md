@@ -98,6 +98,17 @@ element, conceptual visual profile) before layout, to avoid repetitive default d
 - They assert **no** official DGA compliance. Where they touch color, they defer to the verified
   semantic colors and the accent rules in `references/17-accent-theming.md`.
 
+The **composition system** under `claude/skills/dga-platforms-code/compositions/` (a `README.md`, a
+`composition.schema.json`, and seven composition folders each with `composition.md` + `variants.md`),
+plus the Phase 2 evaluation under `evaluation/compositions/`, is the operational extension of
+`references/20`. It is the same class of guidance:
+
+- It defines page **structure only** (regions, dominant element, hierarchy, navigation, density,
+  responsive transformation) — **no** visual profiles, themes, colors, CSS, React, or tokens.
+- It is **not** an official DGA extraction, introduces **no** official DGA tokens, and is **subordinate**
+  to the official sources and verified extractions.
+- It asserts **no** official DGA compliance.
+
 Recorded in [`SOURCE_MATRIX.md`](SOURCE_MATRIX.md) with status **implementation guidance (interpretive
 design guidance)** — never "verified".
 

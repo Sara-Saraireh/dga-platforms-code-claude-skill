@@ -121,6 +121,20 @@ Rules:
 - Use the design brief in `references/19-design-direction-framework.md`; the reusable
   `prompts/00-establish-design-direction.md` runs this gate end to end.
 
+### Applying the composition
+
+Once the composition archetype is chosen, apply it operationally via `compositions/`:
+
+- **Read the selected composition guidance** — its `composition.md` (regions, hierarchy, navigation,
+  density, responsive transformation, anti-patterns).
+- **Choose a justified variant** from that composition's `variants.md`, and say why it fits the task.
+- **State the dominant element** and the structural regions before implementing.
+- **Preserve the composition during implementation** — keep the regions and their priority; switch
+  composition only at a genuine task boundary, not mid-screen.
+- **Do not collapse all regions into cards.** Cards are one surface among several; not every section is
+  a card. Compositions define structure only (no visual styling); they stay subordinate to the official
+  sources and verified tokens. See `compositions/README.md`.
+
 ## Government-grade design principles
 
 - **Trust over flash.** Calm, official, restrained. No decorative noise, no marketing gloss.

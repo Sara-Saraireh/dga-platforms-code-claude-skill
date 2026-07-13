@@ -27,5 +27,10 @@ Do the following, in order:
    authorization, accessibility with assistive tech, security-sensitive surfaces, fake-data
    confirmation). Restate that this aligns with DGA principles and is **not** official compliance.
 
+**Composition.** Verify the screen uses a justified composition and variant from `compositions/` with a
+clear, single dominant element; the task hierarchy is preserved; there is no generic dashboard /
+card-grid fallback or excessive card wrapping; and the responsive transformation (desktop/tablet/mobile)
+and RTL structure hold.
+
 Do not claim official compliance, copy official logos, invent token values, change backend/security
 logic, or use real personal data.
