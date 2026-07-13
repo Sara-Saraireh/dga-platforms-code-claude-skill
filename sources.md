@@ -80,6 +80,27 @@ Not used: "officially compliant", "certified", "DGA-approved", "production-ready
 a **Claude Code Skill, not a published npm package and not official DGA components**; it does not and
 cannot certify official compliance.
 
+## Interpretive design-direction guidance (references 18–22)
+
+The design-direction references — `18-product-experience-classification.md`,
+`19-design-direction-framework.md`, `20-composition-selection.md`, `21-visual-profile-selection.md`,
+and `22-variation-and-repetition-control.md`, plus the prompt `00-establish-design-direction.md` and
+the `evaluation/` baseline — are **interpretive operational guidance / implementation guidance**. They
+help Claude decide *what kind of experience a product should be* (product class, composition, dominant
+element, conceptual visual profile) before layout, to avoid repetitive default dashboards.
+
+- They are **not** official DGA extractions and are **subordinate** to the official sources and the
+  verified extractions above.
+- They introduce **no** official DGA tokens and do not modify or redefine verified token values
+  (`tokens/`).
+- Visual profiles are named **conceptually only**; no profiles, themes, or CSS are implemented by these
+  files.
+- They assert **no** official DGA compliance. Where they touch color, they defer to the verified
+  semantic colors and the accent rules in `references/17-accent-theming.md`.
+
+Recorded in [`SOURCE_MATRIX.md`](SOURCE_MATRIX.md) with status **implementation guidance (interpretive
+design guidance)** — never "verified".
+
 ## Known conflicts / source status
 
 - **Component count.** The official PDF v1.0 states **55 components** (plus 6 foundations, 17

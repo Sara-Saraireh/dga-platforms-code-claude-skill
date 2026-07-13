@@ -48,6 +48,23 @@ cleanup.
 The `--pc-chart-*` variables are **implementation role-mappings** built from the verified color
 tokens and the official `DgaChart` example; they are not published as official DGA "chart tokens".
 
+## Design direction (interpretive guidance — references 18–22)
+
+Repository-authored design-decision support. Not backed by an official DGA source; must not be
+presented as an official extraction or as verified tokens.
+
+| Item | Purpose | Status | Source |
+|------|---------|--------|--------|
+| `references/18-product-experience-classification.md` | Classify product by task/environment | **implementation guidance** (interpretive design guidance) | derived |
+| `references/19-design-direction-framework.md` | Mandatory design-direction brief/gate | **implementation guidance** (interpretive design guidance) | derived |
+| `references/20-composition-selection.md` | Composition archetypes (avoid default dashboard) | **implementation guidance** (interpretive design guidance) | derived |
+| `references/21-visual-profile-selection.md` | Conceptual visual profiles (no CSS this phase) | **implementation guidance** (interpretive design guidance) | derived |
+| `references/22-variation-and-repetition-control.md` | Anti-repetition rules | **implementation guidance** (interpretive design guidance) | derived |
+| `prompts/00-establish-design-direction.md` · `evaluation/` | Run + evaluate the direction gate | **implementation guidance** (interpretive design guidance) | derived |
+
+These files introduce no official DGA tokens and do not modify verified token values. Visual profiles
+are conceptual only; no profiles/themes/CSS are implemented.
+
 ## Counts (Platforms Code Guide v1.0)
 
 | Item | Count | Status | Note |

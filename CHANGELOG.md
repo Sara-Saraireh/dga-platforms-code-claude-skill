@@ -6,6 +6,29 @@ Versioning (see [GOVERNANCE.md](GOVERNANCE.md)).
 
 ## [Unreleased]
 
+### Added — Design Direction Engine (Phase 1)
+- **Mandatory Design Direction Gate before layout.** Added a decision stage between reading the
+  references and planning layout so the composition follows the product's task instead of defaulting to
+  a hero + KPI-cards + card-grid dashboard with only the accent changed. `SKILL.md` gains an
+  "Establish design direction" workflow step, a "Design direction gate (mandatory)" section, and two
+  prohibited-behavior bullets (no default dashboard / no copying the last app's structure; accent
+  change ≠ new direction).
+- **Five interpretive reference files**: `references/18-product-experience-classification.md`,
+  `19-design-direction-framework.md`, `20-composition-selection.md`, `21-visual-profile-selection.md`,
+  `22-variation-and-repetition-control.md` (fill the 18–22 gap between `17` and `29`).
+- **A reusable prompt** `prompts/00-establish-design-direction.md` that runs the gate end to end
+  (classify → brief → composition → conceptual profile → anti-patterns → assumptions → direction),
+  without writing code or modifying files.
+- **An evaluation baseline** under `evaluation/` (`README.md`, `rubric.md`, and six product briefs in
+  `prompts/`) that scores the skill's **design-direction decisions**, not completed visual code.
+- Recorded the new references in `sources.md` and `SOURCE_MATRIX.md`.
+
+### Notes — Design Direction Engine
+- This layer is **interpretive operational guidance / implementation guidance**, subordinate to the
+  official DGA sources and verified extractions. It introduces **no** official DGA tokens, does not
+  modify verified token values, and asserts **no** official DGA compliance. No components, templates,
+  charts, themes, or CSS were changed; visual profiles are named conceptually only (no folders/CSS).
+
 ### Changed — repository cleanup (scope clarified to "Claude Code Skill first")
 - **De-packaged the bundled code.** Removed npm-package framing: `import … from
   "dga-platforms-code/components"` examples are now relative-path / "copy into your project" snippets

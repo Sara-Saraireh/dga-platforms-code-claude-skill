@@ -71,11 +71,15 @@ Do these in order. Do not skip to editing.
    and validation begin. You will preserve those.
 3. **Read the references.** Pull the relevant `references/` files for the task (foundations, layout,
    components, forms, service patterns, RTL, accessibility, responsive, content, engineering).
-4. **Confirm scope.** State what you will and will not change. UI-only tasks stay UI-only.
-5. **Plan incrementally.** Prefer the smallest coherent change. Reuse existing components and tokens
+4. **Establish design direction.** Before planning any layout, complete the Design Direction Gate:
+   classify the product and fill the design brief (`references/19-design-direction-framework.md`).
+   This decides the composition and dominant element from the task — see the section below. Do not
+   skip to a dashboard.
+5. **Confirm scope.** State what you will and will not change. UI-only tasks stay UI-only.
+6. **Plan incrementally.** Prefer the smallest coherent change. Reuse existing components and tokens
    before writing new ones.
-6. **Implement, then verify.** Make the change, then run available checks.
-7. **Summarize.** Report changed files and remaining manual-review items.
+7. **Implement, then verify.** Make the change, then run available checks.
+8. **Summarize.** Report changed files and remaining manual-review items.
 
 ### What you must preserve
 
@@ -86,6 +90,36 @@ Do these in order. Do not skip to editing.
 - **Validation behavior.** Do not relax, remove, or alter validation rules unless explicitly asked.
   You may improve how validation is *presented* (labels, messages, focus) without changing what
   passes or fails.
+
+## Design direction gate (mandatory)
+
+Before planning layout or writing frontend code, establish the design direction from the task — not
+from habit. This gate is interpretive design guidance (`references/18`–`22`), kept clearly separate
+from the verified DGA tokens and extractions, and it never overrides them. Establish:
+
+- **Product class** — one primary + optional secondary (`references/18-product-experience-classification.md`).
+- **Design direction** — a conceptual visual profile (`references/21-visual-profile-selection.md`).
+- **Composition archetype** — chosen from class and task (`references/20-composition-selection.md`).
+- **Dominant element** — the single thing that owns the screen (task / evidence / queue / primary
+  chart / message).
+- **Navigation model** — stepped / split / master-detail / top / minimal.
+- **Density** — matched to the class and environment.
+- **Surface strategy** — flat sections / few cards / split panes / editorial; not "cards everywhere."
+- **Patterns to avoid** — the specific defaults this product must not fall into
+  (`references/22-variation-and-repetition-control.md`).
+
+Rules:
+
+- **Design direction is task-driven.** Classify by user task and environment, not industry, brand
+  color, or the fact that a system uses AI.
+- **A dashboard is not the default layout**, and **card grids are not the default composition.**
+- **Accent theming is not a complete theme system.** Switching the primary accent
+  (`references/17-accent-theming.md`) is a color-role choice, not a design direction.
+- **Visual variation must not be color-only.** Vary the composition, hierarchy, navigation, density,
+  or surfaces — not just the accent (`references/22-variation-and-repetition-control.md`).
+- **Visual novelty must never override trust, accessibility, or task clarity.**
+- Use the design brief in `references/19-design-direction-framework.md`; the reusable
+  `prompts/00-establish-design-direction.md` runs this gate end to end.
 
 ## Government-grade design principles
 
@@ -279,6 +313,9 @@ Do not:
   requested.
 - Overuse green (or any single accent) to the point that visual hierarchy weakens and the primary
   action or true success state is no longer distinct.
+- Default every product to the same hero + KPI-cards + card-grid dashboard, or copy the last generated
+  app's structure, instead of choosing the composition from the task (`references/20`, `references/22`).
+- Treat an accent-color change as a new design direction, or vary products by color alone.
 
 ## Required output format after each task
 
